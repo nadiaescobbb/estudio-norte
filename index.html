@@ -234,24 +234,35 @@
     /* Desktop Nav Active States */
     .nav-link {
         position: relative;
+        transition: opacity 300ms ease, color 300ms ease;
     }
     .nav-link::after {
         content: '';
         position: absolute;
-        bottom: -4px;
-        left: 0;
+        bottom: -6px;
+        left: 50%;
         width: 0;
-        height: 1px;
+        height: 1.5px;
         background: #c4391a;
-        transition: width 300ms cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateX(-50%);
+        transition: width 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease;
+        opacity: 0;
     }
     .nav-link.active::after, .nav-link:hover::after {
         width: 100%;
+        opacity: 1;
     }
     .nav-link.active {
         color: #c4391a !important;
         opacity: 1 !important;
-        font-weight: 700;
+    }
+
+    .logo-link {
+        transition: letter-spacing 400ms cubic-bezier(0.16, 1, 0.3, 1), color 300ms ease;
+    }
+    .logo-link:hover {
+        letter-spacing: 0.25em;
+        color: #c4391a !important;
     }
 
     /* KPI Desktop Polish */
@@ -279,7 +290,7 @@
 
 <!-- TopNavBar -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-[#f9f9f9]/90 backdrop-blur-md dark:bg-[#141414]/90 border-b-[0.5px] border-[#e2bfb7]/20 flex justify-between items-center px-6 md:px-12 py-6">
-    <a href="#top" class="text-xl font-normal tracking-[0.2em] font-sans text-[#141414] dark:text-[#f9f9f9] hover:text-[#c4391a] transition-colors">
+    <a href="#top" class="logo-link text-xl font-normal tracking-[0.2em] font-sans text-[#141414] dark:text-[#f9f9f9] transition-all">
         ESTUDIO_NORTE
     </a>
     <div class="hidden md:flex space-x-12" id="desktop-nav">
@@ -291,7 +302,7 @@
     <div class="md:hidden">
         <button id="menu-toggle" class="michroma text-[10px] tracking-widest uppercase">MENU —</button>
     </div>
-    <div class="mono text-[10px] tracking-widest opacity-60 uppercase hidden md:block">
+    <div class="mono text-[10px] tracking-[0.3em] opacity-40 uppercase hidden md:block">
         ° SANTA FE, ARGENTINA
     </div>
 </nav>
