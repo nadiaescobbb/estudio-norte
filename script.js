@@ -1,164 +1,82 @@
-/*
-    ESTUDIO NORTE - INTERACTION LOGIC
-*/
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // ─── Elements ──────────────────────────────────────────────
-    const navbar      = document.getElementById('navbar');
-    const reveals     = document.querySelectorAll('.reveal');
-    const contactForm = document.getElementById('main-contact-form');
-    const navLinks    = document.querySelectorAll('.nav-links a');
-    const sections    = document.querySelectorAll('section[id], header[id]');
-
-    // ─── Sticky Navbar ─────────────────────────────────────────
-    function handleNavbar() {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-    }
-
-    // ─── Scroll Reveal ─────────────────────────────────────────
-    const revealObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    revealObserver.unobserve(entry.target); // fire once
-                }
-            });
-        },
-        { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
-    );
-
-    reveals.forEach(el => revealObserver.observe(el));
-
-    // ─── Active Nav Link on Scroll ─────────────────────────────
-    const sectionObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    navLinks.forEach(link => {
-                        link.classList.toggle(
-                            'active',
-                            link.getAttribute('href') === `#${id}`
-                        );
-                    });
-                }
-            });
-        },
-        { threshold: 0.4 }
-    );
-
-    sections.forEach(sec => sectionObserver.observe(sec));
-
-    // ─── Smooth Scroll ─────────────────────────────────────────
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            const target = document.querySelector(href);
-            if (!target) return;
+    // 1. Form Validation
+    const form = document.getElementById('technical-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
+            let isValid = true;
 
-            const headerOffset = 80;
-            const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-            window.scrollTo({ top, behavior: 'smooth' });
-        });
-    });
+            const fields = [
+                document.getElementById('name'),
+                document.getElementById('email'),
+                document.getElementById('stage'),
+                document.getElementById('message')
+            ];
 
-    // ─── Scroll handler ────────────────────────────────────────
-    window.addEventListener('scroll', handleNavbar, { passive: true });
-    handleNavbar(); // run on init
+            fields.forEach(field => {
+                if (!field) return;
+                const group = field.closest('.f-group');
+                const isEmpty = !field.value.trim();
+                const isInvalidEmail = field.type === 'email' && !isEmpty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
 
-    // ─── Form Validation & Submission ──────────────────────────
-    if (!contactForm) return;
+                // message is optional — only validate if field has `required`
+                if (field.required && (isEmpty || isInvalidEmail)) {
+                    group.classList.add('has-error');
+                    isValid = false;
+                } else {
+                    group.classList.remove('has-error');
+                }
+            });
 
-    const fields = {
-        name:    { el: document.getElementById('name'),    errorEl: document.getElementById('name-error'),    validate: v => v.trim().length >= 2 ? '' : 'Por favor ingresé su nombre completo.' },
-        email:   { el: document.getElementById('email'),   errorEl: document.getElementById('email-error'),   validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Ingresé un email válido.' },
-        message: { el: document.getElementById('message'), errorEl: document.getElementById('message-error'), validate: v => v.trim().length >= 20 ? '' : 'La descripción debe tener al menos 20 caracteres.' },
-    };
+            if (isValid) {
+                const btn = form.querySelector('button[type="submit"]');
+                const prev = btn.innerHTML;
+                btn.innerHTML = "EXPEDIENTE CONFIRMADO";
+                btn.style.backgroundColor = "#1C1C1C";
 
-    const submitBtn    = document.getElementById('submit-btn');
-    const formFeedback = document.getElementById('form-feedback');
-
-    function showFieldError(key, message) {
-        const { el, errorEl } = fields[key];
-        if (message) {
-            el.classList.add('has-error');
-            errorEl.textContent = message;
-            errorEl.classList.add('visible');
-        } else {
-            el.classList.remove('has-error');
-            errorEl.textContent = '';
-            errorEl.classList.remove('visible');
-        }
-    }
-
-    // Validate on blur — real-time feel without being intrusive
-    Object.entries(fields).forEach(([key, field]) => {
-        field.el.addEventListener('blur', () => {
-            const error = field.validate(field.el.value);
-            showFieldError(key, error);
-        });
-
-        // Clear error as user types after first blur
-        field.el.addEventListener('input', () => {
-            if (field.el.classList.contains('has-error')) {
-                const error = field.validate(field.el.value);
-                showFieldError(key, error);
+                setTimeout(() => {
+                    btn.innerHTML = prev;
+                    btn.style.backgroundColor = "";
+                    form.reset();
+                }, 3000);
             }
         });
-    });
 
-    function validateAll() {
-        let isValid = true;
-        Object.entries(fields).forEach(([key, field]) => {
-            const error = field.validate(field.el.value);
-            showFieldError(key, error);
-            if (error) isValid = false;
+        // Strip error state on remediation
+        form.querySelectorAll('input, select, textarea').forEach(el => {
+            el.addEventListener('input',  () => el.closest('.f-group').classList.remove('has-error'));
+            el.addEventListener('change', () => el.closest('.f-group').classList.remove('has-error'));
         });
-        return isValid;
     }
 
-    function setFeedback(message, type) {
-        formFeedback.textContent = message;
-        formFeedback.className = `form-feedback ${type}`;
-    }
+    // 2. Intersection Observer — fade items in with stagger
+    const fadeItems = document.querySelectorAll('.fade-item');
 
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    const observerOptions = {
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px"
+    };
 
-        // Clear any previous feedback
-        setFeedback('', '');
+    let delayCounter = 0;
+    let resetTimer   = null;
 
-        if (!validateAll()) {
-            // Focus first invalid field
-            const firstInvalid = Object.values(fields).find(f => f.el.classList.contains('has-error'));
-            if (firstInvalid) firstInvalid.el.focus();
-            return;
-        }
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, delayCounter * 90);
 
-        // Disable & show loading
-        submitBtn.disabled = true;
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Enviando…';
+                delayCounter++;
+                fadeObserver.unobserve(entry.target);
 
-        try {
-            // Simulate async API call (replace with real endpoint)
-            await new Promise(resolve => setTimeout(resolve, 1600));
+                clearTimeout(resetTimer);
+                resetTimer = setTimeout(() => { delayCounter = 0; }, 150);
+            }
+        });
+    }, observerOptions);
 
-            // Success state
-            contactForm.reset();
-            Object.keys(fields).forEach(key => showFieldError(key, ''));
-            setFeedback('Consulta enviada. Le responderemos dentro de las próximas 24 horas hábiles.', 'success');
-
-        } catch (err) {
-            setFeedback('Hubo un error al enviar. Por favor intente nuevamente o contáctenos por WhatsApp.', 'error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
-        }
-    });
+    fadeItems.forEach(item => fadeObserver.observe(item));
 
 });
