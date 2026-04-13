@@ -115,22 +115,24 @@
 
     .wa-float {
         position: fixed;
-        bottom: 28px;
-        right: 28px;
+        bottom: 24px;
+        right: 24px;
         z-index: 9999;
         display: flex;
         align-items: center;
-        gap: 10px;
+        justify-content: center;
+        gap: 12px;
         background: #1e3f2e;
         color: #fff;
-        padding: 14px 22px;
+        min-height: 48px;
+        padding: 12px 24px;
         font-family: 'IBM Plex Mono', monospace;
-        font-size: 11px;
+        font-size: 13px;
         font-weight: 500;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         text-decoration: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         transition: transform 0.2s ease, background 0.2s ease;
     }
     .wa-float:hover {
@@ -144,7 +146,7 @@
         .wa-float span { display: inline; }
     }
     @media (max-width: 767px) {
-        .wa-float { padding: 14px; }
+        .wa-float { padding: 12px; border-radius: 4px; }
     }
 
     /* Selection overrides for dark footer */
@@ -289,8 +291,8 @@
 </a>
 
 <!-- TopNavBar -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-[#f9f9f9]/90 backdrop-blur-md dark:bg-[#141414]/90 border-b-[0.5px] border-[#e2bfb7]/20 flex justify-between items-center px-6 md:px-12 py-6">
-    <a href="#top" class="logo-link text-xl font-normal tracking-[0.2em] font-sans text-[#141414] dark:text-[#f9f9f9] transition-all">
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#f9f9f9]/98 dark:bg-[#141414]/98 border-b-[0.5px] border-[#e2bfb7]/20 flex justify-between items-center px-6 md:px-12 py-4 md:py-6">
+    <a href="#top" class="logo-link text-lg md:text-xl font-normal tracking-[0.2em] font-sans text-[#141414] dark:text-[#f9f9f9] transition-all min-h-[44px] flex items-center">
         ESTUDIO_NORTE
     </a>
     <div class="hidden md:flex space-x-12" id="desktop-nav">
@@ -300,24 +302,24 @@
         <a class="nav-link michroma text-[10px] tracking-[0.2em] text-[#141414] dark:text-[#f9f9f9] opacity-80 hover:text-[#c4391a] transition-colors" href="#contacto">CONTACTO</a>
     </div>
     <div class="md:hidden">
-        <button id="menu-toggle" class="michroma text-[10px] tracking-widest uppercase">MENU</button>
+        <button id="menu-toggle" class="michroma text-[11px] tracking-widest uppercase min-h-[44px] px-4 -mr-4">MENU</button>
     </div>
-    <div class="mono text-[10px] tracking-[0.2em] opacity-80 uppercase hidden md:block hover:opacity-100 transition-opacity cursor-default">
+    <div class="mono text-[11px] tracking-[0.2em] opacity-80 uppercase hidden md:block hover:opacity-100 transition-opacity cursor-default">
         SANTA FE, ARGENTINA
     </div>
 </nav>
 
 <!-- Mobile Menu Overlay -->
 <div id="mobile-menu-overlay" class="michroma">
-    <button id="menu-close" class="absolute top-8 right-6 text-white text-[10px] tracking-widest uppercase">CERRAR</button>
-    <div class="flex flex-col space-y-10 text-center">
-        <a href="#proyectos" class="text-white text-2xl uppercase tracking-[0.2em] hover:text-[#c4391a]">PROYECTOS</a>
-        <a href="#proceso" class="text-white text-2xl uppercase tracking-[0.2em] hover:text-[#c4391a]">PROCESO</a>
-        <a href="#clientes" class="text-white text-2xl uppercase tracking-[0.2em] hover:text-[#c4391a]">CLIENTES</a>
-        <a href="#contacto" class="text-white text-2xl uppercase tracking-[0.2em] hover:text-[#c4391a]">CONTACTO</a>
+    <button id="menu-close" class="absolute top-8 right-6 text-white text-[11px] tracking-widest uppercase min-h-[44px] min-w-[44px] flex items-center justify-center">CERRAR</button>
+    <div class="flex flex-col space-y-12 text-center">
+        <a href="#proyectos" class="text-white text-3xl uppercase tracking-[0.2em] hover:text-[#c4391a] py-2">PROYECTOS</a>
+        <a href="#proceso" class="text-white text-3xl uppercase tracking-[0.2em] hover:text-[#c4391a] py-2">PROCESO</a>
+        <a href="#clientes" class="text-white text-3xl uppercase tracking-[0.2em] hover:text-[#c4391a] py-2">CLIENTES</a>
+        <a href="#contacto" class="text-white text-3xl uppercase tracking-[0.2em] hover:text-[#c4391a] py-2">CONTACTO</a>
     </div>
     <div class="absolute bottom-12 left-0 w-full text-center">
-        <span class="mono text-white/40 text-[10px] tracking-widest uppercase">SANTA FE, ARG</span>
+        <span class="mono text-white/60 text-[12px] tracking-widest uppercase">SANTA FE, ARG</span>
     </div>
 </div>
 
@@ -333,7 +335,7 @@
             </h1>
         </div>
         <div class="md:col-span-4 md:text-right pb-2">
-            <p class="mono text-xs uppercase tracking-widest leading-relaxed">
+            <p class="mono text-[13px] uppercase tracking-widest leading-relaxed opacity-90">
                 Francisco G. Norte. Arquitecto Mat. 24.502.<br/>
                 Presupuestos cerrados y control real en terreno.<br/>
                 Santa Fe, Córdoba, Mendoza
@@ -358,17 +360,17 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
             <div class="kpi-card py-6 md:py-8 hairline-b md:border-b-0 md:hairline-r pr-0 md:pr-6">
                 <span class="mono text-4xl block mb-2 font-medium" id="kpi-deviation">&lt; 5%</span>
-                <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-2">DESVÍO PRESUPUESTARIO</span>
+                <span class="mono text-[11px] tracking-widest uppercase opacity-70 block mb-2">DESVÍO PRESUPUESTARIO</span>
                 <p class="text-sm font-light opacity-70 leading-relaxed">No arranco si el presupuesto no está cerrado con proveedores reales. Mi garantía no es devolverte mi plata — es no dejarte empezar una obra que no podés terminar.</p>
             </div>
             <div class="kpi-card py-6 md:py-8 md:px-8 hairline-b md:border-b-0 md:hairline-r">
                 <span class="mono text-4xl block mb-2 font-medium" id="kpi-delivery">100%</span>
-                <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-2">ENTREGA EN TÉRMINO</span>
+                <span class="mono text-[11px] tracking-widest uppercase opacity-70 block mb-2">ENTREGA EN TÉRMINO</span>
                 <p class="text-sm font-light opacity-70 leading-relaxed">Las fechas son rangos reales, no marketing.</p>
             </div>
             <div class="kpi-card py-6 md:py-8 md:pl-8">
                 <span class="mono text-4xl block mb-2 font-medium" id="kpi-price">USD 2.800</span>
-                <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-2">PROYECTO TÉCNICO COMPLETO</span>
+                <span class="mono text-[11px] tracking-widest uppercase opacity-70 block mb-2">PROYECTO TÉCNICO COMPLETO</span>
                 <p class="text-sm font-light opacity-70 leading-relaxed">Incluye planos, cómputo y firma municipal. Un legajo técnico completo te evita el 80% de los adicionales en obra.</p>
             </div>
         </div>
@@ -419,18 +421,18 @@
             <!-- Project Row 1: Casa Lenga -->
             <div class="reveal group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 py-6 md:py-8 hairline-t items-center hover:bg-surface-container-high transition-all duration-500 cursor-pointer" style="transition-delay: 0.1s">
                 <div class="md:col-span-2 aspect-video overflow-hidden">
-                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Casa Lenga — integración serrana con hormigón y madera en Villa de Calamuchita" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"/>
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Casa Lenga — integración serrana con hormigón y madera en Villa de Calamuchita" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" loading="lazy"/>
                 </div>
                 <div class="md:col-span-4 pl-0 md:pl-4">
                     <span class="michroma text-sm uppercase tracking-widest">CASA LENGA</span>
-                    <span class="block mono text-[10px] mt-1 opacity-70">Integración serrana</span>
-                    <span class="block mono text-[9px] mt-1 opacity-40 uppercase tracking-wider">Suelo rocoso · Hormigón visto · Desvío final 2.8% · Habilitación en término</span>
+                    <span class="block mono text-[11px] mt-1 opacity-80">Integración serrana</span>
+                    <span class="block mono text-[10px] mt-2 opacity-60 uppercase tracking-wider">Suelo rocoso · Hormigón visto · Desvío final 2.8% · Habilitación en término</span>
                 </div>
                 <div class="md:col-span-2 hidden md:block">
-                    <span class="mono text-[10px] uppercase opacity-80">VILLA DE CALAMUCHITA, CBA</span>
+                    <span class="mono text-[11px] uppercase opacity-80">VILLA DE CALAMUCHITA, CBA</span>
                 </div>
                 <div class="md:col-span-2 hidden md:block">
-                    <span class="mono text-[10px] uppercase opacity-80">185 M² · 10 MESES</span>
+                    <span class="mono text-[11px] uppercase opacity-80">185 M² · 10 MESES</span>
                 </div>
                 <div class="flex md:hidden items-center gap-3 mt-1">
                     <span class="mono text-[10px] uppercase opacity-80">CALAMUCHITA, CBA</span>
@@ -446,12 +448,12 @@
             <!-- Project Row 2: Nave Logística -->
             <div class="reveal group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 py-6 md:py-8 hairline-t items-center hover:bg-surface-container-high transition-all duration-500 cursor-pointer" style="transition-delay: 0.2s">
                 <div class="md:col-span-2 aspect-video overflow-hidden">
-                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Nave Logística Rosario — ampliación estructural en progreso" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"/>
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Nave Logística Rosario — ampliación estructural en progreso" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" loading="lazy"/>
                 </div>
                 <div class="md:col-span-4 pl-0 md:pl-4">
                     <span class="michroma text-sm uppercase tracking-widest">NAVE LOGÍSTICA</span>
-                    <span class="block mono text-[10px] mt-1 opacity-70">Ampliación estructural</span>
-                    <span class="block mono text-[9px] mt-1 opacity-40 uppercase tracking-wider">Suelo inestable · Pilotaje a 8m · 420 M² · Desvío parcial 3.2% · 65% avance</span>
+                    <span class="block mono text-[11px] mt-1 opacity-80">Ampliación estructural</span>
+                    <span class="block mono text-[10px] mt-2 opacity-60 uppercase tracking-wider">Suelo inestable · Pilotaje a 8m · 420 M² · Desvío parcial 3.2% · 65% avance</span>
                 </div>
                 <div class="md:col-span-2 hidden md:block">
                     <span class="mono text-[10px] uppercase opacity-80">GRAN ROSARIO, SF</span>
@@ -473,12 +475,12 @@
             <!-- Project Row 3: Oficinas Sarmiento -->
             <div class="reveal group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 py-6 md:py-8 hairline-t items-center hover:bg-surface-container-high transition-all duration-500 cursor-pointer" style="transition-delay: 0.3s">
                 <div class="md:col-span-2 aspect-video overflow-hidden">
-                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Oficinas Sarmiento Mendoza — rehabilitación integral de espacio comercial" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"/>
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Oficinas Sarmiento Mendoza — rehabilitación integral de espacio comercial" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" loading="lazy"/>
                 </div>
                 <div class="md:col-span-4 pl-0 md:pl-4">
                     <span class="michroma text-sm uppercase tracking-widest">OFICINAS SARMIENTO</span>
-                    <span class="block mono text-[10px] mt-1 opacity-70">Rehabilitación integral</span>
-                    <span class="block mono text-[9px] mt-1 opacity-40 uppercase tracking-wider">Refuerzo estructural · Tabiquería nueva · Desvío final 1.9% · Habilitación municipal ok</span>
+                    <span class="block mono text-[11px] mt-1 opacity-80">Rehabilitación integral</span>
+                    <span class="block mono text-[10px] mt-2 opacity-60 uppercase tracking-wider">Refuerzo estructural · Tabiquería nueva · Desvío final 1.9% · Habilitación municipal ok</span>
                 </div>
                 <div class="md:col-span-2 hidden md:block">
                     <span class="mono text-[10px] uppercase opacity-80">CENTRO DE MENDOZA</span>
@@ -587,57 +589,57 @@
             <p class="text-base md:text-lg font-light mb-8 md:mb-12 opacity-80">Pasame los datos de tu obra. Te digo si es técnicamente viable o si es preferible frenar antes de empezar.</p>
             <div class="space-y-6">
                 <div>
-                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">MATRÍCULA HABILITANTE</span>
+                    <span class="mono text-[12px] uppercase opacity-70 block mb-2 tracking-widest">MATRÍCULA HABILITANTE</span>
                     <p class="text-base md:text-xl">Prov. Mat. 24.502 (CAUSF)</p>
                 </div>
                 <div>
-                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">LÍNEA DIRECTA VÍA WHATSAPP</span>
+                    <span class="mono text-[12px] uppercase opacity-70 block mb-2 tracking-widest">LÍNEA DIRECTA VÍA WHATSAPP</span>
                     <a class="text-base md:text-xl hover:text-primary-container transition-colors" href="https://wa.me/541145829000">+54 11 4582 9000</a>
                 </div>
                 <div>
-                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">EMAIL</span>
+                    <span class="mono text-[12px] uppercase opacity-70 block mb-2 tracking-widest">EMAIL</span>
                     <a class="text-base md:text-xl hover:text-primary-container transition-colors" href="mailto:hola@estudionorte.com">hola@estudionorte.com</a>
                 </div>
                 <div>
-                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">COSTO DE HONORARIOS PISO</span>
+                    <span class="mono text-[12px] uppercase opacity-70 block mb-2 tracking-widest">COSTO DE HONORARIOS PISO</span>
                     <p class="text-base md:text-xl">USD 2.800 / por fase documental</p>
                 </div>
                 <div>
-                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">UBICACIÓN</span>
+                    <span class="mono text-[12px] uppercase opacity-70 block mb-2 tracking-widest">UBICACIÓN</span>
                     <p class="text-base md:text-xl">Santa Fe / Rosario, Argentina</p>
                 </div>
             </div>
         </div>
         <form class="reveal space-y-8 md:space-y-12" id="technical-form" style="transition-delay: 0.3s">
             <div class="border-b-2 border-on-surface/10 pb-4 focus-within:border-primary transition-colors">
-                <label class="mono text-[10px] uppercase block mb-2" for="name">Nombre completo</label>
-                <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-30" placeholder="Tu nombre..." type="text" id="name" required/>
+                <label class="mono text-[12px] uppercase block mb-3 opacity-70 tracking-widest" for="name">Nombre completo</label>
+                <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-50 min-h-[44px]" placeholder="Tu nombre..." type="text" id="name" required/>
             </div>
             <div class="border-b-2 border-on-surface/10 pb-4 focus-within:border-primary transition-colors">
-                <label class="mono text-[10px] uppercase block mb-2" for="email">Email</label>
-                <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-30" placeholder="tu@email.com" type="email" id="email" required/>
+                <label class="mono text-[12px] uppercase block mb-3 opacity-70 tracking-widest" for="email">Email</label>
+                <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-50 min-h-[44px]" placeholder="tu@email.com" type="email" id="email" required/>
             </div>
             <div class="border-b-2 border-on-surface/10 pb-4 focus-within:border-primary transition-colors">
-                <label class="mono text-[10px] uppercase block mb-2" for="whatsapp">WhatsApp</label>
-                <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-30" placeholder="+54 9 11 ..." type="tel" id="whatsapp" required/>
+                <label class="mono text-[12px] uppercase block mb-3 opacity-70 tracking-widest" for="whatsapp">WhatsApp</label>
+                <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-50 min-h-[44px]" placeholder="+54 9 11 ..." type="tel" id="whatsapp" required/>
             </div>
             <div class="border-b border-on-surface/20 pb-4 focus-within:border-primary transition-colors">
-                <label class="mono text-[10px] uppercase block mb-2">Etapa del proyecto</label>
-                <select class="w-full bg-transparent border-none p-0 focus:ring-0 text-base appearance-none uppercase mono min-h-[44px]">
+                <label class="mono text-[12px] uppercase block mb-3 opacity-70 tracking-widest">Etapa del proyecto</label>
+                <select class="w-full bg-transparent border-none p-0 focus:ring-0 text-base appearance-none uppercase mono min-h-[48px]">
                     <option>Solo es una idea</option>
                     <option>Ya tengo terreno / local</option>
                     <option>Evaluar planos urgente</option>
                 </select>
             </div>
             <div class="border-b border-on-surface/20 pb-4 focus-within:border-primary transition-colors">
-                <label class="mono text-[10px] uppercase block mb-2" for="message">¿Qué querés construir o modificar?</label>
-                <textarea class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-30" id="message" rows="3" placeholder="Contame brevemente tu idea..."></textarea>
+                <label class="mono text-[12px] uppercase block mb-3 opacity-70 tracking-widest" for="message">¿Qué querés construir o modificar?</label>
+                <textarea class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-50 min-h-[44px]" id="message" rows="3" placeholder="Contame brevemente tu idea..."></textarea>
             </div>
             <button class="w-full bg-primary py-6 michroma text-white text-xs tracking-[0.2em] uppercase hover:bg-on-primary-fixed-variant transition-colors" type="submit" id="form-submit">
                 Enviar consulta directa a Francisco
             </button>
             <div class="mt-4">
-                <a href="https://wa.me/541145829000" target="_blank" rel="noopener" class="mono text-[10px] tracking-widest opacity-50 hover:opacity-80 hover:text-primary-container transition-opacity">O escribime directo por WhatsApp →</a>
+                <a href="https://wa.me/541145829000" target="_blank" rel="noopener" class="mono text-[12px] tracking-widest opacity-60 hover:opacity-100 hover:text-primary-container transition-all py-3 inline-block min-h-[44px]">O escribime directo por WhatsApp →</a>
             </div>
         </form>
         <div id="form-success" class="hidden text-center md:text-left py-12 md:py-24">
