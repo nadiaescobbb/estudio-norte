@@ -92,6 +92,27 @@
     .hairline-t { border-top: 0.5px solid rgba(226, 191, 183, 0.4); }
     .hairline-l { border-left: 0.5px solid rgba(226, 191, 183, 0.4); }
 
+    /* Custom Scrollbar - Architectural Theme */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f9f9f9;
+        border-left: 1px solid rgba(226, 191, 183, 0.2);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #c4391a;
+        transition: background 0.3s ease;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #a12001;
+    }
+    /* Firefox Support */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #c4391a #f9f9f9;
+    }
+
     .wa-float {
         position: fixed;
         bottom: 28px;
