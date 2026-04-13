@@ -1,67 +1,128 @@
-# Estudio Norte — B2B Architecture Web Asset 🏗️
+# Estudio Norte — Gabinete Técnico de Arquitectura
 
-> **Una herramienta de captación institucional diseñada para aniquilar objeciones y generar confianza inmediata en dueños de pymes (SMEs) en Argentina.**
+> **Landing page institucional de alta conversión para un estudio de arquitectura orientado a dueños de pymes y comitentes privados en Argentina.**
 
-![Estética Minimalista](https://img.shields.io/badge/UI-Minimalist%2FEditorial-black?style=flat-square) ![Tech Stack](https://img.shields.io/badge/Stack-Vanilla_HTML%2FCSS%2FJS-blue?style=flat-square) ![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=flat-square)
+![Design System](https://img.shields.io/badge/Design-Editorial%20/%20Brutalist-black?style=flat-square) ![Stack](https://img.shields.io/badge/Stack-Tailwind_CDN_%2B_Vanilla_JS-0ea5e9?style=flat-square) ![Status](https://img.shields.io/badge/Status-Producción-success?style=flat-square)
 
 ---
 
-## 📋 Visión General del Proyecto
+## Objetivos del proyecto
 
-**Estudio Norte** es un caso de estudio desarrollado para la agencia **Nadia Web**. 
-No es una simple "página de contacto", sino un embudo de alta conversión (CRO) estructurado alrededor de la psicología del consumidor escéptico. El objetivo primario de este asset es filtrar contactos curiosos y persuadir a clientes de alto valor (comercial/residencial) mediante un enfoque crudo, directo y 100% técnico.
+Estudio Norte no es un portfolio genérico de arquitecto. Es un **activo de captación B2B** diseñado para resolver las tres objeciones principales del mercado de la construcción argentino:
 
-## 🎯 Estrategia de UX y Copywriting (CRO)
+1. **"¿Se va a ir el presupuesto?"** → Garantía auditable de < 5% de desvío en cómputo de materiales.
+2. **"¿Se va a demorar?"** → 100% de obras entregadas en término con cronograma público.
+3. **"¿Y si el arquitecto desaparece?"** → Red de nodos técnicos locales con presencia física certificada.
 
-El diferencial de este proyecto radica en las decisiones tomadas para mitigar las "Red Flags" típicas de la industria de la construcción en mercados inestables:
+Caso de estudio desarrollado por **Nadia Web**.
 
-*   **Voz de Marca ("Decime Vos"):** Abandono del lenguaje corporativo genérico (*"soluciones integrales"*, *"usted"*) a favor de un diálogo entre pares, asegurando "certezas" (ej. *"Tu obra se termina. Sin excusas"*).
-*   **Diseño Antifricción:** El formulario de contacto no pide el engorroso *"Presupuesto orientativo"*, sino que utiliza un filtro rápido de etapa del proyecto (`Idea / Terreno / Urgencia`), reduciendo el abandono de la página al 0%.
-*   **Validación B2B Bruta (Social Proof):** Integración de testimonios empresariales reales, priorizando texto firme sobre carruseles con logos falsos.
-*   **Geografía Coherente:** El portfolio está unificado regionalmente (Santa Fe, Córdoba, Mendoza) para solidificar la propuesta de valor local.
+---
 
-## 🛠️ Arquitectura Técnica y Stack
+## Design System
 
-El proyecto fue construido priorizando la máxima velocidad de carga (FCP) y accesibilidad universal sin depender de frameworks pesados de JavaScript.
+El sitio utiliza un sistema editorial de precisión, construido con Tailwind CSS (CDN) y tipografías de alto contraste:
 
-- **Estructura y Cimientos:** HTML5 Semántico.
-- **Estilizado (Design System):** CSS3 Vanilla. Sistema basado plenamente en _Custom Properties_ (variables) para la rápida adaptación a modo claro/oscuro o cambios de paleta corporativa.
-- **Lógica e Interacciones:** JavaScript Vanilla. Manejo de *Intersection Observers* para la revelación sutil de elementos durante el scroll y validación silenciosa del formulario.
-- **Local SEO Técnico:** Inyección de microdatos JSON-LD (`@type: Architect / LocalBusiness`) para facilitar el rastreo y posicionamiento geolocalizado en Google.
-- **Rendimiento:** Recursos integrados nativamente (zero dependencias NPM). `<link rel="preload">` ejecutados pre-pintado para el hero section. 
+| Token | Valor | Uso |
+|---|---|---|
+| **Headline** | `Michroma` | Títulos arquitectónicos uppercase |
+| **Body** | `IBM Plex Sans 300–600` | Copy editorial, párrafos |
+| **Data / Labels** | `IBM Plex Mono 400–500` | KPIs, etiquetas, metadata técnica |
+| **Primary** | `#a12001` | CTAs, acentos, badges |
+| **Primary Container** | `#c4391a` | Headline accent, hover states |
+| **Surface** | `#f9f9f9` | Fondo principal |
+| **On-Surface** | `#1a1c1c` | Texto principal |
+| **Hairlines** | `rgba(226,191,183,0.4)` | Separadores de sección |
+| **Corners** | `0px` | Brutalismo: sin border-radius |
 
-## 📂 Estructura del Repositorio
+### Patrones visuales
 
-```text
-📦 estudio-norte
- ┣ 📂 assets           # Repositorio de recursos comprimidos genéricos y Favicons
- ┃ ┣ 📜 favicon.png      
- ┃ ┗ 📜 hero.png
- ┣ 📜 index.html       # Markup y lógica CRO.
- ┣ 📜 style.css        # Sistema de grillas, tipografía y variables de diseño.
- ┣ 📜 script.js        # DOM Observers, scroll management y events.
- ┗ 📜 README.md
+- **Grid 12 columnas** — Layout `3 | 9` para label + contenido (patrón editorial)
+- **Grayscale → Color** — Imágenes en escala de grises que revelan color en hover
+- **Hairline borders** — Líneas de 0.5px como separadores de sección
+- **Mono labels** — Etiquetas técnicas en `IBM Plex Mono` a 10px con tracking extendido
+
+---
+
+## Estructura de la página
+
+| Sección | Propósito CRO |
+|---|---|
+| **Hero** | Headline de impacto + credencial profesional + CTA directo a WhatsApp |
+| **Garantías** | Strip de KPIs duros (< 5%, 100%, USD 2.800) con copy auditable |
+| **Sobre mí** | Posicionamiento como gabinete técnico, no freelancer |
+| **Proyectos** | Portfolio en formato tabla — sin renders, datos reales |
+| **Proceso** | 3 etapas con copy específico que elimina incertidumbre |
+| **Clientes** | 2 testimonios B2B verificables con nombre y rol |
+| **Contacto** | Formulario + datos de matrícula + línea directa WhatsApp |
+
+---
+
+## Stack técnico
+
+```
+HTML5 Semántico
+├── Tailwind CSS v3 (CDN + config inline)
+├── Google Fonts (Michroma, IBM Plex Sans, IBM Plex Mono)
+├── Material Symbols Outlined
+├── JSON-LD LocalBusiness Schema
+└── Vanilla JS (form validation, scroll observers)
 ```
 
-## 🚀 Instalación y Despliegue Local
+### SEO y datos estructurados
 
-Al carecer de procesos de construcción pesados (No-NodeJS / Webpack), el proyecto se levanta de manera instantánea.
+- `<meta description>` optimizada para búsqueda local
+- JSON-LD `@type: LocalBusiness` con `areaServed`, `founder`, `geo`, contacto
+- Heading hierarchy: single `<h1>`, `<h2>` por sección, `<h3>` para subsecciones
+- Imágenes AVIF con `alt` descriptivo y `loading="lazy"`
 
-1. Clonar el repositorio:
-   ```bash
-   git clone git@github.com:nadiaescobbb/estudio-norte.git
-   ```
-2. Acceder al directorio:
-   ```bash
-   cd estudio-norte
-   ```
-3. Lanzar con [Live Server de VS Code](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) o cualquier servidor HTTP estático (Python/Node):
-   ```bash
-   npx serve .
-   ```
+---
 
-## ⚖️ Licencia y Autoría
+## Estructura del repositorio
 
-Diseñado y codificado por la agencia **Nadia Web**. 
+```
+📦 estudio-norte
+ ┣ 📂 assets/
+ ┃ ┣ 🖼️ arqhero.avif         # Hero — retrato profesional
+ ┃ ┣ 🖼️ arqfran.avif          # About — foto en obra
+ ┃ ┣ 🖼️ casaresidencial.avif  # Portfolio asset
+ ┃ ┣ 🖼️ IMG_4491.jpeg         # Recurso fotográfico
+ ┃ ┗ 🖼️ favicon.png           # Favicon arquitectónico
+ ┣ 📄 index.html              # Página completa (markup + Tailwind inline)
+ ┣ 📄 style.css               # Legacy — design system anterior (CSS vanilla)
+ ┣ 📄 script.js               # Form validation + Intersection Observers
+ ┗ 📄 README.md
+```
 
-*(Este proyecto forma parte de demostraciones de portfolio enfocadas en la resolución asertiva de problemas de negocio, UI/UX editorial, y arquitecturas front-end de carga instantánea).*
+---
+
+## Instalación local
+
+Sin dependencias. Sin build. Abrir y servir.
+
+```bash
+git clone git@github.com:nadiaescobbb/estudio-norte.git
+cd estudio-norte
+npx -y serve .
+```
+
+O usar Live Server en VS Code.
+
+---
+
+## Decisiones técnicas relevantes
+
+| Decisión | Fundamento |
+|---|---|
+| **Tailwind CDN en vez de build** | Proyecto single-page sin routing. El CDN elimina fricción de deploy y permite config inline. |
+| **Todo en un solo HTML** | Zero latencia de carga. El CSS crítico viaja en el mismo documento. |
+| **WhatsApp como canal principal** | En Argentina el 93% de la comunicación comercial pasa por WhatsApp. El CTA no pierde tiempo con emails. |
+| **Imágenes AVIF** | 70-80% menos peso que JPEG con la misma calidad percibida. |
+| **Sin framework JS** | No hay estado reactivo que manejar. Vanilla JS para observers y validación es suficiente. |
+
+---
+
+## Licencia y autoría
+
+Diseñado y desarrollado por **Nadia Web**.
+
+Este proyecto forma parte del portfolio de la agencia, enfocado en resolución de problemas de negocio mediante UI/UX editorial y arquitecturas frontend de carga instantánea.
