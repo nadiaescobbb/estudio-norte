@@ -91,7 +91,6 @@
     .hairline-t { border-top: 0.5px solid rgba(226, 191, 183, 0.4); }
     .hairline-l { border-left: 0.5px solid rgba(226, 191, 183, 0.4); }
 
-    /* WhatsApp floating button */
     .wa-float {
         position: fixed;
         bottom: 28px;
@@ -117,6 +116,13 @@
         box-shadow: 0 10px 32px rgba(37, 211, 102, 0.45);
     }
     .wa-float svg { flex-shrink: 0; }
+    .wa-float span { display: none; }
+    @media (min-width: 768px) {
+        .wa-float span { display: inline; }
+    }
+    @media (max-width: 767px) {
+        .wa-float { padding: 14px; }
+    }
 
     /* Smooth scroll */
     html { scroll-behavior: smooth; }
@@ -164,7 +170,12 @@
         transform: scale(0);
         transition: opacity 200ms cubic-bezier(0.16, 1, 0.3, 1), transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
     }
-    #proyectos .group { cursor: none; }
+    @media (hover: hover) {
+        #proyectos .group { cursor: none; }
+    }
+    @media (hover: none) {
+        #project-cursor { display: none !important; }
+    }
 </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-primary-container selection:text-white">
@@ -189,7 +200,7 @@
         <a class="michroma text-[10px] tracking-[0.2em] text-[#141414] dark:text-[#f9f9f9] opacity-80 hover:text-[#c4391a] transition-none" href="#clientes">CLIENTES</a>
         <a class="michroma text-[10px] tracking-[0.2em] text-[#141414] dark:text-[#f9f9f9] opacity-80 hover:text-[#c4391a] transition-none" href="#contacto">CONTACTO</a>
     </div>
-    <div class="mono text-[10px] tracking-widest opacity-60 uppercase">
+    <div class="mono text-[10px] tracking-widest opacity-60 uppercase hidden md:block">
         ° SANTA FE, ARGENTINA
     </div>
 </nav>
@@ -197,10 +208,10 @@
 <main class="pt-24">
 
 <!-- Section: Hero -->
-<section class="px-6 md:px-12 pb-24">
+<section class="px-6 md:px-12 pb-12 md:pb-24">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-12">
         <div class="md:col-span-8">
-            <h1 class="michroma text-4xl md:text-7xl leading-tight tracking-[0.05em] uppercase">
+            <h1 class="michroma text-[28px] md:text-7xl leading-tight tracking-[0.05em] uppercase">
                 <span class="hero-line-mask line-1"><span>TU OBRA SE TERMINA.</span></span>
                 <span class="hero-line-mask line-2"><span class="text-primary-container">SIN EXCUSAS.</span></span>
             </h1>
@@ -213,28 +224,28 @@
             </p>
         </div>
     </div>
-    <div class="w-full h-[614px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+    <div class="w-full h-[50vh] md:h-[614px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
         <img alt="Arq. Francisco Norte supervisando obra en terreno con casco y planos" class="w-full h-full object-cover" src="assets/arqhero.avif"/>
     </div>
     <div class="mt-8 max-w-3xl">
         <p class="text-lg leading-relaxed font-light mb-8">Operamos como un gabinete de ejecución: presupuestos cerrados, control técnico auditable y presencia física en obra. Si su proyecto no es viable técnicamente hoy, se lo decimos antes de arrancar.</p>
-        <a href="https://wa.me/541145829000" class="inline-block bg-primary py-5 px-12 michroma text-white text-xs tracking-[0.2em] uppercase hover:bg-on-primary-fixed-variant transition-colors" target="_blank" rel="noopener" id="hero-cta">Hablar con Francisco ahora</a>
+        <a href="https://wa.me/541145829000" class="inline-block bg-primary py-5 px-6 md:px-12 michroma text-white text-xs tracking-[0.2em] uppercase hover:bg-on-primary-fixed-variant transition-colors" target="_blank" rel="noopener" id="hero-cta">Hablar con Francisco ahora</a>
     </div>
 </section>
 
 <!-- Section: Guarantees (KPI Strip) -->
-<section class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
+<section class="px-6 md:px-12 py-12 md:py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
     <div class="md:col-span-3">
         <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">GARANTÍAS</span>
     </div>
     <div class="md:col-span-9 hairline-l pl-0 md:pl-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-0 hairline-t">
-            <div class="py-8 hairline-r pr-6">
+            <div class="py-8 hairline-b md:border-b-0 md:hairline-r pr-0 md:pr-6">
                 <span class="mono text-4xl block mb-2 font-medium" id="kpi-deviation">&lt; 5%</span>
                 <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-3">DESVÍO PRESUPUESTARIO</span>
                 <p class="text-sm font-light opacity-70">Le entregamos la planilla de cómputo auditable. Si el error supera el 5%, bonificamos nuestros honorarios.</p>
             </div>
-            <div class="py-8 md:px-8 hairline-r">
+            <div class="py-8 md:px-8 hairline-b md:border-b-0 md:hairline-r">
                 <span class="mono text-4xl block mb-2 font-medium" id="kpi-delivery">100%</span>
                 <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-3">ENTREGA EN TÉRMINO</span>
                 <p class="text-sm font-light opacity-70">Las fechas son rangos reales, no marketing.</p>
@@ -249,7 +260,7 @@
 </section>
 
 <!-- Section: About -->
-<section class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
+<section class="px-6 md:px-12 py-12 md:py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
     <div class="md:col-span-3">
         <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">SOBRE MÍ</span>
     </div>
@@ -276,7 +287,7 @@
 </section>
 
 <!-- Section: Projects -->
-<section id="proyectos" class="px-6 md:px-12 py-24 hairline-t">
+<section id="proyectos" class="px-6 md:px-12 py-12 md:py-24 hairline-t">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
         <div class="md:col-span-3">
             <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">PROYECTOS</span>
@@ -350,7 +361,7 @@
 </section>
 
 <!-- Section: Process -->
-<section id="proceso" class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
+<section id="proceso" class="px-6 md:px-12 py-12 md:py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
     <div class="md:col-span-3">
         <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">PROCESO</span>
     </div>
@@ -397,7 +408,7 @@
 </section>
 
 <!-- Section: Testimonials -->
-<section id="clientes" class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12 bg-surface-container-low">
+<section id="clientes" class="px-6 md:px-12 py-12 md:py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12 bg-surface-container-low">
     <div class="md:col-span-3">
         <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">CLIENTES</span>
     </div>
@@ -424,11 +435,11 @@
 </section>
 
 <!-- Section: Contact -->
-<section id="contacto" class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
+<section id="contacto" class="px-6 md:px-12 py-12 md:py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
     <div class="md:col-span-3">
         <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">CONTACTO</span>
     </div>
-    <div class="md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-24">
+    <div class="md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
         <div>
             <h2 class="michroma text-4xl uppercase mb-6">¿Arrancamos?</h2>
             <p class="text-lg font-light mb-12 opacity-80">Contame en qué etapa estás. En menos de 24 horas te digo si tu proyecto es viable — sin costo, sin compromiso.</p>
@@ -470,7 +481,7 @@
             </div>
             <div class="border-b-[0.5px] border-on-surface/20 pb-4 focus-within:border-primary transition-colors">
                 <label class="mono text-[10px] uppercase block mb-4">Etapa del proyecto</label>
-                <select class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg appearance-none uppercase mono text-sm">
+                <select class="w-full bg-transparent border-none p-0 focus:ring-0 text-base appearance-none uppercase mono min-h-[44px]">
                     <option>Solo es una idea</option>
                     <option>Ya tengo terreno / local</option>
                     <option>Evaluar planos urgente</option>
@@ -493,8 +504,8 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-[#141414] text-[#f1f1f1] px-6 md:px-12 py-24 border-t-[0.5px] border-[#f9f9f9]/10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
+<footer class="bg-[#141414] text-[#f1f1f1] px-6 md:px-12 py-12 md:py-24 border-t-[0.5px] border-[#f9f9f9]/10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 md:mb-24">
         <div>
             <div class="text-2xl font-normal tracking-[0.2em] text-[#f9f9f9] michroma mb-8">
                 ESTUDIO NORTE
@@ -571,25 +582,28 @@
     var cursor = document.getElementById('project-cursor');
     var projectRows = document.querySelectorAll('#proyectos .group');
     var cursorVisible = false;
+    var hasHover = window.matchMedia('(hover: hover)').matches;
 
-    document.addEventListener('mousemove', function(e) {
-        if (cursorVisible) {
-            cursor.style.transform = 'translate(' + (e.clientX - 40) + 'px, ' + (e.clientY - 40) + 'px) scale(1)';
-        }
-    });
+    if (hasHover && cursor) {
+        document.addEventListener('mousemove', function(e) {
+            if (cursorVisible) {
+                cursor.style.transform = 'translate(' + (e.clientX - 40) + 'px, ' + (e.clientY - 40) + 'px) scale(1)';
+            }
+        });
 
-    projectRows.forEach(function(row) {
-        row.addEventListener('mouseenter', function() {
-            cursorVisible = true;
-            cursor.style.opacity = '1';
-            cursor.style.transform = 'scale(1)';
+        projectRows.forEach(function(row) {
+            row.addEventListener('mouseenter', function() {
+                cursorVisible = true;
+                cursor.style.opacity = '1';
+                cursor.style.transform = 'scale(1)';
+            });
+            row.addEventListener('mouseleave', function() {
+                cursorVisible = false;
+                cursor.style.opacity = '0';
+                cursor.style.transform = 'scale(0)';
+            });
         });
-        row.addEventListener('mouseleave', function() {
-            cursorVisible = false;
-            cursor.style.opacity = '0';
-            cursor.style.transform = 'scale(0)';
-        });
-    });
+    }
 })();
 </script>
 </body>
