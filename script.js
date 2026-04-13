@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const fields = [
                 document.getElementById('name'),
                 document.getElementById('email'),
+                document.getElementById('whatsapp'),
                 document.getElementById('message')
             ];
 
@@ -28,9 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 const group = field.closest('.f-group');
                 const isEmpty = !field.value.trim();
                 const isInvalidEmail = field.type === 'email' && !isEmpty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+                const isInvalidPhone = field.id === 'whatsapp' && !isEmpty && field.value.replace(/\D/g, '').length < 8;
 
                 // message is optional — only validate if field has `required`
-                if (field.required && (isEmpty || isInvalidEmail)) {
+                if (field.required && (isEmpty || isInvalidEmail || isInvalidPhone)) {
                     group.classList.add('has-error');
                     isValid = false;
                 } else {

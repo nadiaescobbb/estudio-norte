@@ -1,273 +1,490 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="light" lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gabinete técnico de arquitectura. Dirección de obra y planificación estructural. Presupuesto cerrado, plazos reales.">
-    <title>Estudio Norte | Precisión y Ejecución</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:wght@600;700&family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Gabinete técnico de arquitectura. Dirección de obra y planificación estructural. Presupuesto cerrado, plazos reales."/>
+<title>Estudio Norte | Precisión y Ejecución</title>
+
+<!-- JSON-LD LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Estudio Norte — Arquitectura Técnica",
+  "description": "Gabinete técnico de arquitectura. Dirección de obra, planificación estructural y presupuesto cerrado.",
+  "url": "https://estudionorte.com",
+  "telephone": "+541145829000",
+  "email": "hola@estudionorte.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santa Fe",
+    "addressRegion": "Santa Fe",
+    "addressCountry": "AR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -31.6333,
+    "longitude": -60.7
+  },
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "founder": {
+    "@type": "Person",
+    "name": "Francisco G. Norte",
+    "jobTitle": "Arquitecto — Mat. 24.502 CAUSF"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Santa Fe" },
+    { "@type": "City", "name": "Córdoba" },
+    { "@type": "City", "name": "Mendoza" }
+  ],
+  "sameAs": []
+}
+</script>
+
+<!-- Google Fonts: Michroma for architectural headlines, IBM Plex Sans/Mono for editorial and technical data -->
+<link href="https://fonts.googleapis.com/css2?family=Michroma&amp;family=IBM+Plex+Sans:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary-fixed-variant": "#8b1900",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-surface": "#1a1c1c",
+                    "on-background": "#1a1c1c",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-container-low": "#f3f3f3",
+                    "background": "#f9f9f9",
+                    "outline-variant": "#e2bfb7",
+                    "primary": "#a12001",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "primary-container": "#c4391a"
+                },
+                borderRadius: {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+                },
+                fontFamily: {
+                    "michroma": ["Michroma", "sans-serif"],
+                    "sans": ["IBM Plex Sans", "sans-serif"],
+                    "mono": ["IBM Plex Mono", "monospace"]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body { font-family: 'IBM Plex Sans', sans-serif; background-color: #f9f9f9; color: #141414; }
+    .michroma { font-family: 'Michroma', sans-serif; }
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+    .hairline-b { border-bottom: 0.5px solid rgba(226, 191, 183, 0.4); }
+    .hairline-r { border-right: 0.5px solid rgba(226, 191, 183, 0.4); }
+    .hairline-t { border-top: 0.5px solid rgba(226, 191, 183, 0.4); }
+    .hairline-l { border-left: 0.5px solid rgba(226, 191, 183, 0.4); }
+
+    /* WhatsApp floating button */
+    .wa-float {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #25D366;
+        color: #fff;
+        padding: 14px 22px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .wa-float:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 32px rgba(37, 211, 102, 0.45);
+    }
+    .wa-float svg { flex-shrink: 0; }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Selection overrides for dark footer */
+    footer ::selection { background: #c4391a; color: #fff; }
+</style>
 </head>
-<body>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-white">
 
-    <nav class="editorial-nav">
-        <div class="nav-container">
-            <div class="brand">ESTUDIO NORTE | ARQUITECTURA TÉCNICA</div>
-            <a href="#contacto" class="nav-contact">Hablar con Francisco</a>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/541145829000" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M19.056 4.905C17.151 3.018 14.614 1.986 12 1.986 6.353 1.986 1.761 6.577 1.761 12.222c0 1.83.473 3.619 1.371 5.2L1.758 22l4.7-.1.218-.112a10.22 10.22 0 0 0 5.324 1.48h.004c5.648 0 10.24-4.59 10.24-10.236 0-2.736-1.066-5.308-3.188-7.227zm-7.052 16.516h-.004a8.553 8.553 0 0 1-4.32-1.164l-.31-.184-3.213.84.856-3.125-.202-.321A8.536 8.536 0 0 1 3.42 12.22c0-4.73 3.85-8.583 8.58-8.583 2.296 0 4.453.896 6.074 2.52 1.62 1.624 2.512 3.782 2.512 6.08 0 4.73-3.852 8.584-8.582 8.584zm4.717-6.42c-.258-.13-1.524-.753-1.758-.84-.236-.086-.407-.13-.578.13-.172.257-.665.84-.816 1.01-.15.172-.301.194-.559.065-.258-.13-1.085-.4-2.066-1.275-.765-.68-1.282-1.52-1.433-1.776-.15-.258-.016-.398.114-.527.116-.118.258-.302.387-.452.128-.152.172-.258.258-.432.086-.172.043-.324-.022-.452-.065-.13-.578-1.397-.794-1.914-.21-.502-.424-.436-.578-.443-.15-.01-.322-.01-.494-.01s-.452.064-.689.324c-.236.257-.903.882-.903 2.152 0 1.27.925 2.5 1.054 2.672.13.172 1.828 2.788 4.43 3.856.62.253 1.103.404 1.48.517.62.186 1.185.16 1.625.097.493-.07 1.524-.624 1.74-1.226.215-.602.215-1.118.15-1.226-.065-.11-.237-.173-.495-.304z"/>
+    </svg>
+    <span>Hablar con Francisco</span>
+</a>
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#f9f9f9] dark:bg-[#141414] border-b-[0.5px] border-[#e2bfb7]/20 flex justify-between items-center px-6 md:px-12 py-6">
+    <div class="text-xl font-normal tracking-[0.2em] font-sans text-[#141414] dark:text-[#f9f9f9]">
+        ESTUDIO_NORTE
+    </div>
+    <div class="hidden md:flex space-x-12">
+        <a class="michroma text-[10px] tracking-[0.2em] text-[#c4391a] font-bold border-b-[0.5px] border-[#c4391a]" href="#proyectos">PROYECTOS</a>
+        <a class="michroma text-[10px] tracking-[0.2em] text-[#141414] dark:text-[#f9f9f9] opacity-80 hover:text-[#c4391a] transition-none" href="#proceso">PROCESO</a>
+        <a class="michroma text-[10px] tracking-[0.2em] text-[#141414] dark:text-[#f9f9f9] opacity-80 hover:text-[#c4391a] transition-none" href="#clientes">CLIENTES</a>
+        <a class="michroma text-[10px] tracking-[0.2em] text-[#141414] dark:text-[#f9f9f9] opacity-80 hover:text-[#c4391a] transition-none" href="#contacto">CONTACTO</a>
+    </div>
+    <div class="mono text-[10px] tracking-widest opacity-60 uppercase">
+        ° SANTA FE, ARGENTINA
+    </div>
+</nav>
+
+<main class="pt-24">
+
+<!-- Section: Hero -->
+<section class="px-6 md:px-12 pb-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-12">
+        <div class="md:col-span-8">
+            <h1 class="michroma text-4xl md:text-7xl leading-tight tracking-[0.05em] uppercase">
+                TU OBRA SE TERMINA.<br/>
+                <span class="text-primary-container">SIN EXCUSAS.</span>
+            </h1>
         </div>
-    </nav>
-
-    <a href="https://wa.me/541145829000" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-        <svg fill="currentColor" viewBox="0 0 24 24" width="15" height="15" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M19.056 4.905C17.151 3.018 14.614 1.986 12 1.986 6.353 1.986 1.761 6.577 1.761 12.222c0 1.83.473 3.619 1.371 5.2L1.758 22l4.7-.1.218-.112a10.22 10.22 0 0 0 5.324 1.48h.004c5.648 0 10.24-4.59 10.24-10.236 0-2.736-1.066-5.308-3.188-7.227zm-7.052 16.516h-.004a8.553 8.553 0 0 1-4.32-1.164l-.31-.184-3.213.84.856-3.125-.202-.321A8.536 8.536 0 0 1 3.42 12.22c0-4.73 3.85-8.583 8.58-8.583 2.296 0 4.453.896 6.074 2.52 1.62 1.624 2.512 3.782 2.512 6.08 0 4.73-3.852 8.584-8.582 8.584zm4.717-6.42c-.258-.13-1.524-.753-1.758-.84-.236-.086-.407-.13-.578.13-.172.257-.665.84-.816 1.01-.15.172-.301.194-.559.065-.258-.13-1.085-.4-2.066-1.275-.765-.68-1.282-1.52-1.433-1.776-.15-.258-.016-.398.114-.527.116-.118.258-.302.387-.452.128-.152.172-.258.258-.432.086-.172.043-.324-.022-.452-.065-.13-.578-1.397-.794-1.914-.21-.502-.424-.436-.578-.443-.15-.01-.322-.01-.494-.01s-.452.064-.689.324c-.236.257-.903.882-.903 2.152 0 1.27.925 2.5 1.054 2.672.13.172 1.828 2.788 4.43 3.856.62.253 1.103.404 1.48.517.62.186 1.185.16 1.625.097.493-.07 1.524-.624 1.74-1.226.215-.602.215-1.118.15-1.226-.065-.11-.237-.173-.495-.304z"/>
-        </svg>
-        <span>WHATSAPP DIRECTO</span>
-    </a>
-
-    <main class="page-load-fade">
-
-        <section class="hero-section wrapper fade-item">
-            <div class="hero-content">
-                <span class="hero-meta fade-item" data-delay="1">Arq. Francisco G. Norte · Mat. 24.502 CAUSF<br>Santa Fe · Córdoba · Mendoza</span>
-                <hr class="hero-rule fade-item" data-delay="2">
-                <h1 class="hero-title fade-item" data-delay="3">Tu obra se termina.<br>Sin excusas.</h1>
-                <p class="hero-desc fade-item" data-delay="4">Operamos como un gabinete de ejecución: presupuestos cerrados, control técnico auditable y presencia física en obra. Si su proyecto no es viable técnicamente hoy, se lo decimos antes de arrancar.</p>
-                <a href="https://wa.me/541145829000" class="btn-primary fade-item" id="hero-cta" target="_blank" rel="noopener" data-delay="5">Hablar con Francisco ahora</a>
-            </div>
-            <div class="hero-image">
-                <picture>
-                    <img src="C:/Users/devco/.gemini/antigravity/brain/b08f1f9e-64bd-4800-8a25-933d84466575/francisco_obra_real_1776070443086.png" alt="Arq. Francisco Norte supervisando obra en terreno con casco y planos" class="img-warm" loading="eager" fetchpriority="high">
-                </picture>
-            </div>
-        </section>
-
-        <section class="guarantees-section wrapper fade-item has-divider">
-            <div class="guarantees-grid">
-                <div class="guarantee">
-                    <div class="g-anchor">&lt; 5%</div>
-                    <h3 class="g-title">de desvío en cómputo de materiales.</h3>
-                    <p class="g-desc">Le entregamos la planilla de cómputo auditable. Si el error supera el 5%, bonificamos nuestros honorarios.</p>
-                </div>
-                <div class="guarantee">
-                    <div class="g-anchor">100%</div>
-                    <h3 class="g-title">de obras entregadas dentro del cronograma.</h3>
-                    <p class="g-desc">Las fechas son rangos reales, no marketing.</p>
-                </div>
-                <div class="guarantee">
-                    <div class="g-anchor">USD 2.800</div>
-                    <h3 class="g-title">honorarios base por fase documental.</h3>
-                    <p class="g-desc">Incluye legajo técnico completo y firma municipal. Sin sorpresas.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-section wrapper fade-item has-divider">
-            <div class="about-grid">
-                <div class="about-image">
-                    <picture>
-                        <source srcset="assets/francisco.avif" type="image/avif">
-                        <img src="assets/francisco.avif" alt="Arquitecto Francisco Norte revisando documentación técnica en la obra" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 1px solid var(--line-light);" class="img-warm" loading="lazy">
-                    </picture>
-                </div>
-                <div class="about-text">
-                    <h2 class="section-title">La dirección de obra<br>no puede ser un favor.</h2>
-                    <p>Un proyecto es una inversión de capital. Por eso operamos como un gabinete técnico: auditoría de materiales, cómputos certificados y rigor de ejecución.</p>
-                    <p>Garantizamos presencia física en terreno a través de nuestros **nodos técnicos locales** en Santa Fe, Córdoba y Mendoza. Centralizamos el comando y delegamos la vigilancia técnica, nunca el criterio.</p>
-                    <p>Contamos con especialistas en cómputo y auditoría externa que validan que cada bolsa de cemento se use donde el plano manda. Usted no paga por metros lineales, paga por cumplimiento.</p>
-                    <div class="signature">
-                        <span class="sig-name">Arq. Francisco G. Norte.</span>
-                        <span class="sig-meta">Arquitecto · Mat. 24.502 CAUSF</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="projects-section wrapper fade-item has-divider">
-            <h2 class="section-title-standard">Nada de renders.<br>Ladrillo y hormigón.</h2>
-            <div class="projects-grid">
-
-                <article class="project-item project-large">
-                    <figure class="p-img" style="position: relative;">
-                        <span class="p-badge entregada">ENTREGADA</span>
-                        <img
-                            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-                            alt="Casa Lenga — integración serrana con hormigón y madera en Villa de Calamuchita"
-                            class="img-warm"
-                            loading="lazy">
-                    </figure>
-                    <div class="p-meta">
-                        <div class="p-category">RESIDENCIAL · Villa de Calamuchita, Córdoba</div>
-                        <span class="p-name">Casa Lenga — Integración serrana</span>
-                        <span class="p-specs">185 M²&nbsp;&nbsp;·&nbsp;&nbsp;10 MESES&nbsp;&nbsp;·&nbsp;&nbsp;ENTREGADA</span>
-                    </div>
-                </article>
-
-                <div class="projects-small-stack">
-                    <article class="project-item">
-                        <figure class="p-img" style="position: relative;">
-                            <span class="p-badge progreso">65% AVANCE</span>
-                            <img
-                                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
-                                alt="Nave Logística Rosario — ampliación estructural en progreso"
-                                class="img-warm"
-                                loading="lazy">
-                        </figure>
-                        <div class="p-meta">
-                            <div class="p-category">INDUSTRIAL · Gran Rosario, Santa Fe</div>
-                            <span class="p-name">Nave Logística — Ampliación estructural</span>
-                            <span class="p-specs">420 M²&nbsp;&nbsp;·&nbsp;&nbsp;4 MESES&nbsp;&nbsp;·&nbsp;&nbsp;65% DE AVANCE</span>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <figure class="p-img" style="position: relative;">
-                            <span class="p-badge entregada">ENTREGADA</span>
-                            <img
-                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
-                                alt="Oficinas Sarmiento Mendoza — rehabilitación integral de espacio comercial"
-                                class="img-warm"
-                                loading="lazy">
-                        </figure>
-                        <div class="p-meta">
-                            <div class="p-category">COMERCIAL · Centro de Mendoza</div>
-                            <span class="p-name">Oficinas Sarmiento — Rehabilitación integral</span>
-                            <span class="p-specs">90 M²&nbsp;&nbsp;·&nbsp;&nbsp;16 SEMANAS&nbsp;&nbsp;·&nbsp;&nbsp;ENTREGADA</span>
-                        </div>
-                    </article>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="process-section wrapper fade-item has-divider">
-            <h2 class="section-title-standard">Tres etapas.<br>Un criterio que no cambia.</h2>
-            <div class="timeline">
-
-                <div class="time-step">
-                    <div class="time-left">
-                        <span class="time-number">01</span>
-                    </div>
-                    <div class="time-content">
-                        <hr class="time-rule">
-                        <span class="t-phase">⊙ DIAGNÓSTICO</span>
-                        <p>Antes de cobrar un peso, evalúo si tu proyecto cierra con el presupuesto y el plazo que tenés. Si no es viable, te lo digo. Así de simple.</p>
-                    </div>
-                </div>
-
-                <div class="time-step">
-                    <div class="time-left">
-                        <span class="time-number">02</span>
-                    </div>
-                    <div class="time-content">
-                        <hr class="time-rule">
-                        <span class="t-phase">▤ DOCUMENTACIÓN TÉCNICA</span>
-                        <p>Planos, cómputo y especificaciones auditadas. Aprobás todo antes de que empiece una palada. Sin letra chica.</p>
-                    </div>
-                </div>
-
-                <div class="time-step">
-                    <div class="time-left">
-                        <span class="time-number">03</span>
-                    </div>
-                    <div class="time-content">
-                        <hr class="time-rule">
-                        <span class="t-phase">▩ EJECUCIÓN Y CERTIFICACIÓN</span>
-                        <p>Dirección técnica auditada por el Gabinete. Control de calidad de materiales y certificación de avance real para liberación de pagos. Nuestra responsabilidad continúa: realizamos auditorías de mantenimiento trimestrales durante el primer año post-entrega.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="testimonials-section wrapper fade-item has-divider">
-            <div class="test-grid">
-                <blockquote class="editorial-quote">
-                    <p>"El único estudio que no me vino con sobrecostos por 'temas del país' a los cuatro meses. Acordamos el esquema de acopio al inicio y ese número se respetó hasta que me entregaron la llave."</p>
-                    <footer>
-                        <span class="t-author">— J. Martínez</span>
-                        <span class="t-role">Gerente Operativo · Logística Martínez S.A.</span>
-                    </footer>
-                </blockquote>
-                <blockquote class="editorial-quote">
-                    <p>"No podía permitirme retrasar la apertura del local ni un mes. Francisco tomó la dirección de obra, me mandó reporte con fotos cada semana y me entregó el local listo para la habilitación municipal."</p>
-                    <footer>
-                        <span class="t-author">— L. Gómez</span>
-                        <span class="t-role">Dueño de La Posta · Local Gastronómico</span>
-                    </footer>
-                </blockquote>
-            </div>
-        </section>
-
-        <section id="contacto" class="contact-section fade-item">
-            <div class="contact-wrapper wrapper">
-                <div class="contact-info">
-                    <h2 class="contact-title">Obtener diagnóstico de viabilidad gratuito</h2>
-                    <p class="contact-desc">Contame en qué etapa estás. En menos de 24 horas te mando una devolución técnica sobre tu proyecto — sin costo.</p>
-                    <div class="c-data">
-                        <span class="c-label">MATRÍCULA HABILITANTE</span>
-                        <span class="c-value">Prov. Mat. 24.502 (CAUSF)</span>
-                    </div>
-                    <div class="c-data">
-                        <span class="c-label">LÍNEA DIRECTA VÍA WHATSAPP</span>
-                        <span class="c-value">+54 11 4582 9000</span>
-                    </div>
-                    <div class="c-data">
-                        <span class="c-label">COSTO DE HONORARIOS PISO</span>
-                        <span class="c-value">USD 2.800 / por fase documental</span>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="technical-form" novalidate>
-                        <div class="f-group">
-                            <label for="name">Nombre completo</label>
-                            <input type="text" id="name" required placeholder="Tu nombre...">
-                            <span class="error-msg">Por favor ingresá tu nombre.</span>
-                        </div>
-                        <div class="f-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required placeholder="tu@email.com">
-                            <span class="error-msg">Verificá que el email sea válido.</span>
-                        </div>
-                        <div class="f-group">
-                            <label>Etapa del proyecto</label>
-                            <div class="radio-pills">
-                                <label class="pill">
-                                    <input type="radio" name="stage" value="idea" required>
-                                    <span>Solo es una idea</span>
-                                </label>
-                                <label class="pill">
-                                    <input type="radio" name="stage" value="terreno">
-                                    <span>Ya tengo terreno / local</span>
-                                </label>
-                                <label class="pill">
-                                    <input type="radio" name="stage" value="urgencia">
-                                    <span>Evaluar planos urgente</span>
-                                </label>
-                            </div>
-                            <span class="error-msg">Seleccioná una etapa.</span>
-                        </div>
-                        <div class="f-group">
-                            <label for="message">¿Qué querés construir o modificar?</label>
-                            <textarea id="message" rows="4" placeholder="Contame brevemente tu idea o el problema que tenés..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary form-btn" id="form-submit">Enviar consulta directa a Francisco</button>
-                        <div style="margin-top: 1.25rem;">
-                            <a href="https://wa.me/541145829000" target="_blank" rel="noopener" style="color: #A4B2C1; font-family: var(--font-mono); font-size: 0.85rem; text-decoration: none;">O escribime directo por WhatsApp →</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="editorial-footer fade-item">
-        <div class="wrapper">
-            <p>© 2026 Estudio Norte Arquitectura · Desarrollado por nadiaweb_</p>
+        <div class="md:col-span-4 md:text-right pb-2">
+            <p class="mono text-xs uppercase tracking-widest leading-relaxed">
+                Arq. Francisco G. Norte<br/>
+                Mat. 24.502 CAUSF<br/>
+                Santa Fe · Córdoba · Mendoza
+            </p>
         </div>
-    </footer>
+    </div>
+    <div class="w-full h-[614px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+        <img alt="Arq. Francisco Norte supervisando obra en terreno con casco y planos" class="w-full h-full object-cover" src="assets/arqhero.avif"/>
+    </div>
+    <div class="mt-8 max-w-3xl">
+        <p class="text-lg leading-relaxed font-light mb-8">Operamos como un gabinete de ejecución: presupuestos cerrados, control técnico auditable y presencia física en obra. Si su proyecto no es viable técnicamente hoy, se lo decimos antes de arrancar.</p>
+        <a href="https://wa.me/541145829000" class="inline-block bg-primary py-5 px-12 michroma text-white text-xs tracking-[0.2em] uppercase hover:bg-on-primary-fixed-variant transition-colors" target="_blank" rel="noopener" id="hero-cta">Hablar con Francisco ahora</a>
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- Section: Guarantees (KPI Strip) -->
+<section class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
+    <div class="md:col-span-3">
+        <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">GARANTÍAS</span>
+    </div>
+    <div class="md:col-span-9 hairline-l pl-0 md:pl-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-0 hairline-t">
+            <div class="py-8 hairline-r pr-6">
+                <span class="mono text-4xl block mb-2 font-medium">&lt; 5%</span>
+                <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-3">DESVÍO PRESUPUESTARIO</span>
+                <p class="text-sm font-light opacity-70">Le entregamos la planilla de cómputo auditable. Si el error supera el 5%, bonificamos nuestros honorarios.</p>
+            </div>
+            <div class="py-8 md:px-8 hairline-r">
+                <span class="mono text-4xl block mb-2 font-medium">100%</span>
+                <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-3">ENTREGA EN TÉRMINO</span>
+                <p class="text-sm font-light opacity-70">Las fechas son rangos reales, no marketing.</p>
+            </div>
+            <div class="py-8 md:pl-8">
+                <span class="mono text-4xl block mb-2 font-medium">USD 2.800</span>
+                <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-3">HONORARIOS BASE / FASE DOCUMENTAL</span>
+                <p class="text-sm font-light opacity-70">Incluye legajo técnico completo y firma municipal. Sin sorpresas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: About -->
+<section class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
+    <div class="md:col-span-3">
+        <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">SOBRE MÍ</span>
+    </div>
+    <div class="md:col-span-9 hairline-l pl-0 md:pl-12">
+        <h2 class="michroma text-3xl md:text-5xl uppercase mb-12 leading-tight">
+            La dirección de obra<br/>no puede ser un favor.
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <p class="text-lg leading-relaxed font-light">
+                Un proyecto es una inversión de capital. Por eso opero como un gabinete técnico: auditoría de materiales, cómputos certificados y rigor de ejecución.
+            </p>
+            <p class="text-lg leading-relaxed font-light">
+                Garantizo presencia física en terreno a través de mi red de nodos técnicos locales en Santa Fe, Córdoba y Mendoza. Centralizo el comando y delego la vigilancia técnica, nunca el criterio.
+            </p>
+        </div>
+        <p class="text-lg leading-relaxed font-light mb-16">
+            Cuento con especialistas en cómputo y auditoría externa que validan que cada bolsa de cemento se use donde el plano manda. Usted no paga por metros lineales, paga por cumplimiento.
+        </p>
+        <div class="flex flex-col gap-1">
+            <span class="michroma text-sm tracking-widest">Arq. Francisco G. Norte.</span>
+            <span class="mono text-[10px] tracking-widest uppercase opacity-60">Arquitecto · Mat. 24.502 CAUSF</span>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Projects -->
+<section id="proyectos" class="px-6 md:px-12 py-24 hairline-t">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+        <div class="md:col-span-3">
+            <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">PROYECTOS</span>
+        </div>
+        <div class="md:col-span-9">
+            <h2 class="michroma text-3xl md:text-5xl uppercase mb-12 leading-tight">
+                Nada de renders.<br/>Ladrillo y hormigón.
+            </h2>
+
+            <!-- Project Row 1: Casa Lenga -->
+            <div class="group grid grid-cols-1 md:grid-cols-12 gap-4 py-8 hairline-t items-center hover:bg-surface-container-high transition-colors cursor-pointer">
+                <div class="md:col-span-2 aspect-video overflow-hidden">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt="Casa Lenga — integración serrana con hormigón y madera en Villa de Calamuchita" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"/>
+                </div>
+                <div class="md:col-span-4 pl-4">
+                    <span class="michroma text-sm uppercase tracking-widest">CASA LENGA</span>
+                    <span class="block mono text-[10px] mt-1 opacity-50">Integración serrana</span>
+                </div>
+                <div class="md:col-span-2">
+                    <span class="mono text-[10px] uppercase opacity-60">VILLA DE CALAMUCHITA, CBA</span>
+                </div>
+                <div class="md:col-span-2">
+                    <span class="mono text-[10px] uppercase opacity-60">185 M² · 10 MESES</span>
+                </div>
+                <div class="md:col-span-2 text-right">
+                    <span class="mono text-[10px] uppercase px-3 py-1 bg-primary text-white">ENTREGADA</span>
+                </div>
+            </div>
+
+            <!-- Project Row 2: Nave Logística -->
+            <div class="group grid grid-cols-1 md:grid-cols-12 gap-4 py-8 hairline-t items-center hover:bg-surface-container-high transition-colors cursor-pointer">
+                <div class="md:col-span-2 aspect-video overflow-hidden">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt="Nave Logística Rosario — ampliación estructural en progreso" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"/>
+                </div>
+                <div class="md:col-span-4 pl-4">
+                    <span class="michroma text-sm uppercase tracking-widest">NAVE LOGÍSTICA</span>
+                    <span class="block mono text-[10px] mt-1 opacity-50">Ampliación estructural</span>
+                </div>
+                <div class="md:col-span-2">
+                    <span class="mono text-[10px] uppercase opacity-60">GRAN ROSARIO, SF</span>
+                </div>
+                <div class="md:col-span-2">
+                    <span class="mono text-[10px] uppercase opacity-60">420 M² · 4 MESES</span>
+                </div>
+                <div class="md:col-span-2 text-right">
+                    <span class="mono text-[10px] uppercase px-3 py-1 bg-surface-container-highest text-on-surface">65% AVANCE</span>
+                </div>
+            </div>
+
+            <!-- Project Row 3: Oficinas Sarmiento -->
+            <div class="group grid grid-cols-1 md:grid-cols-12 gap-4 py-8 hairline-t items-center hover:bg-surface-container-high transition-colors cursor-pointer">
+                <div class="md:col-span-2 aspect-video overflow-hidden">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt="Oficinas Sarmiento Mendoza — rehabilitación integral de espacio comercial" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"/>
+                </div>
+                <div class="md:col-span-4 pl-4">
+                    <span class="michroma text-sm uppercase tracking-widest">OFICINAS SARMIENTO</span>
+                    <span class="block mono text-[10px] mt-1 opacity-50">Rehabilitación integral</span>
+                </div>
+                <div class="md:col-span-2">
+                    <span class="mono text-[10px] uppercase opacity-60">CENTRO DE MENDOZA</span>
+                </div>
+                <div class="md:col-span-2">
+                    <span class="mono text-[10px] uppercase opacity-60">90 M² · 16 SEM</span>
+                </div>
+                <div class="md:col-span-2 text-right">
+                    <span class="mono text-[10px] uppercase px-3 py-1 bg-primary text-white">ENTREGADA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Process -->
+<section id="proceso" class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
+    <div class="md:col-span-3">
+        <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">PROCESO</span>
+    </div>
+    <div class="md:col-span-9">
+        <h2 class="michroma text-3xl md:text-5xl uppercase mb-12 leading-tight">
+            Tres etapas.<br/>Un criterio que no cambia.
+        </h2>
+        <div class="divide-y-[0.5px] divide-[#e2bfb7]/40">
+            <div class="py-12 grid grid-cols-1 md:grid-cols-12 gap-6 group">
+                <div class="md:col-span-1">
+                    <span class="mono text-primary text-xl">01</span>
+                </div>
+                <div class="md:col-span-4">
+                    <h3 class="michroma text-sm tracking-widest uppercase">⊙ DIAGNÓSTICO</h3>
+                </div>
+                <div class="md:col-span-7">
+                    <p class="font-light opacity-80">Antes de cobrar un peso, evalúo si tu proyecto cierra con el presupuesto y el plazo que tenés. Si no es viable, te lo digo. Así de simple.</p>
+                </div>
+            </div>
+            <div class="py-12 grid grid-cols-1 md:grid-cols-12 gap-6 group">
+                <div class="md:col-span-1">
+                    <span class="mono text-primary text-xl">02</span>
+                </div>
+                <div class="md:col-span-4">
+                    <h3 class="michroma text-sm tracking-widest uppercase">▤ DOCUMENTACIÓN TÉCNICA</h3>
+                </div>
+                <div class="md:col-span-7">
+                    <p class="font-light opacity-80">Planos, cómputo y especificaciones auditadas. Aprobás todo antes de que empiece una palada. Sin letra chica.</p>
+                </div>
+            </div>
+            <div class="py-12 grid grid-cols-1 md:grid-cols-12 gap-6 group">
+                <div class="md:col-span-1">
+                    <span class="mono text-primary text-xl">03</span>
+                </div>
+                <div class="md:col-span-4">
+                    <h3 class="michroma text-sm tracking-widest uppercase">▩ EJECUCIÓN Y CERTIFICACIÓN</h3>
+                </div>
+                <div class="md:col-span-7">
+                    <p class="font-light opacity-80">Dirección técnica auditada por el Gabinete. Control de calidad de materiales y certificación de avance real para liberación de pagos. Nuestra responsabilidad continúa: realizamos auditorías de mantenimiento trimestrales durante el primer año post-entrega.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Testimonials -->
+<section id="clientes" class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12 bg-surface-container-low">
+    <div class="md:col-span-3">
+        <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">CLIENTES</span>
+    </div>
+    <div class="md:col-span-9">
+        <div class="max-w-2xl mb-16">
+            <p class="text-2xl md:text-3xl italic font-light leading-snug mb-8">
+                "El único estudio que no me vino con sobrecostos por 'temas del país' a los cuatro meses. Acordamos el esquema de acopio al inicio y ese número se respetó hasta que me entregaron la llave."
+            </p>
+            <div class="flex flex-col gap-1">
+                <span class="mono text-[10px] tracking-widest uppercase opacity-60">— J. MARTÍNEZ</span>
+                <span class="mono text-[10px] tracking-widest uppercase opacity-40">Gerente Operativo · Logística Martínez S.A.</span>
+            </div>
+        </div>
+        <div class="max-w-2xl">
+            <p class="text-2xl md:text-3xl italic font-light leading-snug mb-8">
+                "No podía permitirme retrasar la apertura del local ni un mes. Francisco tomó la dirección de obra, me mandó reporte con fotos cada semana y me entregó el local listo para la habilitación municipal."
+            </p>
+            <div class="flex flex-col gap-1">
+                <span class="mono text-[10px] tracking-widest uppercase opacity-60">— L. GÓMEZ</span>
+                <span class="mono text-[10px] tracking-widest uppercase opacity-40">Dueño de La Posta · Local Gastronómico</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Contact -->
+<section id="contacto" class="px-6 md:px-12 py-24 hairline-t grid grid-cols-1 md:grid-cols-12 gap-12">
+    <div class="md:col-span-3">
+        <span class="mono text-[10px] tracking-[0.3em] uppercase opacity-50">CONTACTO</span>
+    </div>
+    <div class="md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-24">
+        <div>
+            <h2 class="michroma text-4xl uppercase mb-6">Obtener diagnóstico<br/>gratuito</h2>
+            <p class="text-lg font-light mb-12 opacity-80">Contame en qué etapa estás. En menos de 24 horas te mando una devolución técnica sobre tu proyecto — sin costo.</p>
+            <div class="space-y-8">
+                <div>
+                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">MATRÍCULA HABILITANTE</span>
+                    <p class="text-xl">Prov. Mat. 24.502 (CAUSF)</p>
+                </div>
+                <div>
+                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">LÍNEA DIRECTA VÍA WHATSAPP</span>
+                    <a class="text-xl hover:text-primary-container" href="https://wa.me/541145829000">+54 11 4582 9000</a>
+                </div>
+                <div>
+                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">EMAIL</span>
+                    <a class="text-xl hover:text-primary-container" href="mailto:hola@estudionorte.com">hola@estudionorte.com</a>
+                </div>
+                <div>
+                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">COSTO DE HONORARIOS PISO</span>
+                    <p class="text-xl">USD 2.800 / por fase documental</p>
+                </div>
+                <div>
+                    <span class="mono text-[10px] uppercase opacity-50 block mb-2">UBICACIÓN</span>
+                    <p class="text-xl">Santa Fe / Rosario, Argentina</p>
+                </div>
+            </div>
+        </div>
+        <form class="space-y-12" id="technical-form" novalidate>
+            <div class="border-b-[0.5px] border-on-surface/20 pb-4 focus-within:border-primary transition-colors">
+                <label class="mono text-[10px] uppercase block mb-4" for="name">Nombre completo</label>
+                <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-30" placeholder="Tu nombre..." type="text" id="name" required/>
+            </div>
+            <div class="border-b-[0.5px] border-on-surface/20 pb-4 focus-within:border-primary transition-colors">
+                <label class="mono text-[10px] uppercase block mb-4" for="email">Email</label>
+                <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-30" placeholder="tu@email.com" type="email" id="email" required/>
+            </div>
+            <div class="border-b-[0.5px] border-on-surface/20 pb-4 focus-within:border-primary transition-colors">
+                <label class="mono text-[10px] uppercase block mb-4" for="whatsapp">WhatsApp</label>
+                <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-30" placeholder="+54 9 11 ..." type="tel" id="whatsapp" required/>
+            </div>
+            <div class="border-b-[0.5px] border-on-surface/20 pb-4 focus-within:border-primary transition-colors">
+                <label class="mono text-[10px] uppercase block mb-4">Etapa del proyecto</label>
+                <select class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg appearance-none uppercase mono text-sm">
+                    <option>Solo es una idea</option>
+                    <option>Ya tengo terreno / local</option>
+                    <option>Evaluar planos urgente</option>
+                </select>
+            </div>
+            <div class="border-b-[0.5px] border-on-surface/20 pb-4 focus-within:border-primary transition-colors">
+                <label class="mono text-[10px] uppercase block mb-4" for="message">¿Qué querés construir o modificar?</label>
+                <textarea class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-30" id="message" rows="3" placeholder="Contame brevemente tu idea..."></textarea>
+            </div>
+            <button class="w-full bg-primary py-6 michroma text-white text-xs tracking-[0.2em] uppercase hover:bg-on-primary-fixed-variant transition-colors" type="submit" id="form-submit">
+                Enviar consulta directa a Francisco
+            </button>
+            <div class="mt-4">
+                <a href="https://wa.me/541145829000" target="_blank" rel="noopener" class="mono text-[10px] tracking-widest opacity-50 hover:opacity-80 hover:text-primary-container transition-opacity">O escribime directo por WhatsApp →</a>
+            </div>
+        </form>
+    </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#141414] text-[#f1f1f1] px-6 md:px-12 py-24 border-t-[0.5px] border-[#f9f9f9]/10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
+        <div>
+            <div class="text-2xl font-normal tracking-[0.2em] text-[#f9f9f9] michroma mb-8">
+                ESTUDIO NORTE
+            </div>
+            <p class="mono text-[10px] opacity-40 leading-relaxed uppercase tracking-widest">
+                Arquitectura de precisión y cierre de obra.<br/>
+                Especialistas en gestión técnica integral.
+            </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col space-y-4">
+                <a class="mono text-[10px] tracking-widest hover:text-[#c4391a]" href="#">INSTAGRAM</a>
+                <a class="mono text-[10px] tracking-widest hover:text-[#c4391a]" href="#">LINKEDIN</a>
+                <a class="mono text-[10px] tracking-widest hover:text-[#c4391a]" href="#proyectos">PROYECTOS</a>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a class="mono text-[10px] tracking-widest hover:text-[#c4391a]" href="#proceso">PROCESO</a>
+                <a class="mono text-[10px] tracking-widest hover:text-[#c4391a]" href="#contacto">CONTACTO</a>
+                <a class="mono text-[10px] tracking-widest hover:text-[#c4391a]" href="https://wa.me/541145829000" target="_blank" rel="noopener">WHATSAPP</a>
+            </div>
+        </div>
+        <div class="flex flex-col items-end justify-between">
+            <div class="text-right">
+                <span class="material-symbols-outlined text-4xl text-[#c4391a]">architecture</span>
+            </div>
+            <span class="mono text-[10px] tracking-widest opacity-40">° SANTA FE, ARG</span>
+        </div>
+    </div>
+    <div class="hairline-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-40">
+        <span class="mono text-[10px] tracking-widest">© 2026 ESTUDIO NORTE ARQUITECTURA · DESARROLLADO POR NADIAWEB_</span>
+        <span class="mono text-[10px] tracking-widest">24.502 CAUSF</span>
+    </div>
+</footer>
+
 </body>
 </html>
