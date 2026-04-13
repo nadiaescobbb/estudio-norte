@@ -530,7 +530,7 @@
                 </div>
             </div>
         </div>
-        <form class="space-y-8 md:space-y-12" id="technical-form" novalidate>
+        <form class="space-y-8 md:space-y-12" id="technical-form">
             <div class="border-b-2 border-on-surface/10 pb-4 focus-within:border-primary transition-colors">
                 <label class="mono text-[10px] uppercase block mb-2" for="name">Nombre completo</label>
                 <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg placeholder:opacity-30" placeholder="Tu nombre..." type="text" id="name" required/>
@@ -711,6 +711,7 @@
 
     if (contactForm && formSuccess) {
         contactForm.addEventListener('submit', function(e) {
+            if (!contactForm.checkValidity()) return;
             e.preventDefault();
             contactForm.classList.add('hidden');
             formSuccess.classList.remove('hidden');
