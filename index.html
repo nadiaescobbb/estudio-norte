@@ -123,9 +123,52 @@
 
     /* Selection overrides for dark footer */
     footer ::selection { background: #c4391a; color: #fff; }
+
+    .hero-line-mask {
+        display: block;
+        overflow: hidden;
+        line-height: 1.1;
+    }
+    .hero-line-mask > span {
+        display: block;
+        transform: translateY(100%);
+        clip-path: inset(0 0 100% 0);
+        animation: heroReveal 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .hero-line-mask.line-2 > span {
+        animation-delay: 200ms;
+    }
+    @keyframes heroReveal {
+        to {
+            transform: translateY(0);
+            clip-path: inset(0 0 0% 0);
+        }
+    }
+
+    #project-cursor {
+        position: fixed;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #a12001;
+        color: #f9f9f9;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        z-index: 9998;
+        opacity: 0;
+        transform: scale(0);
+        transition: opacity 200ms cubic-bezier(0.16, 1, 0.3, 1), transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #proyectos .group { cursor: none; }
 </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-primary-container selection:text-white">
+<div id="project-cursor">VER +</div>
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/541145829000" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
@@ -158,8 +201,8 @@
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-12">
         <div class="md:col-span-8">
             <h1 class="michroma text-4xl md:text-7xl leading-tight tracking-[0.05em] uppercase">
-                TU OBRA SE TERMINA.<br/>
-                <span class="text-primary-container">SIN EXCUSAS.</span>
+                <span class="hero-line-mask line-1"><span>TU OBRA SE TERMINA.</span></span>
+                <span class="hero-line-mask line-2"><span class="text-primary-container">SIN EXCUSAS.</span></span>
             </h1>
         </div>
         <div class="md:col-span-4 md:text-right pb-2">
@@ -187,17 +230,17 @@
     <div class="md:col-span-9 hairline-l pl-0 md:pl-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-0 hairline-t">
             <div class="py-8 hairline-r pr-6">
-                <span class="mono text-4xl block mb-2 font-medium">&lt; 5%</span>
+                <span class="mono text-4xl block mb-2 font-medium" id="kpi-deviation">&lt; 5%</span>
                 <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-3">DESVÍO PRESUPUESTARIO</span>
                 <p class="text-sm font-light opacity-70">Le entregamos la planilla de cómputo auditable. Si el error supera el 5%, bonificamos nuestros honorarios.</p>
             </div>
             <div class="py-8 md:px-8 hairline-r">
-                <span class="mono text-4xl block mb-2 font-medium">100%</span>
+                <span class="mono text-4xl block mb-2 font-medium" id="kpi-delivery">100%</span>
                 <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-3">ENTREGA EN TÉRMINO</span>
                 <p class="text-sm font-light opacity-70">Las fechas son rangos reales, no marketing.</p>
             </div>
             <div class="py-8 md:pl-8">
-                <span class="mono text-4xl block mb-2 font-medium">USD 2.800</span>
+                <span class="mono text-4xl block mb-2 font-medium" id="kpi-price">USD 2.800</span>
                 <span class="mono text-[10px] tracking-widest uppercase opacity-60 block mb-3">HONORARIOS BASE / FASE DOCUMENTAL</span>
                 <p class="text-sm font-light opacity-70">Incluye legajo técnico completo y firma municipal. Sin sorpresas.</p>
             </div>
@@ -486,5 +529,68 @@
     </div>
 </footer>
 
+<script>
+(function() {
+    var deviation = document.getElementById('kpi-deviation');
+    var delivery = document.getElementById('kpi-delivery');
+    var price = document.getElementById('kpi-price');
+    var guaranteesSection = deviation.closest('section');
+    var kpiFired = false;
+
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function animateCount(el, from, to, duration, format, delay) {
+        setTimeout(function() {
+            var start = performance.now();
+            function tick(now) {
+                var elapsed = now - start;
+                var progress = Math.min(elapsed / duration, 1);
+                var value = Math.round(from + (to - from) * easeOut(progress));
+                el.textContent = format(value);
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }, delay);
+    }
+
+    var kpiObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting && !kpiFired) {
+                kpiFired = true;
+                animateCount(deviation, 0, 5, 1800, function(v) { return '< ' + v + '%'; }, 0);
+                animateCount(delivery, 0, 100, 1800, function(v) { return v + '%'; }, 200);
+                animateCount(price, 0, 2800, 1800, function(v) {
+                    return 'USD ' + v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                }, 400);
+                kpiObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+    kpiObserver.observe(guaranteesSection);
+
+    var cursor = document.getElementById('project-cursor');
+    var projectRows = document.querySelectorAll('#proyectos .group');
+    var cursorVisible = false;
+
+    document.addEventListener('mousemove', function(e) {
+        if (cursorVisible) {
+            cursor.style.transform = 'translate(' + (e.clientX - 40) + 'px, ' + (e.clientY - 40) + 'px) scale(1)';
+        }
+    });
+
+    projectRows.forEach(function(row) {
+        row.addEventListener('mouseenter', function() {
+            cursorVisible = true;
+            cursor.style.opacity = '1';
+            cursor.style.transform = 'scale(1)';
+        });
+        row.addEventListener('mouseleave', function() {
+            cursorVisible = false;
+            cursor.style.opacity = '0';
+            cursor.style.transform = 'scale(0)';
+        });
+    });
+})();
+</script>
 </body>
 </html>
