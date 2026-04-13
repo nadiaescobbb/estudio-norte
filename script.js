@@ -63,29 +63,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const fadeItems = document.querySelectorAll('.fade-item');
 
     const observerOptions = {
-        threshold: 0.08,
-        rootMargin: "0px 0px -40px 0px"
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
     };
-
-    let delayCounter = 0;
-    let resetTimer   = null;
 
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                const delay = entry.target.getAttribute('data-delay') || 0;
                 setTimeout(() => {
                     entry.target.classList.add('visible');
-                }, delayCounter * 90);
-
-                delayCounter++;
+                }, delay * 150);
+                
                 fadeObserver.unobserve(entry.target);
-
-                clearTimeout(resetTimer);
-                resetTimer = setTimeout(() => { delayCounter = 0; }, 150);
             }
         });
     }, observerOptions);
 
     fadeItems.forEach(item => fadeObserver.observe(item));
 
+    // 3. UI Polish: Sticky Nav & Timeline Progress
+    const nav = document.querySelector('.editorial-nav');
+    const timeline = document.querySelector('.timeline');
+
+    const handleScroll = () => {
+        // Sticky Nav
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+
+        // Timeline Progress
+        if (timeline) {
+            const rect = timeline.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+            
+            if (rect.top < viewHeight && rect.bottom > 0) {
+                const progress = Math.min(1, Math.max(0, (viewHeight - rect.top) / (rect.height + viewHeight * 0.5)));
+                timeline.style.setProperty('--timeline-progress', progress);
+            }
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Init state
 });

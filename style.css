@@ -185,22 +185,36 @@ img {
    NAVIGATION
    ============================================ */
 .editorial-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  background: transparent;
-  border-bottom: 1px solid var(--line-light);
+  width: 100%;
+  background: rgba(245, 242, 237, 0); /* Start transparent */
+  border-bottom: 1px solid transparent;
   z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-nav.scrolled {
+  background: rgba(245, 242, 237, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line-light);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.5rem 5vw;
+  padding: 1.8rem 5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: padding 0.4s ease;
+}
+
+.editorial-nav.scrolled .nav-container {
+  padding: 1.1rem 5vw;
 }
 
 .brand {
@@ -583,12 +597,45 @@ textarea:focus {
   margin-left: 0.25rem;
 }
 
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+}
+
+/* The vertical track (grey) */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.45rem;
+    top: 0.75rem;
+    bottom: 0.75rem;
+    width: 2px;
+    background: var(--line-light);
+    opacity: 0.5;
+}
+
+/* The progress line (red) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    left: 0.45rem;
+    top: 0.75rem;
+    height: calc(100% - 1.5rem);
+    width: 2px;
+    background: var(--cta-red);
+    transform-origin: top;
+    transform: scaleY(var(--timeline-progress, 0));
+    transition: transform 0.1s linear;
+    z-index: 1;
+}
+
 .time-step {
   display: grid;
   grid-template-columns: 4.5rem 1fr;
   gap: 2rem;
   position: relative;
   padding-bottom: 3.5rem;
+  z-index: 2;
 }
 
 /* Red dot on the border line */
