@@ -92,15 +92,93 @@ img {
   to   { opacity: 1; }
 }
 
+/* Project Badges */
+.p-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    z-index: 10;
+    border-radius: 2px;
+}
+
+.p-badge.entregada {
+    background-color: var(--line-red);
+    color: var(--bg-warm);
+}
+
+.p-badge.progreso {
+    background-color: var(--text-dark);
+    color: var(--bg-warm);
+    border: 1px solid var(--line-red);
+}
+
+/* Radio Pills Form */
+.radio-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.pill {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.pill input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.pill span {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--line-light);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+}
+
+.pill:hover span {
+    border-color: var(--line-red);
+}
+
+.pill input:checked + span {
+    background-color: var(--text-dark);
+    color: var(--bg-warm);
+    border-color: var(--text-dark);
+}
+
+/* Animations */
 .fade-item {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 280ms ease-out, transform 280ms ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade-item.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .radio-pills {
+        flex-direction: column;
+    }
+    
+    .pill span {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* ============================================
@@ -248,17 +326,31 @@ img {
   line-height: 1.05;
 }
 
-/* Max 3 lines visible */
 .hero-desc {
-  font-size: 1.05rem;
-  max-width: 46ch;
-  margin-bottom: 2.5rem;
-  color: var(--text-dark);
-  line-height: 1.65;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+/* Form Styles */
+textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--bg-warm);
+    border: 1px solid var(--line-light);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-dark);
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--line-red);
 }
 
 .hero-image img {

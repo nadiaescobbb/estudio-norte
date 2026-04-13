@@ -10,9 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const fields = [
                 document.getElementById('name'),
                 document.getElementById('email'),
-                document.getElementById('stage'),
                 document.getElementById('message')
             ];
+
+            const stageChecked = document.querySelector('input[name="stage"]:checked');
+            const stageContainer = document.querySelector('.radio-pills');
+
+            if (!stageChecked) {
+                if (stageContainer) stageContainer.classList.add('has-error');
+                isValid = false;
+            } else {
+                if (stageContainer) stageContainer.classList.remove('has-error');
+            }
 
             fields.forEach(field => {
                 if (!field) return;
