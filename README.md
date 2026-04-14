@@ -1,18 +1,18 @@
 # Estudio Norte — Gabinete Técnico de Arquitectura
 
-> **Landing page institucional de alta conversión para un estudio de arquitectura orientado a dueños de pymes y comitentes privados en Argentina.**
+> **Landing page institucional de alta conversión para un estudio de arquitectura orientado a dueños de pymes y comitentes industriales en Argentina.**
 
-![Design System](https://img.shields.io/badge/Design-Editorial%20/%20Brutalist-black?style=flat-square) ![Stack](https://img.shields.io/badge/Stack-Tailwind_CDN_%2B_Vanilla_JS-0ea5e9?style=flat-square) ![Status](https://img.shields.io/badge/Status-Producción-success?style=flat-square)
+![Design System](https://img.shields.io/badge/Design-Editorial%20/%20Brutalist-black?style=flat-square) ![Stack](https://img.shields.io/badge/Stack-Tailwind_CDN_%2B_Vanilla_JS-c4391a?style=flat-square) ![Status](https://img.shields.io/badge/Status-Producción-success?style=flat-square)
 
 ---
 
 ## Objetivos del proyecto
 
-Estudio Norte no es un portfolio genérico de arquitecto. Es un **activo de captación B2B** diseñado para resolver las tres objeciones principales del mercado de la construcción argentino:
+Estudio Norte no es un portfolio genérico de arquitecto. Es un **Gabinete Técnico** (Activo de captación B2B) diseñado para resolver las objeciones críticas del mercado de la construcción e industrial argentino:
 
-1. **"¿Se va a ir el presupuesto?"** → Garantía auditable de < 5% de desvío en cómputo de materiales.
-2. **"¿Se va a demorar?"** → 100% de obras entregadas en término con cronograma público.
-3. **"¿Y si el arquitecto desaparece?"** → Red de nodos técnicos locales con presencia física certificada.
+1. **Gestión de Riesgo Financiero** → Evaluación de viabilidad antes de la inversión inicial.
+2. **Control Operativo** → Presencia técnica real en terreno y reportes de auditoría semanales.
+3. **Escalabilidad Geográfica** → Sistema de nodos locales en Santa Fe, Córdoba y Mendoza.
 
 Caso de estudio desarrollado por **Nadia Web**.
 
@@ -20,40 +20,37 @@ Caso de estudio desarrollado por **Nadia Web**.
 
 ## Design System
 
-El sitio utiliza un sistema editorial de precisión, construido con Tailwind CSS (CDN) y tipografías de alto contraste:
+El sitio utiliza un sistema editorial de precisión, construido con Tailwind CSS (CDN) y tipografías que proyectan autoridad técnica:
 
 | Token | Valor | Uso |
 |---|---|---|
-| **Headline** | `Michroma` | Títulos arquitectónicos uppercase |
-| **Body** | `IBM Plex Sans 300–600` | Copy editorial, párrafos |
-| **Data / Labels** | `IBM Plex Mono 400–500` | KPIs, etiquetas, metadata técnica |
-| **Primary** | `#a12001` | CTAs, acentos, badges |
-| **Primary Container** | `#c4391a` | Headline accent, hover states |
-| **Surface** | `#f9f9f9` | Fondo principal |
-| **On-Surface** | `#1a1c1c` | Texto principal |
-| **Hairlines** | `rgba(226,191,183,0.4)` | Separadores de sección |
-| **Corners** | `0px` | Brutalismo: sin border-radius |
+| **Headline** | `Michroma` | Títulos arquitectónicos uppercase (Autoridad) |
+| **Body** | `IBM Plex Sans 300–600` | Copy editorial, párrafos (Legibilidad) |
+| **Data / Labels** | `IBM Plex Mono 400–500` | KPIs, etiquetas, metadata técnica (Precisión) |
+| **Primary** | `#c4391a` | CTAs, acentos, badges (Alerta/Acción) |
+| **Surface** | `#f9f9f9` | Fondo principal (Limpio/Editorial) |
+| **On-Surface** | `#141414` | Texto principal (Contraste alto) |
+| **Hairlines** | `rgba(20,20,20,0.1)` | Separadores de sección de 0.5px |
 
-### Patrones visuales
+### Patrones de Conversión (CRO)
 
-- **Grid 12 columnas** — Layout `3 | 9` para label + contenido (patrón editorial)
-- **Grayscale → Color** — Imágenes en escala de grises que revelan color en hover
-- **Hairline borders** — Líneas de 0.5px como separadores de sección
-- **Mono labels** — Etiquetas técnicas en `IBM Plex Mono` a 10px con tracking extendido
+- **Sinceridad de Bolsillo** — Copy técnico que prioriza la rentabilidad sobre la estética.
+- **Autoridad Protectora** — Tono de voz firme que posiciona al arquitecto como un auditor del capital del cliente.
+- **Escasez Real** — Implementación de "Cupo Operativo" (1 obra por zona) para asegurar exclusividad.
 
 ---
 
 ## Estructura de la página
 
-| Sección | Propósito CRO |
+| Sección | Propósito B2B |
 |---|---|
-| **Hero** | Headline de impacto + credencial profesional + CTA directo a WhatsApp |
-| **Garantías** | Strip de KPIs duros (< 5%, 100%, USD 2.800) con copy auditable |
-| **Sobre mí** | Posicionamiento como gabinete técnico, no freelancer |
-| **Proyectos** | Portfolio en formato tabla — sin renders, datos reales |
-| **Proceso** | 3 etapas con copy específico que elimina incertidumbre |
-| **Clientes** | 2 testimonios B2B verificables con nombre y rol |
-| **Contacto** | Formulario + datos de matrícula + línea directa WhatsApp |
+| **Hero** | Propuesta de valor directa: "Tu obra se termina. Sin excusas." |
+| **Criterio Técnico** | Strip de KPIs operativos (Supervisión, Reportes, Logística). |
+| **Sobre mí** | Pivot institucional como Gabinete Técnico y Director de Obra. |
+| **Ejecuciones** | Portfolio priorizando naves industriales y casos de alta complejidad técnica. |
+| **Metodología** | 3 etapas claras: Auditoría de Inversión, Ingeniería de Acopio y Dirección Rigurosa. |
+| **Clientes** | Testimonios de autoridad (Ingenieros, Gerentes de Planta). |
+| **Contacto** | Formulario de "Solicitud de Auditoría" con filtro de requerimiento técnico. |
 
 ---
 
