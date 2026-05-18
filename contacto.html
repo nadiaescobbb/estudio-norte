@@ -10,52 +10,41 @@
   <title>Contacto | Estudio Norte</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=Archivo+Black&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="site-header">
   <nav class="nav" aria-label="Navegacion principal">
-    <a href="index.html" class="brand">Estudio Norte<small>obra / direccion / control</small></a>
+    <a class="brand" href="index.html">Estudio Norte</a>
     <div class="nav-links">
       <a href="estudio.html">Enfoque</a>
       <a href="index.html#servicios">Servicios</a>
       <a href="portfolio.html">Obras</a>
       <a href="contacto.html" aria-current="page">Contacto</a>
     </div>
-    <a class="button nav-cta" href="contacto.html"><span>Evaluar proyecto</span><span aria-hidden="true">→</span></a>
+    <a class="btn btn-small" href="contacto.html">Solicitar evaluacion</a>
   </nav>
 </header>
 <main id="contenido">
-  <section class="shell page-hero narrow">
-    <div data-reveal>
-      <p class="kicker">primera evaluacion</p>
-      <h1 class="headline">No pedimos datos de mas. Pedimos los datos correctos.</h1>
-      <p class="subhead">El objetivo del primer contacto es entender etapa, escala, urgencia y documentacion disponible. Con eso se define si corresponde reunion, relevamiento o revision documental.</p>
-    </div>
-    <aside class="side-manual" data-reveal>
-      <p class="kicker">preparar antes de consultar</p>
-      <ul>
-        <li>Ubicacion y superficie aproximada.</li>
-        <li>Etapa actual: idea, planos, presupuesto u obra iniciada.</li>
-        <li>Fotos, planos, presupuesto o material previo.</li>
-        <li>Decision que hoy bloquea el avance.</li>
-      </ul>
-    </aside>
+  <section class="container page-hero">
+    <span class="eyebrow" data-reveal>Primera evaluacion</span>
+    <h1 class="page-title wide-title" data-reveal>Datos concretos para una conversacion util.</h1>
+    <p class="lead" data-reveal>El primer contacto busca entender etapa, escala, urgencia y documentacion disponible. Con eso se define si corresponde reunion, relevamiento o revision documental.</p>
   </section>
-  <section class="shell section contact-layout">
+  <section class="container section contact-layout">
     <form id="technical-form" class="form-card" novalidate aria-describedby="form-status" data-reveal>
       <div class="form-grid">
-        <label><span class="data-label">Nombre</span><input id="name" name="nombre" required autocomplete="name" class="field" placeholder="Nombre y apellido" /></label>
-        <label><span class="data-label">WhatsApp</span><input id="whatsapp" name="whatsapp" required autocomplete="tel" class="field" placeholder="+54..." /></label>
-        <label><span class="data-label">Email</span><input id="email" name="email" type="email" autocomplete="email" class="field" placeholder="nombre@empresa.com" /></label>
-        <label><span class="data-label">Tipo de obra</span><select name="tipo" class="field"><option>Residencial</option><option>Comercial</option><option>Industrial</option><option>Reforma o ampliacion</option><option>No estoy seguro</option></select></label>
-        <label><span class="data-label">Ubicacion</span><input name="ubicacion" class="field" placeholder="Ciudad o zona" /></label>
-        <label><span class="data-label">Superficie estimada</span><input name="superficie" class="field" placeholder="Ej. 180 m2" /></label>
+        <label><span class="meta">Nombre</span><input id="name" name="nombre" required autocomplete="name" class="field" placeholder="Nombre y apellido" /></label>
+        <label><span class="meta">WhatsApp</span><input id="whatsapp" name="whatsapp" required autocomplete="tel" class="field" placeholder="+54..." /></label>
+        <label><span class="meta">Email</span><input id="email" name="email" type="email" autocomplete="email" class="field" placeholder="nombre@empresa.com" /></label>
+        <label><span class="meta">Tipo de obra</span><select name="tipo" class="field"><option>Residencial</option><option>Comercial</option><option>Industrial</option><option>Reforma o ampliacion</option><option>No estoy seguro</option></select></label>
+        <label><span class="meta">Ubicacion</span><input name="ubicacion" class="field" placeholder="Ciudad o zona" /></label>
+        <label><span class="meta">Superficie estimada</span><input name="superficie" class="field" placeholder="Ej. 180 m2" /></label>
       </div>
       <div style="margin-top: 1.5rem;">
-        <span class="data-label">Etapa actual</span>
+        <span class="meta">Etapa actual</span>
         <div class="radio-pills">
           <label><input type="radio" name="stage" value="idea" required /> Idea inicial</label>
           <label><input type="radio" name="stage" value="planos" /> Tengo planos</label>
@@ -63,31 +52,38 @@
           <label><input type="radio" name="stage" value="obra" /> Obra iniciada</label>
         </div>
       </div>
-      <label style="margin-top: 1.5rem;"><span class="data-label">Mensaje</span><textarea id="message" name="mensaje" rows="5" class="field" placeholder="Que necesitas resolver, plazo aproximado y datos utiles."></textarea></label>
+      <label style="margin-top: 1.5rem;"><span class="meta">Mensaje</span><textarea id="message" name="mensaje" rows="5" class="field" placeholder="Que necesitas resolver, plazo aproximado y datos utiles."></textarea></label>
       <p id="form-status" class="proof-note" aria-live="polite">Completa los campos clave para simular una consulta calificada.</p>
-      <div class="action-row">
-        <button class="button" type="submit"><span>Solicitar evaluacion</span><span aria-hidden="true">→</span></button>
-      </div>
+      <div class="actions"><button class="btn" type="submit">Solicitar evaluacion</button></div>
     </form>
-    <aside class="side-manual" data-reveal>
-      <p class="kicker">canales</p>
-      <p>Santa Fe y region centro<br />hola@estudionorte.com</p>
-      <p>Datos referenciales para caso conceptual. En produccion se conectaria con WhatsApp, email o CRM.</p>
+    <aside class="side-panel" data-reveal>
+      <span class="eyebrow">Preparar antes de consultar</span>
+      <ul>
+        <li>Ubicacion y superficie aproximada.</li>
+        <li>Etapa actual: idea, planos, presupuesto u obra iniciada.</li>
+        <li>Fotos, planos, presupuesto o material previo.</li>
+        <li>Decision que hoy bloquea el avance.</li>
+      </ul>
+      <p class="proof-note">Datos referenciales para caso conceptual. En produccion se conectaria con WhatsApp, email o CRM.</p>
     </aside>
   </section>
 </main>
 <footer class="footer">
-  <div class="shell footer-inner">
+  <div class="container footer-grid">
     <div>
-      <p class="brand">Estudio Norte<small>caso conceptual por Trama Studio</small></p>
-      <p>Web conceptual para demostrar como una constructora puede vender confianza operativa antes de la primera reunion.</p>
+      <a class="brand brand-footer" href="index.html">Estudio Norte</a>
+      <p>Construccion, direccion de obra y seguimiento tecnico para proyectos con decisiones claras.</p>
     </div>
     <div>
-      <p class="kicker">Contacto referencial</p>
-      <p>Santa Fe y region centro<br />hola@estudionorte.com</p>
+      <span class="eyebrow">Zona de trabajo</span>
+      <p>Santa Fe y region centro</p>
     </div>
     <div>
-      <a class="button light" href="contacto.html"><span>Iniciar consulta</span><span aria-hidden="true">→</span></a>
+      <span class="eyebrow">Caso conceptual</span>
+      <p>Proyecto de Trama Studio para demostrar criterio de negocio en una web de construccion.</p>
+    </div>
+    <div class="footer-cta">
+      <a class="btn btn-light" href="contacto.html">Consultar proyecto</a>
     </div>
   </div>
 </footer>

@@ -10,61 +10,54 @@
   <title>Obras y proyectos | Estudio Norte</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=Archivo+Black&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="site-header">
   <nav class="nav" aria-label="Navegacion principal">
-    <a href="index.html" class="brand">Estudio Norte<small>obra / direccion / control</small></a>
+    <a class="brand" href="index.html">Estudio Norte</a>
     <div class="nav-links">
       <a href="estudio.html">Enfoque</a>
       <a href="index.html#servicios">Servicios</a>
       <a href="portfolio.html" aria-current="page">Obras</a>
       <a href="contacto.html">Contacto</a>
     </div>
-    <a class="button nav-cta" href="contacto.html"><span>Evaluar proyecto</span><span aria-hidden="true">→</span></a>
+    <a class="btn btn-small" href="contacto.html">Solicitar evaluacion</a>
   </nav>
 </header>
 <main id="contenido">
-  <section class="shell page-hero">
-    <p class="kicker" data-reveal>archivo de obra</p>
-    <h1 class="display" data-reveal>Casos con problema, alcance y decision.</h1>
-    <p class="subhead" data-reveal>Cada ficha cuenta una situacion que el cliente reconoce: vivienda con decisiones pendientes, nave con compras criticas o local que no puede frenar su operacion.</p>
-    <div class="filter-row" aria-label="Filtros conceptuales de obra" data-reveal>
-      <span class="active">Todo</span><span>Residencial</span><span>Industrial</span><span>Comercial</span>
-    </div>
+  <section class="container page-hero">
+    <span class="eyebrow" data-reveal>Portfolio conceptual</span>
+    <h1 class="page-title wide-title" data-reveal>Obras presentadas por problema, no por promesa.</h1>
+    <p class="lead" data-reveal>Cada caso ayuda a que el futuro cliente identifique una situacion parecida: vivienda en definicion, nave con dependencias criticas o local que necesita reformar sin frenar su actividad.</p>
+    <div class="filter-row" aria-label="Filtros conceptuales de obra" data-reveal><span class="active">Todo</span><span>Residencial</span><span>Industrial</span><span>Comercial</span></div>
   </section>
-  <section class="shell section">
-    <div class="projects-masonry" data-reveal>
-      <a class="project-card" href="proyecto-184.html">
-        <img src="assets/exp_184.png" alt="Vivienda Casa del Lago en etapa de obra" />
-        <div class="project-body"><span class="project-code">RES / direccion / 235 M2</span><h2>Casa del Lago</h2><p>Una vivienda que necesitaba ordenar materialidad, detalles y decisiones de avance.</p></div>
-      </a>
-      <a class="project-card" href="proyecto-185.html">
-        <img src="assets/exp_185.png" alt="Estructura industrial de Nave Sauce Viejo" />
-        <div class="project-body"><span class="project-code">IND / plan / 440 M2</span><h2>Nave Sauce Viejo</h2><p>Coordinacion de rubros y compras criticas para sostener una secuencia viable.</p></div>
-      </a>
-      <a class="project-card" href="proyecto-186.html">
-        <img src="assets/exp_186.png" alt="Reforma comercial Locales del Parque" />
-        <div class="project-body"><span class="project-code">COM / reforma / 120 M2</span><h2>Locales del Parque</h2><p>Obra comercial con tiempos acotados, interferencias y puesta en marcha cercana.</p></div>
-      </a>
+  <section class="container section">
+    <div class="project-grid" data-reveal>
+      <a class="project-card" href="proyecto-184.html"><img src="assets/exp_184.png" alt="Casa del Lago en obra" /><div class="project-body"><span class="meta">Residencial / direccion</span><h2>Casa del Lago</h2><p>Vivienda que necesitaba ordenar documentacion, materialidad y decisiones de avance.</p></div></a>
+      <a class="project-card" href="proyecto-185.html"><img src="assets/exp_185.png" alt="Nave Sauce Viejo en ejecucion" /><div class="project-body"><span class="meta">Industrial / plan de obra</span><h2>Nave Sauce Viejo</h2><p>Coordinacion de rubros y compras criticas para sostener una secuencia viable.</p></div></a>
+      <a class="project-card" href="proyecto-186.html"><img src="assets/exp_186.png" alt="Locales del Parque reformados" /><div class="project-body"><span class="meta">Comercial / reforma</span><h2>Locales del Parque</h2><p>Obra comercial con tiempos acotados, interferencias y puesta en marcha cercana.</p></div></a>
     </div>
   </section>
 </main>
 <footer class="footer">
-  <div class="shell footer-inner">
+  <div class="container footer-grid">
     <div>
-      <p class="brand">Estudio Norte<small>caso conceptual por Trama Studio</small></p>
-      <p>Web conceptual para demostrar como una constructora puede vender confianza operativa antes de la primera reunion.</p>
+      <a class="brand brand-footer" href="index.html">Estudio Norte</a>
+      <p>Construccion, direccion de obra y seguimiento tecnico para proyectos con decisiones claras.</p>
     </div>
     <div>
-      <p class="kicker">Contacto referencial</p>
-      <p>Santa Fe y region centro<br />hola@estudionorte.com</p>
+      <span class="eyebrow">Zona de trabajo</span>
+      <p>Santa Fe y region centro</p>
     </div>
     <div>
-      <a class="button light" href="contacto.html"><span>Iniciar consulta</span><span aria-hidden="true">→</span></a>
+      <span class="eyebrow">Caso conceptual</span>
+      <p>Proyecto de Trama Studio para demostrar criterio de negocio en una web de construccion.</p>
+    </div>
+    <div class="footer-cta">
+      <a class="btn btn-light" href="contacto.html">Consultar proyecto</a>
     </div>
   </div>
 </footer>
