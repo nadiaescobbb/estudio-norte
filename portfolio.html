@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Archivo completo de expedientes auditados y dirigidos por Estudio Norte. Ingeniería de Autoridad."/>
+<title>Archivo de Expedientes | Estudio Norte</title>
+
+<!-- Fonts: Montserrat & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#D90429",
+                    "secondary": "#111111",
+                    "surface": "#FAF9F6"
+                },
+                fontFamily: {
+                    "sans": ["Inter", "sans-serif"],
+                    "display": ["Montserrat", "sans-serif"],
+                    "mono": ["IBM Plex Mono", "monospace"]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: #FAF9F6; color: #111111; position: relative; }
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.025; pointer-events: none; z-index: 9999;
+    }
+    h1, h2, h3, h4, .font-display { font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+    .mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+    .btn-primary { background-color: #D90429; color: white; padding: 12px 28px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 14px; transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1); }
+    .metadata-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.5); }
+    
+    .filter-btn {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        padding: 8px 20px;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .filter-btn.active {
+        background: #111111;
+        color: white;
+        border-color: #111111;
+    }
+</style>
+</head>
+<body>
+
+<nav class="bg-white py-4 px-6 flex justify-between items-center sticky top-0 z-50 border-b border-black/5">
+    <a href="index.html" class="text-2xl font-black text-secondary">
+        <span class="text-primary">ESTUDIO</span>NORTE
+    </a>
+    <div class="hidden lg:flex gap-8 font-bold text-sm uppercase">
+        <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
+        <a href="portfolio.html" class="text-primary">Expedientes</a>
+        <a href="contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+    </div>
+    <div class="flex items-center gap-4">
+        <span class="mono text-[10px] hidden md:block">ARCHIVE_SYSTEM: ONLINE</span>
+        <a href="contacto.html" class="btn-primary py-2 text-[10px]">Iniciar Evaluación</a>
+    </div>
+</nav>
+
+<header class="py-24 px-6 max-w-7xl mx-auto">
+    <span class="text-primary font-bold uppercase text-xs tracking-widest mb-6 block">Archivo Maestro</span>
+    <h1 class="text-6xl md:text-8xl font-black mb-12 leading-none uppercase">Expedientes<br/>Auditados</h1>
+    
+    <div class="flex flex-wrap gap-4 border-t border-black/5 pt-12">
+        <div class="filter-btn active">Todo</div>
+        <div class="filter-btn">Residencial</div>
+        <div class="filter-btn">Industrial</div>
+        <div class="filter-btn">Comercial</div>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto py-12 px-6 pb-32">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Exp 184 -->
+        <a href="proyecto-184.html" class="group relative overflow-hidden rounded-xl h-[450px] block border border-black/5 shadow-sm">
+            <div class="absolute top-4 right-4 z-10 bg-primary/90 backdrop-blur-md text-white text-[9px] mono px-3 py-1 rounded tracking-widest uppercase">LAT: -31.63 // 184-A</div>
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" alt="P1"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-90 flex items-end p-8">
+                <div>
+                    <div class="text-primary font-bold uppercase text-[10px] tracking-widest mb-2">Residencial // 235 M2</div>
+                    <h4 class="text-white text-3xl font-black">Casa del Lago</h4>
+                    <p class="text-white/50 text-sm mt-2 font-medium">Audit Spec: Desvío 0.00%</p>
+                </div>
+            </div>
+        </a>
+        <!-- Exp 185 -->
+        <a href="proyecto-185.html" class="group relative overflow-hidden rounded-xl h-[450px] block border border-black/5 shadow-sm">
+            <div class="absolute top-4 right-4 z-10 bg-primary/90 backdrop-blur-md text-white text-[9px] mono px-3 py-1 rounded tracking-widest uppercase">LOG: INBOUND // 185-B</div>
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" alt="P2"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-90 flex items-end p-8">
+                <div>
+                    <div class="text-primary font-bold uppercase text-[10px] tracking-widest mb-2">Industrial // 440 M2</div>
+                    <h4 class="text-white text-3xl font-black">Nave Sauce Viejo</h4>
+                    <p class="text-white/50 text-sm mt-2 font-medium">Audit Spec: Desvío 0.00%</p>
+                </div>
+            </div>
+        </a>
+        <!-- Exp 186 -->
+        <a href="proyecto-186.html" class="group relative overflow-hidden rounded-xl h-[450px] block border border-black/5 shadow-sm">
+            <div class="absolute top-4 right-4 z-10 bg-primary/90 backdrop-blur-md text-white text-[9px] mono px-3 py-1 rounded tracking-widest uppercase">STATUS: OK // 186-C</div>
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" alt="P3"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-90 flex items-end p-8">
+                <div>
+                    <div class="text-primary font-bold uppercase text-[10px] tracking-widest mb-2">Comercial // 120 M2</div>
+                    <h4 class="text-white text-3xl font-black">Locales del Parque</h4>
+                    <p class="text-white/50 text-sm mt-2 font-medium">Audit Spec: Desvío 0.00%</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</main>
+
+<footer class="bg-secondary text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-2xl font-black"><span class="text-primary">ESTUDIO</span>NORTE</div>
+        <div class="text-xs opacity-30 uppercase tracking-widest">Ingeniería de Autoridad // 2026</div>
+    </div>
+</footer>
+
+</body>
+</html>

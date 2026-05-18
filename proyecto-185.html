@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Auditoría Técnica y Dirección de Obra - Expediente №185. Nave Sauce Viejo. Estudio Norte."/>
+<title>Expediente №185 | Estudio Norte</title>
+
+<!-- Fonts: Montserrat & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#D90429",
+                    "secondary": "#111111",
+                    "surface": "#FAF9F6"
+                },
+                fontFamily: {
+                    "sans": ["Inter", "sans-serif"],
+                    "display": ["Montserrat", "sans-serif"],
+                    "mono": ["IBM Plex Mono", "monospace"]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: #FAF9F6; color: #111111; position: relative; }
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.025; pointer-events: none; z-index: 9999;
+    }
+    h1, h2, h3, h4, .font-display { font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+    .mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+    .btn-primary { background-color: #D90429; color: white; padding: 12px 28px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 14px; transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1); }
+    .btn-primary:hover { background-color: #b90422; transform: translateY(-2px); }
+    .metadata-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.5); }
+    .audit-card { background: white; border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; box-shadow: 0 32px 64px rgba(0,0,0,0.05); }
+    .spotlight-card { position: relative; overflow: hidden; }
+    .spotlight-card::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(217, 4, 41, 0.04), transparent 80%); opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
+    .spotlight-card:hover::after { opacity: 1; }
+    .timeline-item { position: relative; padding-left: 32px; border-left: 2px solid #D90429; padding-bottom: 32px; }
+    .timeline-item::before { content: ""; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: #D90429; border: 4px solid #FAF9F6; border-radius: 50%; }
+</style>
+</head>
+<body>
+
+<nav class="bg-white py-4 px-6 flex justify-between items-center sticky top-0 z-50 border-b border-black/5">
+    <a href="index.html" class="text-2xl font-black text-secondary">
+        <span class="text-primary">ESTUDIO</span>NORTE
+    </a>
+    <div class="hidden lg:flex gap-8 font-bold text-sm uppercase">
+        <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
+        <a href="portfolio.html" class="text-primary">Expedientes</a>
+        <a href="contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+    </div>
+    <div class="flex items-center gap-4">
+        <span class="mono text-[10px] hidden md:block">AUDIT_LOG: OK</span>
+        <a href="portfolio.html" class="material-symbols-outlined text-secondary hover:text-primary transition-colors">grid_view</a>
+    </div>
+</nav>
+
+<header class="relative bg-secondary text-white py-32 px-6">
+    <div class="absolute inset-0 opacity-40">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover" alt="Nave Sauce Viejo"/>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
+        <div class="max-w-2xl">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="bg-primary px-3 py-1 text-[10px] mono font-bold rounded">ENTREGADO</span>
+                <span class="text-xs mono opacity-60">EXP_NO: 185-B</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-none uppercase">Nave Sauce Viejo</h1>
+            <div class="flex gap-12">
+                <div>
+                    <div class="metadata-tag text-white/50 mb-2">Ubicación</div>
+                    <div class="font-bold">Sauce Viejo, ARG</div>
+                </div>
+                <div>
+                    <div class="metadata-tag text-white/50 mb-2">Finalización</div>
+                    <div class="font-bold mono">2023</div>
+                </div>
+            </div>
+        </div>
+        <div class="audit-card p-8 text-secondary min-w-[320px] spotlight-card">
+            <h3 class="font-black uppercase mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">analytics</span> 
+                Audit Specs
+            </h3>
+            <div class="space-y-4">
+                <div class="flex justify-between border-b border-black/5 pb-2">
+                    <span class="text-xs opacity-50 uppercase font-bold">Superficie</span>
+                    <span class="font-bold mono">440 m²</span>
+                </div>
+                <div class="flex justify-between border-b border-black/5 pb-2">
+                    <span class="text-xs opacity-50 uppercase font-bold">Plazo Real</span>
+                    <span class="font-bold mono">8 Meses</span>
+                </div>
+                <div class="flex justify-between border-b border-black/5 pb-2">
+                    <span class="text-xs opacity-50 uppercase font-bold">Desvío Presup.</span>
+                    <span class="text-primary font-black mono">0.00%</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-xs opacity-50 uppercase font-bold">Eficiencia</span>
+                    <span class="font-bold mono text-green-600">A++</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto py-24 px-6 grid lg:grid-cols-12 gap-16">
+    <div class="lg:col-span-8 space-y-16">
+        <section>
+            <span class="text-primary font-bold uppercase text-xs tracking-widest mb-4 block">01 / El Desafío</span>
+            <h2 class="text-4xl font-black mb-8 leading-tight">Infraestructura Industrial de Carga Pesada en Suelos Inestables.</h2>
+            <p class="text-xl text-secondary/70 leading-relaxed">
+                La nave industrial requería una platea de hormigón con capacidad de carga para maquinaria pesada continua. El suelo presentaba expansividad, lo que exigió una auditoría constante sobre el proceso de compactación y la dosificación de aditivos para evitar fisuras por retracción térmica.
+            </p>
+        </section>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="rounded-xl overflow-hidden relative group">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Estructura"/>
+            </div>
+            <div class="rounded-xl overflow-hidden relative group md:mt-12">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Planta"/>
+            </div>
+        </div>
+    </div>
+    <div class="lg:col-span-4">
+        <div class="sticky top-32 space-y-12">
+            <div>
+                <h4 class="font-black uppercase mb-8 border-b-2 border-primary inline-block">Audit Timeline</h4>
+                <div class="mt-8">
+                    <div class="timeline-item">
+                        <div class="mono text-[10px] text-primary mb-1">MAY 2022</div>
+                        <div class="font-bold">Apertura de Expediente</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="mono text-[10px] text-primary mb-1">SEP 2022</div>
+                        <div class="font-bold">Compactación Certificada</div>
+                    </div>
+                    <div class="timeline-item border-l-transparent">
+                        <div class="mono text-[10px] text-primary mb-1">ENE 2023</div>
+                        <div class="font-bold">Entrega Final</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-secondary text-white pt-24 pb-12 px-6 mt-24">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
+        <div>
+            <div class="text-3xl font-black mb-8"><span class="text-primary">ESTUDIO</span>NORTE</div>
+            <p class="opacity-50 text-sm leading-relaxed">Gabinete de Auditoría Técnica.</p>
+        </div>
+        <div class="md:col-span-3 flex flex-col md:items-end">
+            <h4 class="text-xl mb-8">Siguiente Expediente</h4>
+            <a href="proyecto-186.html" class="group flex items-center gap-6 text-right">
+                <div>
+                    <div class="text-xs mono text-primary mb-1">NEXT_FILE: №186-C</div>
+                    <div class="text-3xl font-black group-hover:text-primary transition-colors">Locales del Parque</div>
+                </div>
+                <span class="material-symbols-outlined text-5xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('mousemove', e => {
+        document.querySelectorAll('.spotlight-card').forEach(card => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+            card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+        });
+    });
+</script>
+
+</body>
+</html>
