@@ -1,44 +1,58 @@
-# Estudio Norte - Caso conceptual para constructora tecnica
+# Estudio Norte
 
-Proyecto conceptual desarrollado para mostrar como **Trama Studio** redisenaria la presencia digital de una constructora o estudio tecnico que necesita generar consultas mejor calificadas.
+Sitio conceptual desarrollado para presentar como una constructora puede comunicar mejor su forma de trabajo, sus servicios y sus casos de obra.
 
-La propuesta evita el enfoque generico de "empresa lider en construccion" y se centra en lo que el cliente final realmente necesita antes de invertir: entender alcance, costos, etapas, responsables y riesgos.
+El proyecto esta pensado como parte del portfolio de Trama Studio. La idea fue tomar el rubro construccion y llevarlo a una web mas clara, comercial y cercana al cliente real: alguien que esta por invertir, comparar propuestas o destrabar una obra que ya empezo.
 
-## Objetivo del rediseno
+## Enfoque del proyecto
 
-Transformar una web institucional de construccion en una herramienta comercial:
+Estudio Norte no se presenta como una constructora generica. La propuesta se apoya en tres ideas:
 
-- explicar servicios complejos con lenguaje claro;
-- reducir incertidumbre sobre presupuesto, tiempos y ejecucion;
-- ordenar el proceso de contacto segun la etapa real del proyecto;
-- presentar obras por desafio y tipo de intervencion;
-- demostrar solvencia tecnica sin promesas absolutas.
+- explicar servicios tecnicos con lenguaje simple;
+- mostrar una imagen profesional, seria y actual;
+- ordenar la consulta para entender en que etapa esta cada proyecto.
+
+El sitio busca transmitir confianza sin caer en promesas exageradas. En una obra real importan el alcance, la documentacion, los responsables, los tiempos y la comunicacion durante el proceso.
+
+## Direccion visual
+
+La identidad visual trabaja con una paleta verde institucional, fondo claro y secciones amplias. La intencion es que la marca se perciba solida, confiable y orientada a obras de impacto publico, comercial o privado.
+
+La home combina:
+
+- navegacion simple y directa;
+- hero con mensaje fuerte e imagen protagonista;
+- etiquetas de servicios sobre la imagen;
+- bloque de presentacion institucional;
+- servicios principales;
+- llamado a contacto;
+- argumentos de confianza;
+- cierre con datos de contacto.
 
 ## Publico pensado
 
-- Propietarios que quieren construir o ampliar.
-- Comercios que necesitan reformar sin perder operacion.
-- Pymes que requieren obra industrial o logistica.
-- Comitentes que ya tienen planos o presupuestos y necesitan evaluacion.
+El sitio esta pensado para personas o equipos que necesitan construir, reformar, ampliar o revisar una obra:
 
-## Decisiones estrategicas
+- propietarios particulares;
+- comercios;
+- pymes;
+- estudios tecnicos;
+- instituciones;
+- clientes que ya tienen planos, presupuestos o una obra en marcha.
 
-| Decision | Motivo |
-|---|---|
-| Sin precios por m2 | En obra real, el precio depende de alcance, ubicacion, materiales y etapa documental. |
-| Sin "desvio 0.00%" | Las promesas absolutas reducen credibilidad y pueden ser riesgosas. |
-| Servicios por necesidad | El usuario entiende mejor "direccion de obra", "auditoria de avance" o "coordinacion de proveedores" que paquetes genericos. |
-| Formulario por etapa | Filtra consultas y ayuda a saber si la persona esta en idea, planos, presupuesto u obra iniciada. |
-| Portfolio por problema | Cada caso explica desafio, intervencion y resultado esperado. |
+## Estructura del sitio
 
-## Estructura
-
-- `index.html`: home orientada a confianza, servicios, proceso y captacion.
+- `index.html`: pagina principal con propuesta, servicios, confianza y contacto.
+- `estudio.html`: enfoque del proyecto y criterio comercial.
 - `portfolio.html`: obras conceptuales organizadas por tipo de intervencion.
-- `contacto.html`: formulario de evaluacion pensado para consultas reales.
-- `proyecto-184.html`, `proyecto-185.html`, `proyecto-186.html`: casos de obra con narrativa tecnica.
-- `assets/`: imagenes referenciales para el caso conceptual.
+- `contacto.html`: formulario para solicitar una primera evaluacion.
+- `proyecto-184.html`, `proyecto-185.html`, `proyecto-186.html`: fichas de obra.
+- `style.css`: sistema visual del sitio.
+- `script.js`: interacciones y validacion del formulario.
+- `assets/`: imagenes utilizadas en el caso.
 
-## Nota de uso
+## Objetivo
 
-Este no es el sitio de una empresa real. Es un caso conceptual para demostrar criterio de UX, contenido y estrategia comercial aplicado al rubro construccion.
+El objetivo fue demostrar que una web para una constructora no tiene que ser solamente una tarjeta de presentacion. Puede funcionar como una herramienta comercial: explicar, ordenar, filtrar consultas y ayudar a que el cliente llegue mejor preparado a la primera conversacion.
+
+Este proyecto es conceptual y fue creado para mostrar criterio de diseno, contenido y estrategia aplicado al rubro construccion.

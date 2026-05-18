@@ -10,129 +10,130 @@
   <title>Estudio Norte | Construccion y direccion de obra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="site-header">
   <nav class="nav" aria-label="Navegacion principal">
-    <a class="brand" href="index.html">Estudio Norte</a>
-    <div class="nav-links">
-      <a href="estudio.html">Enfoque</a>
+    <a class="brand" href="index.html" aria-label="Estudio Norte inicio">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Estudio Norte<small>constructora</small></span>
+    </a>
+    <div class="nav-pill">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="estudio.html">Sobre nos</a>
       <a href="index.html#servicios">Servicios</a>
-      <a href="portfolio.html">Obras</a>
-      <a href="contacto.html">Contacto</a>
     </div>
-    <a class="btn btn-small" href="contacto.html">Solicitar evaluacion</a>
+    <a class="btn nav-contact" href="contacto.html">Contactos</a>
   </nav>
 </header>
 <main id="contenido">
   <section class="container hero">
-    <div class="hero-shell" data-reveal>
-      <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="hero-stage">
-        <div class="hero-copy">
-          <span class="eyebrow">Construccion y direccion de obra</span>
-          <h1>Tu obra necesita una base clara.</h1>
-          <p class="lead">Direccion, planificacion y seguimiento para proyectos residenciales, comerciales e industriales. Menos promesas, mas control sobre alcance, costos y decisiones.</p>
-          <div class="actions">
-            <a class="btn" href="contacto.html">Solicitar evaluacion</a>
-            <a class="btn btn-secondary" href="portfolio.html">Ver obras</a>
-          </div>
-        </div>
-        <div class="hero-photo">
-          <img src="assets/hero_main.png" alt="Estructura de hormigon en construccion con cielo despejado" />
-        </div>
+    <div data-reveal>
+      <h1>Excelencia en <span>construccion</span><br />civil y soluciones<br />para tu obra.</h1>
+      <p class="lead">Construimos con calidad, responsabilidad y seguimiento para transformar proyectos reales en obras claras, coordinadas y bien comunicadas.</p>
+      <a class="btn" href="#servicios">Conoce nuestros servicios</a>
+    </div>
+    <figure class="hero-media" data-reveal>
+      <img src="assets/hero_main.png" alt="Obra civil en estructura con equipo tecnico" />
+      <span class="chip chip-1">Construccion civil</span>
+      <span class="chip chip-2">Direccion de obra</span>
+      <span class="chip chip-3">Seguimiento tecnico</span>
+    </figure>
+  </section>
+
+  <section class="container section">
+    <div class="about-card" data-reveal>
+      <div class="about-media">
+        <img src="assets/exp_184.png" alt="Equipo tecnico coordinando decisiones de obra" />
+        <div class="stat-card"><strong>+10</strong><span>Proyectos<br />conceptuales</span></div>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">Sobre nos</span>
+        <h2>Compromisso en cada obra, calidad en cada resultado</h2>
+        <p>Estudio Norte ordena proyectos de construccion, direccion y seguimiento con procesos claros para clientes residenciales, comerciales e industriales.</p>
+        <p>Nuestro proposito es que cada obra tenga alcance definido, responsables visibles y una comunicacion simple desde la primera consulta hasta el cierre.</p>
       </div>
     </div>
   </section>
 
-  <section class="facts">
-    <div class="container facts-grid">
-      <div class="fact"><span>Zona</span><strong>Santa Fe y region centro</strong></div>
-      <div class="fact"><span>Clientes</span><strong>Particulares, comercios y pymes</strong></div>
-      <div class="fact"><span>Antes de obra</span><strong>Alcance, costos y prioridades</strong></div>
-      <div class="fact"><span>Durante obra</span><strong>Reportes y control de avance</strong></div>
+  <section class="container section" id="servicios">
+    <div class="services-head">
+      <span class="eyebrow">Nuestros servicios</span>
+      <h2 class="section-title">Donde garantizamos calidad y eficiencia</h2>
+    </div>
+    <div class="service-tabs" data-reveal>
+      <div class="service-line"><span class="icon">1</span> Construccion civil</div>
+      <article class="service-feature">
+        <img src="assets/exp_185.png" alt="Edificio en construccion con grua" />
+        <p>Obras orientadas a clientes que necesitan transparencia, responsabilidad tecnica y cumplimiento riguroso de etapas. Organizamos documentacion, compras criticas, rubros y reportes para que cada decision tenga contexto.</p>
+      </article>
+      <div class="service-line"><span class="icon">2</span> Direccion de obra</div>
+      <div class="service-line"><span class="icon">3</span> Auditoria y seguimiento</div>
     </div>
   </section>
 
   <section class="container section">
-    <div class="section-head">
-      <div data-reveal><span class="eyebrow">Lo que necesita el cliente</span><h2 class="section-title">Confianza antes de invertir.</h2></div>
-      <p class="section-copy" data-reveal>Una constructora real no necesita prometer perfeccion. Necesita explicar como reduce incertidumbre: que revisa, que documenta, que coordina y como comunica los avances.</p>
-    </div>
-    <div class="needs-grid" data-reveal>
-      <article class="need"><span class="meta">Presupuesto</span><div><h3>Entender que se esta cotizando</h3><p>Separar alcance, materiales, mano de obra y decisiones pendientes para comparar propuestas con criterio.</p></div></article>
-      <article class="need"><span class="meta">Gestion</span><div><h3>Ordenar tiempos y responsables</h3><p>Definir hitos, compras criticas y personas responsables antes de que la obra avance por inercia.</p></div></article>
-      <article class="need"><span class="meta">Seguimiento</span><div><h3>Ver avances sin depender de mensajes sueltos</h3><p>Reportes claros, registro de decisiones y alertas tempranas cuando aparecen desvios de costo, plazo o alcance.</p></div></article>
-    </div>
-  </section>
-
-  <section class="section service-section" id="servicios">
-    <div class="container">
-      <div class="section-head">
-        <div data-reveal><span class="eyebrow">Servicios</span><h2 class="section-title">Servicios escritos por etapa de obra.</h2></div>
-        <p class="section-copy" data-reveal>En vez de vender paquetes cerrados, la web ayuda a que el cliente identifique donde esta parado y que necesita resolver ahora.</p>
+    <div class="cta-card" data-reveal>
+      <div class="cta-copy">
+        <h2>Aliados confiables en proyectos que transforman espacios.</h2>
+        <a class="btn btn-bright" href="contacto.html">Entre en contacto</a>
       </div>
-      <div class="service-list" data-reveal>
-        <article class="service-row"><span class="meta">Antes de cotizar</span><h3>Proyecto y documentacion</h3><p>Revision de planos, computos, alcance y prioridades para pedir presupuestos comparables.</p></article>
-        <article class="service-row"><span class="meta">Durante la obra</span><h3>Direccion y seguimiento</h3><p>Coordinacion de rubros, hitos de avance, compras criticas y comunicacion con el comitente.</p></article>
-        <article class="service-row"><span class="meta">Obra iniciada</span><h3>Auditoria de avance</h3><p>Diagnostico tecnico cuando una obra ya empezo y necesita ordenar riesgos, pendientes o documentacion.</p></article>
-        <article class="service-row"><span class="meta">Entrega</span><h3>Cierre y post-obra</h3><p>Control de pendientes, informacion de mantenimiento y cierre documentado de decisiones importantes.</p></article>
+      <img src="assets/exp_186.png" alt="Planos y obra comercial como referencia de proyecto" />
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="feature-cloud" data-reveal>
+      <div class="feature-list">
+        <div class="feature-item">Experiencia comprobada en obras publicas y privadas <span class="icon">✓</span></div>
+        <div class="feature-item">Equipo tecnico especializado y altamente calificado <span class="icon">✓</span></div>
+        <div class="feature-item">Soluciones versatiles que atienden diferentes demandas <span class="icon">✓</span></div>
+      </div>
+      <div class="feature-photo">
+        <img src="assets/hero_main.png" alt="Representacion visual de equipo tecnico de Estudio Norte" />
+      </div>
+      <div class="feature-list right">
+        <div class="feature-item"><span class="icon">✓</span> Respeto por plazos y normas tecnicas</div>
+        <div class="feature-item"><span class="icon">✓</span> Compromiso con desarrollo urbano responsable</div>
+        <div class="feature-item"><span class="icon">✓</span> Innovacion constante para garantizar eficiencia</div>
       </div>
     </div>
   </section>
 
   <section class="container section">
-    <div class="section-head">
-      <div data-reveal><span class="eyebrow">Metodo</span><h2 class="section-title">Un proceso que se puede explicar.</h2></div>
-      <p class="section-copy" data-reveal>La confianza aparece cuando el cliente entiende que va a pasar despues de dejar sus datos.</p>
-    </div>
-    <div class="process" data-reveal>
-      <article class="process-step"><b>01</b><div><h3>Consulta</h3><p>Etapa actual, urgencia y objetivo de inversion.</p></div></article>
-      <article class="process-step"><b>02</b><div><h3>Relevamiento</h3><p>Documentacion, sitio, superficie y restricciones.</p></div></article>
-      <article class="process-step"><b>03</b><div><h3>Alcance</h3><p>Que incluye, que falta y que decisiones siguen abiertas.</p></div></article>
-      <article class="process-step"><b>04</b><div><h3>Plan</h3><p>Etapas, compras, responsables y calendario.</p></div></article>
-      <article class="process-step"><b>05</b><div><h3>Control</h3><p>Seguimiento, reportes, ajustes y cierre.</p></div></article>
-    </div>
-  </section>
-
-  <section class="container section">
-    <div class="section-head">
-      <div data-reveal><span class="eyebrow">Obras</span><h2 class="section-title">Casos para reconocerse.</h2></div>
-      <div data-reveal><p class="section-copy">Cada ficha muestra tipo de intervencion, problema y resolucion. No son promesas vacias: son situaciones parecidas a las que trae un cliente real.</p><div class="actions"><a class="btn btn-secondary" href="portfolio.html">Ver portfolio</a></div></div>
-    </div>
-    <div class="project-grid" data-reveal>
-      <a class="project-card" href="proyecto-184.html"><img src="assets/exp_184.png" alt="Vivienda residencial en etapa de obra" /><div class="project-body"><span class="meta">Residencial / 235 m2</span><h2>Casa del Lago</h2><p>Direccion de obra y seguimiento de decisiones tecnicas en vivienda unifamiliar.</p></div></a>
-      <a class="project-card" href="proyecto-185.html"><img src="assets/exp_185.png" alt="Nave industrial en ejecucion" /><div class="project-body"><span class="meta">Industrial / 440 m2</span><h2>Nave Sauce Viejo</h2><p>Planificacion de etapas, compras criticas y coordinacion de ejecucion industrial.</p></div></a>
-      <a class="project-card" href="proyecto-186.html"><img src="assets/exp_186.png" alt="Local comercial reformado" /><div class="project-body"><span class="meta">Comercial / 120 m2</span><h2>Locales del Parque</h2><p>Reforma comercial con control de tiempos, interferencias y puesta en marcha.</p></div></a>
-    </div>
-  </section>
-
-  <section class="case-band">
-    <div class="container case-inner">
-      <div data-reveal><span class="eyebrow">Caso conceptual</span><h2 class="section-title">Hecho para demostrar criterio de mercado.</h2></div>
-      <p class="lead" data-reveal>Este sitio muestra como una constructora puede usar su web como herramienta comercial: ordenar consultas, responder objeciones y explicar un proceso antes de la primera reunion.</p>
+    <div class="contact-card" data-reveal>
+      <div>
+        <span class="eyebrow">Entre en contacto</span>
+        <h2>Obras con eficiencia, transparencia y control</h2>
+        <p>Solicita una evaluacion gratuita de tu proyecto y recibe una primera orientacion sobre alcance, documentacion, etapas y proximos pasos.</p>
+      </div>
+      <div class="contact-list">
+        <div><span>☎</span><p><strong>Numero de telefono</strong><br />(0342) 000-0000</p></div>
+        <div><span>✉</span><p><strong>Email</strong><br />hola@estudionorte.com</p></div>
+        <div><span>⌖</span><p><strong>Direccion</strong><br />Santa Fe, region centro</p></div>
+      </div>
     </div>
   </section>
 </main>
 <footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <a class="brand brand-footer" href="index.html">Estudio Norte</a>
-      <p>Construccion, direccion de obra y seguimiento tecnico para proyectos con decisiones claras.</p>
-    </div>
-    <div>
-      <span class="eyebrow">Zona de trabajo</span>
-      <p>Santa Fe y region centro</p>
-    </div>
-    <div>
-      <span class="eyebrow">Caso conceptual</span>
-      <p>Proyecto de Trama Studio para demostrar criterio de negocio en una web de construccion.</p>
-    </div>
-    <div class="footer-cta">
-      <a class="btn btn-light" href="contacto.html">Consultar proyecto</a>
+  <div class="container footer-inner">
+    <a class="brand footer-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Estudio Norte<small>constructora</small></span>
+    </a>
+    <nav class="footer-links" aria-label="Navegacion de pie">
+      <a href="index.html">Home</a>
+      <a href="estudio.html">Sobre nos</a>
+      <a href="portfolio.html">Servicios</a>
+    </nav>
+    <div class="social-row" aria-hidden="true"><span>f</span><span>x</span><span>in</span><span>ig</span></div>
+    <div class="footer-bottom">
+      <span>Terminos de uso</span>
+      <span>Politica de privacidad</span>
+      <span>2026 Todos los derechos reservados</span>
     </div>
   </div>
 </footer>
