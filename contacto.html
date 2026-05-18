@@ -10,18 +10,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { ink:"#151515", paper:"#f6f2ea", clay:"#b44a2f", muted:"#6e665d" }, fontFamily: { sans:["IBM Plex Sans","sans-serif"], display:["Archivo Black","sans-serif"], mono:["IBM Plex Mono","monospace"] } } } }
+    tailwind.config = { theme: { extend: { colors: { ink:"oklch(18% .012 60)", paper:"oklch(95% .018 76)", clay:"oklch(52% .11 44)", muted:"oklch(47% .025 65)" }, fontFamily: { sans:["IBM Plex Sans","sans-serif"], display:["Archivo Black","sans-serif"], mono:["IBM Plex Mono","monospace"] } } } }
   </script>
   <style>
-    body { background:#f6f2ea; color:#151515; }
+    body { background:oklch(95% .018 76); color:oklch(18% .012 60); }
     .title { font-family:"Archivo Black", sans-serif; text-transform:uppercase; line-height:.95; letter-spacing:-.02em; }
-    .tag { font-family:"IBM Plex Mono", monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:#b44a2f; }
+    .tag { font-family:"IBM Plex Mono", monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:oklch(52% .11 44); }
     .field { width:100%; background:transparent; border:0; border-bottom:1px solid rgba(21,21,21,.22); padding:.9rem 0; outline:0; }
-    .field:focus { border-bottom-color:#b44a2f; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; border-radius:4px; padding:.9rem 1.15rem; font-weight:700; text-transform:uppercase; font-size:.78rem; background:#151515; color:white; }
+    .field:focus { border-bottom-color:oklch(52% .11 44); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; border-radius:4px; padding:.9rem 1.15rem; font-weight:700; text-transform:uppercase; font-size:.78rem; background:oklch(18% .012 60); color:white; }
+      .site-polish { background-image: linear-gradient(90deg, rgba(46, 34, 24, .035) 1px, transparent 1px), linear-gradient(rgba(46, 34, 24, .028) 1px, transparent 1px); background-size: 48px 48px; }
+    :focus-visible { outline: 3px solid oklch(70% .11 54); outline-offset: 4px; }
+    .btn { transition: transform .18s cubic-bezier(.16,1,.3,1), background-color .18s ease, border-color .18s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .scope-row { border-top: 1px solid rgba(21,21,21,.14); }
+    .scope-row:last-child { border-bottom: 1px solid rgba(21,21,21,.14); }
+    .proof-note { font-size: .82rem; line-height: 1.55; color: oklch(47% .025 65); }
   </style>
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased site-polish">
 <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-black/10">
   <nav class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-6">
     <a href="index.html" class="font-display text-xl uppercase tracking-tight">Estudio Norte</a>
@@ -39,7 +46,7 @@
     <h1 class="title text-5xl md:text-7xl max-w-4xl">Contanos en qué etapa está tu proyecto</h1>
     <p class="text-lg text-muted mt-7 max-w-2xl leading-relaxed">El objetivo del primer contacto es entender alcance, ubicación, etapa actual y urgencias. Con esa información se define si corresponde una reunión, un relevamiento o una revisión documental.</p>
 
-    <form id="technical-form" class="mt-12 bg-white/60 border border-black/10 p-6 md:p-10" novalidate>
+    <form id="technical-form" class="mt-12 bg-white/60 border border-black/10 p-6 md:p-10" novalidate aria-describedby="form-status">
       <div class="grid md:grid-cols-2 gap-8">
         <label><span class="tag">Nombre</span><input id="name" name="nombre" required autocomplete="name" class="field" placeholder="Nombre y apellido" /></label>
         <label><span class="tag">WhatsApp</span><input id="whatsapp" name="whatsapp" required autocomplete="tel" class="field" placeholder="+54..." /></label>
@@ -58,6 +65,7 @@
         </div>
       </div>
       <label class="block mt-8"><span class="tag">Mensaje</span><textarea id="message" name="mensaje" rows="5" class="field resize-none" placeholder="Contanos qué necesitás resolver, plazos aproximados y cualquier dato útil."></textarea></label>
+      <p id="form-status" class="proof-note mt-6" aria-live="polite">Completá los campos clave para simular una consulta calificada.</p>
       <div class="mt-8 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
         <button class="btn" type="submit">Solicitar evaluación</button>
         <p class="text-sm text-muted max-w-sm">Caso conceptual: en una implementación real este formulario se conectaría a WhatsApp, email o CRM del cliente.</p>

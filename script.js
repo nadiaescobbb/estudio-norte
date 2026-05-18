@@ -15,20 +15,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (empty) {
           isValid = false;
+          field.setAttribute("aria-invalid", "true");
           field.closest("label")?.classList.add("ring-1", "ring-red-700");
         } else {
+          field.removeAttribute("aria-invalid");
           field.closest("label")?.classList.remove("ring-1", "ring-red-700");
         }
       });
 
       const button = form.querySelector("button[type='submit']");
+      const status = form.querySelector("#form-status");
       const original = button.textContent;
       button.textContent = isValid ? "Consulta registrada" : "Revisá los datos";
-      button.style.backgroundColor = isValid ? "#2f4f3f" : "#8f2b22";
+      if (status) status.textContent = isValid ? "Consulta simulada correctamente. En producción se enviaría al canal comercial definido." : "Faltan datos clave: nombre, WhatsApp y etapa actual.";
+      button.style.backgroundColor = isValid ? "oklch(38% .055 155)" : "oklch(42% .11 34)";
 
       window.setTimeout(() => {
         button.textContent = original;
         button.style.backgroundColor = "";
+        if (status) status.textContent = "Completá los campos clave para simular una consulta calificada.";
         if (isValid) form.reset();
       }, 2600);
     });
