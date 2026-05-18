@@ -3,95 +3,94 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contá en qué etapa está tu proyecto y solicitá una primera evaluación técnica con Estudio Norte." />
+  <meta name="description" content="Conta en que etapa esta tu proyecto y solicita una primera evaluacion tecnica con Estudio Norte." />
+  <meta property="og:title" content="Contacto | Estudio Norte" />
+  <meta property="og:description" content="Conta en que etapa esta tu proyecto y solicita una primera evaluacion tecnica con Estudio Norte." />
+  <meta property="og:image" content="assets/hero_main.png" />
   <title>Contacto | Estudio Norte</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: { colors: { ink:"oklch(18% .012 60)", paper:"oklch(95% .018 76)", clay:"oklch(52% .11 44)", muted:"oklch(47% .025 65)" }, fontFamily: { sans:["IBM Plex Sans","sans-serif"], display:["Archivo Black","sans-serif"], mono:["IBM Plex Mono","monospace"] } } } }
-  </script>
-  <style>
-    body { background:oklch(95% .018 76); color:oklch(18% .012 60); }
-    .title { font-family:"Archivo Black", sans-serif; text-transform:uppercase; line-height:.95; letter-spacing:-.02em; }
-    .tag { font-family:"IBM Plex Mono", monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:oklch(52% .11 44); }
-    .field { width:100%; background:transparent; border:0; border-bottom:1px solid rgba(21,21,21,.22); padding:.9rem 0; outline:0; }
-    .field:focus { border-bottom-color:oklch(52% .11 44); }
-    .btn { display:inline-flex; align-items:center; justify-content:center; border-radius:4px; padding:.9rem 1.15rem; font-weight:700; text-transform:uppercase; font-size:.78rem; background:oklch(18% .012 60); color:white; }
-      .site-polish { background-image: linear-gradient(90deg, rgba(46, 34, 24, .035) 1px, transparent 1px), linear-gradient(rgba(46, 34, 24, .028) 1px, transparent 1px); background-size: 48px 48px; }
-    :focus-visible { outline: 3px solid oklch(70% .11 54); outline-offset: 4px; }
-    .btn { transition: transform .18s cubic-bezier(.16,1,.3,1), background-color .18s ease, border-color .18s ease; }
-    .btn:hover { transform: translateY(-1px); }
-    .scope-row { border-top: 1px solid rgba(21,21,21,.14); }
-    .scope-row:last-child { border-bottom: 1px solid rgba(21,21,21,.14); }
-    .proof-note { font-size: .82rem; line-height: 1.55; color: oklch(47% .025 65); }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=Archivo+Black&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="font-sans antialiased site-polish">
-<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-black/10">
-  <nav class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-6">
-    <a href="index.html" class="font-display text-xl uppercase tracking-tight">Estudio Norte</a>
-    <div class="hidden md:flex items-center gap-7 text-sm font-semibold">
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Navegacion principal">
+    <a href="index.html" class="brand">Estudio Norte<small>obra / direccion / control</small></a>
+    <div class="nav-links">
+      <a href="estudio.html">Enfoque</a>
       <a href="index.html#servicios">Servicios</a>
       <a href="portfolio.html">Obras</a>
-      <a href="contacto.html" class="text-clay">Contacto</a>
+      <a href="contacto.html" aria-current="page">Contacto</a>
     </div>
+    <a class="button nav-cta" href="contacto.html"><span>Evaluar proyecto</span><span aria-hidden="true">→</span></a>
   </nav>
 </header>
-
-<main class="max-w-7xl mx-auto px-5 py-16 md:py-24 grid lg:grid-cols-[1fr_.7fr] gap-14">
-  <section>
-    <p class="tag mb-5">Primera evaluación</p>
-    <h1 class="title text-5xl md:text-7xl max-w-4xl">Contanos en qué etapa está tu proyecto</h1>
-    <p class="text-lg text-muted mt-7 max-w-2xl leading-relaxed">El objetivo del primer contacto es entender alcance, ubicación, etapa actual y urgencias. Con esa información se define si corresponde una reunión, un relevamiento o una revisión documental.</p>
-
-    <form id="technical-form" class="mt-12 bg-white/60 border border-black/10 p-6 md:p-10" novalidate aria-describedby="form-status">
-      <div class="grid md:grid-cols-2 gap-8">
-        <label><span class="tag">Nombre</span><input id="name" name="nombre" required autocomplete="name" class="field" placeholder="Nombre y apellido" /></label>
-        <label><span class="tag">WhatsApp</span><input id="whatsapp" name="whatsapp" required autocomplete="tel" class="field" placeholder="+54..." /></label>
-        <label><span class="tag">Email</span><input id="email" name="email" type="email" autocomplete="email" class="field" placeholder="nombre@empresa.com" /></label>
-        <label><span class="tag">Tipo de obra</span><select name="tipo" class="field"><option>Residencial</option><option>Comercial</option><option>Industrial</option><option>Reforma / ampliación</option><option>No estoy seguro</option></select></label>
-        <label><span class="tag">Ubicación</span><input name="ubicacion" class="field" placeholder="Ciudad o zona" /></label>
-        <label><span class="tag">Superficie estimada</span><input name="superficie" class="field" placeholder="Ej. 180 m2" /></label>
+<main id="contenido">
+  <section class="shell page-hero narrow">
+    <div data-reveal>
+      <p class="kicker">primera evaluacion</p>
+      <h1 class="headline">No pedimos datos de mas. Pedimos los datos correctos.</h1>
+      <p class="subhead">El objetivo del primer contacto es entender etapa, escala, urgencia y documentacion disponible. Con eso se define si corresponde reunion, relevamiento o revision documental.</p>
+    </div>
+    <aside class="side-manual" data-reveal>
+      <p class="kicker">preparar antes de consultar</p>
+      <ul>
+        <li>Ubicacion y superficie aproximada.</li>
+        <li>Etapa actual: idea, planos, presupuesto u obra iniciada.</li>
+        <li>Fotos, planos, presupuesto o material previo.</li>
+        <li>Decision que hoy bloquea el avance.</li>
+      </ul>
+    </aside>
+  </section>
+  <section class="shell section contact-layout">
+    <form id="technical-form" class="form-card" novalidate aria-describedby="form-status" data-reveal>
+      <div class="form-grid">
+        <label><span class="data-label">Nombre</span><input id="name" name="nombre" required autocomplete="name" class="field" placeholder="Nombre y apellido" /></label>
+        <label><span class="data-label">WhatsApp</span><input id="whatsapp" name="whatsapp" required autocomplete="tel" class="field" placeholder="+54..." /></label>
+        <label><span class="data-label">Email</span><input id="email" name="email" type="email" autocomplete="email" class="field" placeholder="nombre@empresa.com" /></label>
+        <label><span class="data-label">Tipo de obra</span><select name="tipo" class="field"><option>Residencial</option><option>Comercial</option><option>Industrial</option><option>Reforma o ampliacion</option><option>No estoy seguro</option></select></label>
+        <label><span class="data-label">Ubicacion</span><input name="ubicacion" class="field" placeholder="Ciudad o zona" /></label>
+        <label><span class="data-label">Superficie estimada</span><input name="superficie" class="field" placeholder="Ej. 180 m2" /></label>
       </div>
-      <div class="mt-8">
-        <span class="tag block mb-3">Etapa actual</span>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 radio-pills">
-          <label class="border border-black/10 p-3 cursor-pointer"><input type="radio" name="stage" value="idea" class="mr-2" required /> Idea inicial</label>
-          <label class="border border-black/10 p-3 cursor-pointer"><input type="radio" name="stage" value="planos" class="mr-2" /> Tengo planos</label>
-          <label class="border border-black/10 p-3 cursor-pointer"><input type="radio" name="stage" value="presupuesto" class="mr-2" /> Busco presupuesto</label>
-          <label class="border border-black/10 p-3 cursor-pointer"><input type="radio" name="stage" value="obra" class="mr-2" /> Obra iniciada</label>
+      <div style="margin-top: 1.5rem;">
+        <span class="data-label">Etapa actual</span>
+        <div class="radio-pills">
+          <label><input type="radio" name="stage" value="idea" required /> Idea inicial</label>
+          <label><input type="radio" name="stage" value="planos" /> Tengo planos</label>
+          <label><input type="radio" name="stage" value="presupuesto" /> Busco presupuesto</label>
+          <label><input type="radio" name="stage" value="obra" /> Obra iniciada</label>
         </div>
       </div>
-      <label class="block mt-8"><span class="tag">Mensaje</span><textarea id="message" name="mensaje" rows="5" class="field resize-none" placeholder="Contanos qué necesitás resolver, plazos aproximados y cualquier dato útil."></textarea></label>
-      <p id="form-status" class="proof-note mt-6" aria-live="polite">Completá los campos clave para simular una consulta calificada.</p>
-      <div class="mt-8 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
-        <button class="btn" type="submit">Solicitar evaluación</button>
-        <p class="text-sm text-muted max-w-sm">Caso conceptual: en una implementación real este formulario se conectaría a WhatsApp, email o CRM del cliente.</p>
+      <label style="margin-top: 1.5rem;"><span class="data-label">Mensaje</span><textarea id="message" name="mensaje" rows="5" class="field" placeholder="Que necesitas resolver, plazo aproximado y datos utiles."></textarea></label>
+      <p id="form-status" class="proof-note" aria-live="polite">Completa los campos clave para simular una consulta calificada.</p>
+      <div class="action-row">
+        <button class="button" type="submit"><span>Solicitar evaluacion</span><span aria-hidden="true">→</span></button>
       </div>
     </form>
+    <aside class="side-manual" data-reveal>
+      <p class="kicker">canales</p>
+      <p>Santa Fe y region centro<br />hola@estudionorte.com</p>
+      <p>Datos referenciales para caso conceptual. En produccion se conectaria con WhatsApp, email o CRM.</p>
+    </aside>
   </section>
-
-  <aside class="lg:pt-24">
-    <div class="border-t-2 border-clay pt-6">
-      <p class="tag mb-3">Qué conviene preparar</p>
-      <ul class="space-y-4 text-muted">
-        <li><strong class="text-ink">Ubicación y superficie:</strong> permite entender escala y condicionantes.</li>
-        <li><strong class="text-ink">Etapa actual:</strong> idea, planos, presupuesto u obra en marcha.</li>
-        <li><strong class="text-ink">Objetivo:</strong> construir, ampliar, reformar, auditar o reordenar una obra.</li>
-        <li><strong class="text-ink">Material disponible:</strong> fotos, planos, presupuestos o documentación previa.</li>
-      </ul>
-    </div>
-    <div class="mt-10 bg-ink text-white p-7">
-      <p class="tag mb-3">Canales</p>
-      <p class="text-white/70">Santa Fe · Región centro</p>
-      <p class="text-white/70">hola@estudionorte.com</p>
-      <p class="text-white/45 text-sm mt-5">Los datos visibles son referenciales para el caso conceptual.</p>
-    </div>
-  </aside>
 </main>
-
+<footer class="footer">
+  <div class="shell footer-inner">
+    <div>
+      <p class="brand">Estudio Norte<small>caso conceptual por Trama Studio</small></p>
+      <p>Web conceptual para demostrar como una constructora puede vender confianza operativa antes de la primera reunion.</p>
+    </div>
+    <div>
+      <p class="kicker">Contacto referencial</p>
+      <p>Santa Fe y region centro<br />hola@estudionorte.com</p>
+    </div>
+    <div>
+      <a class="button light" href="contacto.html"><span>Iniciar consulta</span><span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>

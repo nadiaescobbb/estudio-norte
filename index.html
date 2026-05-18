@@ -3,220 +3,183 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Estudio Norte: construcción, dirección de obra y seguimiento técnico para proyectos residenciales, comerciales e industriales." />
-  <title>Estudio Norte | Construcción y Dirección de Obra</title>
+  <meta name="description" content="Estudio Norte: construccion, direccion de obra y seguimiento tecnico para proyectos residenciales, comerciales e industriales." />
+  <meta property="og:title" content="Estudio Norte | Construccion y direccion de obra" />
+  <meta property="og:description" content="Estudio Norte: construccion, direccion de obra y seguimiento tecnico para proyectos residenciales, comerciales e industriales." />
+  <meta property="og:image" content="assets/hero_main.png" />
+  <title>Estudio Norte | Construccion y direccion de obra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: "oklch(18% .012 60)",
-            paper: "oklch(95% .018 76)",
-            clay: "oklch(52% .11 44)",
-            line: "rgba(21,21,21,.12)",
-            muted: "oklch(47% .025 65)"
-          },
-          fontFamily: {
-            sans: ["IBM Plex Sans", "sans-serif"],
-            display: ["Archivo Black", "sans-serif"],
-            mono: ["IBM Plex Mono", "monospace"]
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    body { background: oklch(95% .018 76); color: oklch(18% .012 60); }
-    .hairline { border-color: rgba(21,21,21,.12); }
-    .btn { display:inline-flex; align-items:center; gap:.6rem; border-radius:4px; padding:.9rem 1.15rem; font-weight:700; text-transform:uppercase; font-size:.78rem; letter-spacing:.02em; }
-    .btn-primary { background:oklch(18% .012 60); color:oklch(98% .004 75); }
-    .btn-secondary { border:1px solid rgba(21,21,21,.18); color:oklch(18% .012 60); }
-    .tag { font-family:"IBM Plex Mono", monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:oklch(52% .11 44); }
-    .section-title { font-family:"Archivo Black", sans-serif; text-transform:uppercase; line-height:.95; letter-spacing:-.02em; }
-      .site-polish { background-image: linear-gradient(90deg, rgba(46, 34, 24, .035) 1px, transparent 1px), linear-gradient(rgba(46, 34, 24, .028) 1px, transparent 1px); background-size: 48px 48px; }
-    :focus-visible { outline: 3px solid oklch(70% .11 54); outline-offset: 4px; }
-    .btn { transition: transform .18s cubic-bezier(.16,1,.3,1), background-color .18s ease, border-color .18s ease; }
-    .btn:hover { transform: translateY(-1px); }
-    .scope-row { border-top: 1px solid rgba(21,21,21,.14); }
-    .scope-row:last-child { border-bottom: 1px solid rgba(21,21,21,.14); }
-    .proof-note { font-size: .82rem; line-height: 1.55; color: oklch(47% .025 65); }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=Archivo+Black&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="font-sans antialiased site-polish">
-
-<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b hairline">
-  <nav class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-6">
-    <a href="index.html" class="font-display text-xl uppercase tracking-tight">Estudio Norte</a>
-    <div class="hidden md:flex items-center gap-7 text-sm font-semibold">
-      <a href="#servicios" class="hover:text-clay">Servicios</a>
-      <a href="#metodo" class="hover:text-clay">Método</a>
-      <a href="portfolio.html" class="hover:text-clay">Obras</a>
-      <a href="contacto.html" class="hover:text-clay">Contacto</a>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Navegacion principal">
+    <a href="index.html" class="brand">Estudio Norte<small>obra / direccion / control</small></a>
+    <div class="nav-links">
+      <a href="estudio.html">Enfoque</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="portfolio.html">Obras</a>
+      <a href="contacto.html">Contacto</a>
     </div>
-    <a href="contacto.html" class="btn btn-primary">Solicitar evaluación</a>
+    <a class="button nav-cta" href="contacto.html"><span>Evaluar proyecto</span><span aria-hidden="true">→</span></a>
   </nav>
 </header>
-
-<main>
-  <section class="max-w-7xl mx-auto px-5 pt-12 md:pt-16 pb-14 grid lg:grid-cols-[1.18fr_.82fr] gap-10 items-center min-h-[calc(100vh-82px)]">
-    <div>
-      <p class="tag mb-5">Construcción · Dirección de obra · Seguimiento técnico</p>
-      <h1 class="section-title text-5xl md:text-6xl lg:text-6xl max-w-5xl">
-        Obras con alcance claro y seguimiento de principio a fin
-      </h1>
-      <p class="mt-7 text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
-        Planificamos, documentamos y acompañamos proyectos residenciales, comerciales e industriales para que cada etapa tenga responsables, costos visibles y decisiones mejor informadas.
-      </p>
-      <div class="mt-9 flex flex-wrap gap-3">
-        <a href="contacto.html" class="btn btn-primary">Contar mi proyecto <span aria-hidden="true">→</span></a>
-        <a href="portfolio.html" class="btn btn-secondary">Ver obras</a>
+<main id="contenido">
+  <section class="shell hero">
+    <div class="hero-copy" data-reveal>
+      <p class="kicker">[ santa fe / region centro ]</p>
+      <h1 class="display">Obra<br />con control<br />visible.</h1>
+      <p class="subhead">Direccion, planificacion y seguimiento para clientes que necesitan entender alcance, costos y decisiones antes de comprometer una inversion grande.</p>
+      <div class="hero-actions">
+        <a class="button" href="contacto.html"><span>Contar mi obra</span><span aria-hidden="true">→</span></a>
+        <a class="button secondary" href="portfolio.html"><span>Ver casos</span><span aria-hidden="true">↗</span></a>
       </div>
     </div>
-    <div class="relative">
-      <img src="assets/hero_main.png" alt="Equipo técnico revisando documentación de obra" class="w-full max-h-[60vh] aspect-[4/5] object-cover border hairline" />
-      <div class="absolute left-4 bottom-4 right-4 bg-paper/95 border hairline p-4 grid grid-cols-3 gap-3">
-        <div><span class="block font-display text-2xl">01</span><span class="tag">Diagnóstico</span></div>
-        <div><span class="block font-display text-2xl">02</span><span class="tag">Plan de obra</span></div>
-        <div><span class="block font-display text-2xl">03</span><span class="tag">Seguimiento</span></div>
-      </div>
-    </div>
+    <figure class="hero-map" data-reveal>
+      <img src="assets/hero_main.png" alt="Equipo tecnico revisando documentacion de obra sobre una mesa" />
+      <figcaption>
+        <span><b>01</b><small class="meta">diagnostico</small></span>
+        <span><b>02</b><small class="meta">alcance</small></span>
+        <span><b>03</b><small class="meta">seguimiento</small></span>
+      </figcaption>
+    </figure>
   </section>
 
-  <section class="border-y hairline bg-white/45">
-    <div class="max-w-7xl mx-auto px-5 py-8 grid md:grid-cols-4 gap-6">
-      <div><span class="tag">Zona de trabajo</span><p class="font-semibold mt-2">Santa Fe y región centro</p></div>
-      <div><span class="tag">Tipo de cliente</span><p class="font-semibold mt-2">Particulares, comercios y pymes</p></div>
-      <div><span class="tag">Antes de construir</span><p class="font-semibold mt-2">Alcance, costos y prioridades</p></div>
-      <div><span class="tag">Durante la obra</span><p class="font-semibold mt-2">Reportes, coordinación y control</p></div>
+  <div class="ruler" aria-hidden="true">
+    <div class="ruler-track">
+      <span>planos</span><span>costos</span><span>rubros</span><span>plazos reales</span><span>compras criticas</span><span>entrega</span>
+      <span>planos</span><span>costos</span><span>rubros</span><span>plazos reales</span><span>compras criticas</span><span>entrega</span>
     </div>
-  </section>
+  </div>
 
-  <section class="max-w-7xl mx-auto px-5 py-20 grid lg:grid-cols-[.65fr_1fr] gap-12" id="problemas">
-    <div>
-      <p class="tag mb-4">Lo que necesita el cliente final</p>
-      <h2 class="section-title text-4xl md:text-5xl">Menos incertidumbre antes de invertir</h2>
+  <section class="shell section split">
+    <div data-reveal>
+      <p class="kicker">lo que compra el cliente</p>
+      <h2 class="headline">Menos ruido antes de construir.</h2>
     </div>
-    <div class="grid md:grid-cols-2 gap-4">
-      <article class="border hairline bg-white/55 p-6">
-        <span class="material-symbols-outlined text-clay">payments</span>
-        <h3 class="font-bold text-xl mt-4">Entender el presupuesto</h3>
-        <p class="text-muted mt-2">Separar alcance, materiales, mano de obra y etapas para comparar propuestas sin perderse en tecnicismos.</p>
-      </article>
-      <article class="border hairline bg-white/55 p-6">
-        <span class="material-symbols-outlined text-clay">event_note</span>
-        <h3 class="font-bold text-xl mt-4">Ordenar tiempos y prioridades</h3>
-        <p class="text-muted mt-2">Definir hitos de avance, decisiones pendientes y dependencias críticas antes de iniciar la ejecución.</p>
-      </article>
-      <article class="border hairline bg-white/55 p-6">
-        <span class="material-symbols-outlined text-clay">engineering</span>
-        <h3 class="font-bold text-xl mt-4">Coordinar equipos</h3>
-        <p class="text-muted mt-2">Alinear proveedores, gremios y responsables técnicos para reducir retrabajos y cambios de último momento.</p>
-      </article>
-      <article class="border hairline bg-white/55 p-6">
-        <span class="material-symbols-outlined text-clay">fact_check</span>
-        <h3 class="font-bold text-xl mt-4">Seguir la obra con datos</h3>
-        <p class="text-muted mt-2">Registrar avances, desvíos y decisiones para que el comitente sepa qué está pasando y por qué.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="bg-ink text-white py-20" id="servicios">
-    <div class="max-w-7xl mx-auto px-5">
-      <div class="grid lg:grid-cols-[.78fr_1fr] gap-12 mb-14">
+    <div class="issue-grid" data-reveal>
+      <article class="issue">
+        <code>REQ / 01</code>
         <div>
-          <p class="tag mb-4">Servicios</p>
-          <h2 class="section-title text-4xl md:text-6xl max-w-3xl">Alcance claro antes de pedir presupuesto</h2>
+          <h3>Presupuesto entendible</h3>
+          <p>Separar alcance, materiales, mano de obra y decisiones pendientes para comparar sin comprar a ciegas.</p>
         </div>
-        <p class="text-white/62 text-lg max-w-2xl leading-relaxed">La web no vende paquetes cerrados. Ordena conversaciones comerciales: que hay que resolver, que documentacion existe, que etapa esta bloqueando la obra y quien decide el proximo paso.</p>
-      </div>
+      </article>
+      <article class="issue">
+        <code>REQ / 02</code>
+        <div>
+          <h3>Etapas y responsables</h3>
+          <p>Definir quien decide, quien ejecuta y que documentacion bloquea el siguiente avance.</p>
+        </div>
+      </article>
+      <article class="issue">
+        <code>REQ / 03</code>
+        <div>
+          <h3>Registro de obra</h3>
+          <p>Reportes, desvios y acuerdos visibles para que la conversacion no dependa de memoria o mensajes sueltos.</p>
+        </div>
+      </article>
+    </div>
+  </section>
 
-      <div class="border-y border-white/14">
-        <div class="scope-row grid md:grid-cols-[.32fr_.36fr_1fr] gap-4 py-6">
-          <span class="tag">Antes de cotizar</span>
-          <h3 class="font-bold text-2xl">Proyecto y documentacion</h3>
-          <p class="text-white/62">Planos, computos, alcance y prioridades para entender que se puede presupuestar y que todavia falta definir.</p>
+  <section class="section dark" id="servicios">
+    <div class="shell">
+      <div class="split">
+        <div data-reveal>
+          <p class="kicker">servicios</p>
+          <h2 class="headline">No vendemos paquetes. Ordenamos decisiones.</h2>
         </div>
-        <div class="scope-row grid md:grid-cols-[.32fr_.36fr_1fr] gap-4 py-6">
-          <span class="tag">Durante la obra</span>
-          <h3 class="font-bold text-2xl">Direccion y seguimiento</h3>
-          <p class="text-white/62">Hitos de avance, responsables, coordinacion de gremios y registro de decisiones para que el comitente no dependa de intuiciones.</p>
-        </div>
-        <div class="scope-row grid md:grid-cols-[.32fr_.36fr_1fr] gap-4 py-6">
-          <span class="tag">Obra iniciada</span>
-          <h3 class="font-bold text-2xl">Auditoria de avance</h3>
-          <p class="text-white/62">Revision tecnica de estado, riesgos de costo o plazo, documentacion faltante y recomendaciones para reordenar el proceso.</p>
-        </div>
-        <div class="scope-row grid md:grid-cols-[.32fr_.36fr_1fr] gap-4 py-6">
-          <span class="tag">Entrega</span>
-          <h3 class="font-bold text-2xl">Cierre y post-obra</h3>
-          <p class="text-white/62">Pendientes, mantenimiento inicial y traspaso de informacion para que la entrega no sea solo una fecha en el calendario.</p>
-        </div>
+        <p class="subhead" data-reveal>La web presenta los servicios como momentos de obra. Asi el cliente identifica su situacion y llega a la consulta con mas informacion util.</p>
+      </div>
+      <div class="scope-list" data-reveal>
+        <article class="scope-row">
+          <span class="meta">antes de cotizar</span>
+          <h3>Proyecto y documentacion</h3>
+          <p>Planos, computos, alcance y prioridades para saber que se puede presupuestar y que falta definir.</p>
+        </article>
+        <article class="scope-row">
+          <span class="meta">durante la obra</span>
+          <h3>Direccion y seguimiento</h3>
+          <p>Hitos de avance, coordinacion de rubros y registro de decisiones para sostener control operativo.</p>
+        </article>
+        <article class="scope-row">
+          <span class="meta">obra iniciada</span>
+          <h3>Auditoria de avance</h3>
+          <p>Revision tecnica de estado, riesgos, documentacion faltante y recomendaciones para reordenar el proceso.</p>
+        </article>
+        <article class="scope-row">
+          <span class="meta">entrega</span>
+          <h3>Cierre y post-obra</h3>
+          <p>Pendientes, mantenimiento inicial y traspaso de informacion para que la entrega no sea solo una fecha.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-5 py-20" id="metodo">
-    <p class="tag mb-4">Método de trabajo</p>
-    <h2 class="section-title text-4xl md:text-6xl max-w-4xl mb-12">El proceso visible también vende confianza</h2>
-    <div class="grid md:grid-cols-5 gap-4">
-      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">1</span><h3 class="font-bold mt-3">Consulta inicial</h3><p class="text-muted text-sm mt-2">Estado del proyecto, urgencias y objetivo de inversión.</p></div>
-      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">2</span><h3 class="font-bold mt-3">Relevamiento</h3><p class="text-muted text-sm mt-2">Documentación existente, superficie, sitio y restricciones.</p></div>
-      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">3</span><h3 class="font-bold mt-3">Alcance</h3><p class="text-muted text-sm mt-2">Qué incluye la obra, qué falta definir y qué se prioriza.</p></div>
-      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">4</span><h3 class="font-bold mt-3">Plan de obra</h3><p class="text-muted text-sm mt-2">Etapas, responsables, compras y calendario de decisiones.</p></div>
-      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">5</span><h3 class="font-bold mt-3">Seguimiento</h3><p class="text-muted text-sm mt-2">Reportes, desvíos, ajustes y cierre documentado.</p></div>
+  <section class="shell section">
+    <p class="kicker" data-reveal>metodo de trabajo</p>
+    <h2 class="headline" data-reveal>La confianza se diseña como proceso.</h2>
+    <div class="process" data-reveal>
+      <article class="process-step"><b>1</b><div><h3>Consulta</h3><p>Estado, urgencia y objetivo de inversion.</p></div></article>
+      <article class="process-step"><b>2</b><div><h3>Relevo</h3><p>Documentos, sitio, superficie y restricciones.</p></div></article>
+      <article class="process-step"><b>3</b><div><h3>Alcance</h3><p>Que incluye, que falta y que conviene priorizar.</p></div></article>
+      <article class="process-step"><b>4</b><div><h3>Plan</h3><p>Etapas, compras, gremios y calendario de decisiones.</p></div></article>
+      <article class="process-step"><b>5</b><div><h3>Control</h3><p>Reportes, ajustes, cierre y pendientes.</p></div></article>
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-5 pb-20" id="obras">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
-      <div>
-        <p class="tag mb-4">Obras y proyectos</p>
-        <h2 class="section-title text-4xl md:text-6xl">Casos por tipo de intervención</h2>
+  <section class="shell section">
+    <div class="split">
+      <div data-reveal>
+        <p class="kicker">obras</p>
+        <h2 class="headline">Casos por problema tecnico.</h2>
       </div>
-      <a href="portfolio.html" class="btn btn-secondary">Ver todos</a>
+      <div class="action-row" data-reveal><a class="button secondary" href="portfolio.html"><span>Ver portfolio</span><span aria-hidden="true">→</span></a></div>
     </div>
-    <div class="grid md:grid-cols-3 gap-5">
-      <a href="proyecto-184.html" class="group bg-white/55 border hairline">
-        <img src="assets/exp_184.png" alt="Vivienda residencial en etapa de obra" class="w-full aspect-[4/3] object-cover" />
-        <div class="p-5"><span class="tag">Residencial · Dirección de obra</span><h3 class="font-bold text-2xl mt-2">Casa del Lago</h3><p class="text-muted mt-2">Control de documentación, decisiones de materialidad y seguimiento por etapas.</p></div>
+    <div class="projects-masonry" data-reveal>
+      <a class="project-card" href="proyecto-184.html">
+        <img src="assets/exp_184.png" alt="Vivienda residencial en etapa de obra" />
+        <div class="project-body"><span class="project-code">RES / 235 M2</span><h2>Casa del Lago</h2><p>Control de documentacion, materialidad y seguimiento por etapas.</p></div>
       </a>
-      <a href="proyecto-185.html" class="group bg-white/55 border hairline">
-        <img src="assets/exp_185.png" alt="Nave industrial en ejecución" class="w-full aspect-[4/3] object-cover" />
-        <div class="p-5"><span class="tag">Industrial · Plan de obra</span><h3 class="font-bold text-2xl mt-2">Nave Sauce Viejo</h3><p class="text-muted mt-2">Organización de etapas, compras críticas y coordinación de gremios.</p></div>
+      <a class="project-card" href="proyecto-185.html">
+        <img src="assets/exp_185.png" alt="Nave industrial en ejecucion" />
+        <div class="project-body"><span class="project-code">IND / 440 M2</span><h2>Nave Sauce Viejo</h2><p>Compras criticas, secuencia de tareas y coordinacion de rubros.</p></div>
       </a>
-      <a href="proyecto-186.html" class="group bg-white/55 border hairline">
-        <img src="assets/exp_186.png" alt="Local comercial reformado" class="w-full aspect-[4/3] object-cover" />
-        <div class="p-5"><span class="tag">Comercial · Reforma</span><h3 class="font-bold text-2xl mt-2">Locales del Parque</h3><p class="text-muted mt-2">Reforma con operación comercial cercana y ventanas acotadas de trabajo.</p></div>
+      <a class="project-card" href="proyecto-186.html">
+        <img src="assets/exp_186.png" alt="Local comercial reformado" />
+        <div class="project-body"><span class="project-code">COM / 120 M2</span><h2>Locales del Parque</h2><p>Reforma con ventanas de trabajo acotadas y control de interferencias.</p></div>
       </a>
     </div>
   </section>
 
-  <section class="bg-white/55 border-y hairline" aria-labelledby="trama-case">
-    <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-[.9fr_1.1fr] gap-10 items-center">
-      <div>
-        <p class="tag mb-4">Caso conceptual Trama Studio</p>
-        <h2 id="trama-case" class="section-title text-4xl md:text-5xl">Diseñado para demostrar criterio de negocio</h2>
+  <section class="case-band" aria-labelledby="trama-case">
+    <div class="shell case-inner">
+      <div data-reveal>
+        <p class="kicker">caso conceptual</p>
+        <h2 id="trama-case" class="headline">Hecho para demostrar criterio.</h2>
       </div>
-      <p class="text-lg text-muted leading-relaxed">
-        Este proyecto muestra cómo una web para construcción puede dejar de ser un folleto y convertirse en una herramienta comercial: filtra consultas, explica procesos, ordena servicios y responde las dudas que aparecen antes de invertir en una obra.
-      </p>
+      <p class="subhead" data-reveal>Este proyecto muestra como una web para construccion puede dejar de ser folleto: filtra consultas, explica procesos, ordena servicios y responde dudas reales antes de una obra.</p>
     </div>
   </section>
 </main>
-
-<footer class="bg-ink text-white">
-  <div class="max-w-7xl mx-auto px-5 py-12 grid md:grid-cols-3 gap-8">
-    <div><h3 class="font-display text-2xl uppercase">Estudio Norte</h3><p class="text-white/55 mt-4">Construcción, dirección de obra y seguimiento técnico para proyectos con decisiones claras.</p></div>
-    <div><p class="tag mb-3">Contacto</p><p class="text-white/70">Santa Fe · Región centro</p><p class="text-white/70">hola@estudionorte.com</p></div>
-    <div class="md:text-right"><a href="contacto.html" class="btn btn-primary bg-white text-ink">Solicitar evaluación</a></div>
+<footer class="footer">
+  <div class="shell footer-inner">
+    <div>
+      <p class="brand">Estudio Norte<small>caso conceptual por Trama Studio</small></p>
+      <p>Web conceptual para demostrar como una constructora puede vender confianza operativa antes de la primera reunion.</p>
+    </div>
+    <div>
+      <p class="kicker">Contacto referencial</p>
+      <p>Santa Fe y region centro<br />hola@estudionorte.com</p>
+    </div>
+    <div>
+      <a class="button light" href="contacto.html"><span>Iniciar consulta</span><span aria-hidden="true">→</span></a>
+    </div>
   </div>
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>

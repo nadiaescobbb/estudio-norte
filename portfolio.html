@@ -3,74 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Obras y proyectos conceptuales de Estudio Norte organizados por tipo de intervención." />
-  <title>Obras y Proyectos | Estudio Norte</title>
+  <meta name="description" content="Portfolio conceptual de Estudio Norte organizado por tipo de intervencion y problema de obra." />
+  <meta property="og:title" content="Obras y proyectos | Estudio Norte" />
+  <meta property="og:description" content="Portfolio conceptual de Estudio Norte organizado por tipo de intervencion y problema de obra." />
+  <meta property="og:image" content="assets/hero_main.png" />
+  <title>Obras y proyectos | Estudio Norte</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: { colors: { ink:"oklch(18% .012 60)", paper:"oklch(95% .018 76)", clay:"oklch(52% .11 44)", muted:"oklch(47% .025 65)" }, fontFamily: { sans:["IBM Plex Sans","sans-serif"], display:["Archivo Black","sans-serif"], mono:["IBM Plex Mono","monospace"] } } } }
-  </script>
-  <style>
-    body { background:oklch(95% .018 76); color:oklch(18% .012 60); }
-    .title { font-family:"Archivo Black", sans-serif; text-transform:uppercase; line-height:.95; letter-spacing:-.02em; }
-    .tag { font-family:"IBM Plex Mono", monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:oklch(52% .11 44); }
-      .site-polish { background-image: linear-gradient(90deg, rgba(46, 34, 24, .035) 1px, transparent 1px), linear-gradient(rgba(46, 34, 24, .028) 1px, transparent 1px); background-size: 48px 48px; }
-    :focus-visible { outline: 3px solid oklch(70% .11 54); outline-offset: 4px; }
-    .btn { transition: transform .18s cubic-bezier(.16,1,.3,1), background-color .18s ease, border-color .18s ease; }
-    .btn:hover { transform: translateY(-1px); }
-    .scope-row { border-top: 1px solid rgba(21,21,21,.14); }
-    .scope-row:last-child { border-bottom: 1px solid rgba(21,21,21,.14); }
-    .proof-note { font-size: .82rem; line-height: 1.55; color: oklch(47% .025 65); }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=Archivo+Black&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="font-sans antialiased site-polish">
-<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-black/10">
-  <nav class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-6">
-    <a href="index.html" class="font-display text-xl uppercase tracking-tight">Estudio Norte</a>
-    <div class="hidden md:flex items-center gap-7 text-sm font-semibold">
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Navegacion principal">
+    <a href="index.html" class="brand">Estudio Norte<small>obra / direccion / control</small></a>
+    <div class="nav-links">
+      <a href="estudio.html">Enfoque</a>
       <a href="index.html#servicios">Servicios</a>
-      <a href="portfolio.html" class="text-clay">Obras</a>
+      <a href="portfolio.html" aria-current="page">Obras</a>
       <a href="contacto.html">Contacto</a>
     </div>
-    <a href="contacto.html" class="bg-ink text-white px-4 py-3 rounded text-xs font-bold uppercase">Evaluar proyecto</a>
+    <a class="button nav-cta" href="contacto.html"><span>Evaluar proyecto</span><span aria-hidden="true">→</span></a>
   </nav>
 </header>
-
-<main class="max-w-7xl mx-auto px-5 py-16 md:py-24">
-  <p class="tag mb-5">Portfolio conceptual</p>
-  <h1 class="title text-5xl md:text-7xl max-w-5xl">Obras presentadas por problema, no por promesa</h1>
-  <p class="text-lg text-muted mt-7 max-w-3xl">Cada caso muestra tipo de intervención, etapa, desafío y solución aplicada. En una web real, esta estructura ayuda a que el cliente se reconozca en problemas concretos antes de consultar.</p>
-
-  <div class="mt-12 flex flex-wrap gap-3" aria-label="Filtros conceptuales de obra">
-    <span class="border border-black/10 bg-ink text-paper px-4 py-2 text-sm">Todo</span>
-    <span class="border border-black/10 bg-paper/70 px-4 py-2 text-sm">Residencial</span>
-    <span class="border border-black/10 bg-paper/70 px-4 py-2 text-sm">Industrial</span>
-    <span class="border border-black/10 bg-paper/70 px-4 py-2 text-sm">Comercial</span>
-  </div>
-
-  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-    <a href="proyecto-184.html" class="bg-white/60 border border-black/10">
-      <img src="assets/exp_184.png" alt="Casa del Lago" class="w-full aspect-[4/3] object-cover" />
-      <div class="p-6"><span class="tag">Residencial · 235 m2</span><h2 class="font-bold text-3xl mt-2">Casa del Lago</h2><p class="text-muted mt-3">Dirección de obra y seguimiento de decisiones técnicas en vivienda unifamiliar.</p></div>
-    </a>
-    <a href="proyecto-185.html" class="bg-white/60 border border-black/10">
-      <img src="assets/exp_185.png" alt="Nave Sauce Viejo" class="w-full aspect-[4/3] object-cover" />
-      <div class="p-6"><span class="tag">Industrial · 440 m2</span><h2 class="font-bold text-3xl mt-2">Nave Sauce Viejo</h2><p class="text-muted mt-3">Planificación de etapas, compras críticas y coordinación de ejecución industrial.</p></div>
-    </a>
-    <a href="proyecto-186.html" class="bg-white/60 border border-black/10">
-      <img src="assets/exp_186.png" alt="Locales del Parque" class="w-full aspect-[4/3] object-cover" />
-      <div class="p-6"><span class="tag">Comercial · 120 m2</span><h2 class="font-bold text-3xl mt-2">Locales del Parque</h2><p class="text-muted mt-3">Reforma comercial con control de tiempos, interferencias y puesta en marcha.</p></div>
-    </a>
+<main id="contenido">
+  <section class="shell page-hero">
+    <p class="kicker" data-reveal>archivo de obra</p>
+    <h1 class="display" data-reveal>Casos con problema, alcance y decision.</h1>
+    <p class="subhead" data-reveal>Cada ficha cuenta una situacion que el cliente reconoce: vivienda con decisiones pendientes, nave con compras criticas o local que no puede frenar su operacion.</p>
+    <div class="filter-row" aria-label="Filtros conceptuales de obra" data-reveal>
+      <span class="active">Todo</span><span>Residencial</span><span>Industrial</span><span>Comercial</span>
+    </div>
+  </section>
+  <section class="shell section">
+    <div class="projects-masonry" data-reveal>
+      <a class="project-card" href="proyecto-184.html">
+        <img src="assets/exp_184.png" alt="Vivienda Casa del Lago en etapa de obra" />
+        <div class="project-body"><span class="project-code">RES / direccion / 235 M2</span><h2>Casa del Lago</h2><p>Una vivienda que necesitaba ordenar materialidad, detalles y decisiones de avance.</p></div>
+      </a>
+      <a class="project-card" href="proyecto-185.html">
+        <img src="assets/exp_185.png" alt="Estructura industrial de Nave Sauce Viejo" />
+        <div class="project-body"><span class="project-code">IND / plan / 440 M2</span><h2>Nave Sauce Viejo</h2><p>Coordinacion de rubros y compras criticas para sostener una secuencia viable.</p></div>
+      </a>
+      <a class="project-card" href="proyecto-186.html">
+        <img src="assets/exp_186.png" alt="Reforma comercial Locales del Parque" />
+        <div class="project-body"><span class="project-code">COM / reforma / 120 M2</span><h2>Locales del Parque</h2><p>Obra comercial con tiempos acotados, interferencias y puesta en marcha cercana.</p></div>
+      </a>
+    </div>
   </section>
 </main>
-
-<footer class="bg-ink text-white mt-12">
-  <div class="max-w-7xl mx-auto px-5 py-10 flex flex-col md:flex-row justify-between gap-6">
-    <p class="font-display text-2xl uppercase">Estudio Norte</p>
-    <p class="text-white/50">Caso conceptual de Trama Studio · Imágenes referenciales.</p>
+<footer class="footer">
+  <div class="shell footer-inner">
+    <div>
+      <p class="brand">Estudio Norte<small>caso conceptual por Trama Studio</small></p>
+      <p>Web conceptual para demostrar como una constructora puede vender confianza operativa antes de la primera reunion.</p>
+    </div>
+    <div>
+      <p class="kicker">Contacto referencial</p>
+      <p>Santa Fe y region centro<br />hola@estudionorte.com</p>
+    </div>
+    <div>
+      <a class="button light" href="contacto.html"><span>Iniciar consulta</span><span aria-hidden="true">→</span></a>
+    </div>
   </div>
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
