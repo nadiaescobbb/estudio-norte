@@ -1,141 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Archivo completo de expedientes auditados y dirigidos por Estudio Norte. Ingeniería de Autoridad."/>
-<title>Archivo de Expedientes | Estudio Norte</title>
-
-<!-- Fonts: Montserrat & Inter -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    "primary": "#D90429",
-                    "secondary": "#111111",
-                    "surface": "#FAF9F6"
-                },
-                fontFamily: {
-                    "sans": ["Inter", "sans-serif"],
-                    "display": ["Montserrat", "sans-serif"],
-                    "mono": ["IBM Plex Mono", "monospace"]
-                }
-            }
-        }
-    }
-</script>
-<style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: #FAF9F6; color: #111111; position: relative; }
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        opacity: 0.025; pointer-events: none; z-index: 9999;
-    }
-    h1, h2, h3, h4, .font-display { font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: -0.03em; }
-    .mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
-    .btn-primary { background-color: #D90429; color: white; padding: 12px 28px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 14px; transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1); }
-    .metadata-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.5); }
-    
-    .filter-btn {
-        font-family: 'IBM Plex Mono', monospace;
-        font-size: 11px;
-        text-transform: uppercase;
-        padding: 8px 20px;
-        border: 1px solid rgba(0,0,0,0.1);
-        border-radius: 4px;
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-    .filter-btn.active {
-        background: #111111;
-        color: white;
-        border-color: #111111;
-    }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Obras y proyectos conceptuales de Estudio Norte organizados por tipo de intervención." />
+  <title>Obras y Proyectos | Estudio Norte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { ink:"#151515", paper:"#f6f2ea", clay:"#b44a2f", muted:"#6e665d" }, fontFamily: { sans:["IBM Plex Sans","sans-serif"], display:["Archivo Black","sans-serif"], mono:["IBM Plex Mono","monospace"] } } } }
+  </script>
+  <style>
+    body { background:#f6f2ea; color:#151515; }
+    .title { font-family:"Archivo Black", sans-serif; text-transform:uppercase; line-height:.95; letter-spacing:-.02em; }
+    .tag { font-family:"IBM Plex Mono", monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:#b44a2f; }
+  </style>
 </head>
-<body>
-
-<nav class="bg-white py-4 px-6 flex justify-between items-center sticky top-0 z-50 border-b border-black/5">
-    <a href="index.html" class="text-2xl font-black text-secondary">
-        <span class="text-primary">ESTUDIO</span>NORTE
-    </a>
-    <div class="hidden lg:flex gap-8 font-bold text-sm uppercase">
-        <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
-        <a href="portfolio.html" class="text-primary">Expedientes</a>
-        <a href="contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+<body class="font-sans antialiased">
+<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-black/10">
+  <nav class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-6">
+    <a href="index.html" class="font-display text-xl uppercase tracking-tight">Estudio Norte</a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-semibold">
+      <a href="index.html#servicios">Servicios</a>
+      <a href="portfolio.html" class="text-clay">Obras</a>
+      <a href="contacto.html">Contacto</a>
     </div>
-    <div class="flex items-center gap-4">
-        <span class="mono text-[10px] hidden md:block">ARCHIVE_SYSTEM: ONLINE</span>
-        <a href="contacto.html" class="btn-primary py-2 text-[10px]">Iniciar Evaluación</a>
-    </div>
-</nav>
-
-<header class="py-24 px-6 max-w-7xl mx-auto">
-    <span class="text-primary font-bold uppercase text-xs tracking-widest mb-6 block">Archivo Maestro</span>
-    <h1 class="text-6xl md:text-8xl font-black mb-12 leading-none uppercase">Expedientes<br/>Auditados</h1>
-    
-    <div class="flex flex-wrap gap-4 border-t border-black/5 pt-12">
-        <div class="filter-btn active">Todo</div>
-        <div class="filter-btn">Residencial</div>
-        <div class="filter-btn">Industrial</div>
-        <div class="filter-btn">Comercial</div>
-    </div>
+    <a href="contacto.html" class="bg-ink text-white px-4 py-3 rounded text-xs font-bold uppercase">Evaluar proyecto</a>
+  </nav>
 </header>
 
-<main class="max-w-7xl mx-auto py-12 px-6 pb-32">
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Exp 184 -->
-        <a href="proyecto-184.html" class="group relative overflow-hidden rounded-xl h-[450px] block border border-black/5 shadow-sm">
-            <div class="absolute top-4 right-4 z-10 bg-primary/90 backdrop-blur-md text-white text-[9px] mono px-3 py-1 rounded tracking-widest uppercase">LAT: -31.63 // 184-A</div>
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" alt="P1"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-90 flex items-end p-8">
-                <div>
-                    <div class="text-primary font-bold uppercase text-[10px] tracking-widest mb-2">Residencial // 235 M2</div>
-                    <h4 class="text-white text-3xl font-black">Casa del Lago</h4>
-                    <p class="text-white/50 text-sm mt-2 font-medium">Audit Spec: Desvío 0.00%</p>
-                </div>
-            </div>
-        </a>
-        <!-- Exp 185 -->
-        <a href="proyecto-185.html" class="group relative overflow-hidden rounded-xl h-[450px] block border border-black/5 shadow-sm">
-            <div class="absolute top-4 right-4 z-10 bg-primary/90 backdrop-blur-md text-white text-[9px] mono px-3 py-1 rounded tracking-widest uppercase">LOG: INBOUND // 185-B</div>
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" alt="P2"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-90 flex items-end p-8">
-                <div>
-                    <div class="text-primary font-bold uppercase text-[10px] tracking-widest mb-2">Industrial // 440 M2</div>
-                    <h4 class="text-white text-3xl font-black">Nave Sauce Viejo</h4>
-                    <p class="text-white/50 text-sm mt-2 font-medium">Audit Spec: Desvío 0.00%</p>
-                </div>
-            </div>
-        </a>
-        <!-- Exp 186 -->
-        <a href="proyecto-186.html" class="group relative overflow-hidden rounded-xl h-[450px] block border border-black/5 shadow-sm">
-            <div class="absolute top-4 right-4 z-10 bg-primary/90 backdrop-blur-md text-white text-[9px] mono px-3 py-1 rounded tracking-widest uppercase">STATUS: OK // 186-C</div>
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" alt="P3"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-90 flex items-end p-8">
-                <div>
-                    <div class="text-primary font-bold uppercase text-[10px] tracking-widest mb-2">Comercial // 120 M2</div>
-                    <h4 class="text-white text-3xl font-black">Locales del Parque</h4>
-                    <p class="text-white/50 text-sm mt-2 font-medium">Audit Spec: Desvío 0.00%</p>
-                </div>
-            </div>
-        </a>
-    </div>
+<main class="max-w-7xl mx-auto px-5 py-16 md:py-24">
+  <p class="tag mb-5">Portfolio conceptual</p>
+  <h1 class="title text-5xl md:text-7xl max-w-5xl">Obras presentadas por problema, no por promesa</h1>
+  <p class="text-lg text-muted mt-7 max-w-3xl">Cada caso muestra tipo de intervención, etapa, desafío y solución aplicada. En una web real, esta estructura ayuda a que el cliente se reconozca en problemas concretos antes de consultar.</p>
+
+  <div class="mt-12 flex flex-wrap gap-3">
+    <span class="border border-black/10 px-4 py-2 text-sm">Todo</span>
+    <span class="border border-black/10 px-4 py-2 text-sm">Residencial</span>
+    <span class="border border-black/10 px-4 py-2 text-sm">Industrial</span>
+    <span class="border border-black/10 px-4 py-2 text-sm">Comercial</span>
+  </div>
+
+  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+    <a href="proyecto-184.html" class="bg-white/60 border border-black/10">
+      <img src="assets/exp_184.png" alt="Casa del Lago" class="w-full aspect-[4/3] object-cover" />
+      <div class="p-6"><span class="tag">Residencial · 235 m2</span><h2 class="font-bold text-3xl mt-2">Casa del Lago</h2><p class="text-muted mt-3">Dirección de obra y seguimiento de decisiones técnicas en vivienda unifamiliar.</p></div>
+    </a>
+    <a href="proyecto-185.html" class="bg-white/60 border border-black/10">
+      <img src="assets/exp_185.png" alt="Nave Sauce Viejo" class="w-full aspect-[4/3] object-cover" />
+      <div class="p-6"><span class="tag">Industrial · 440 m2</span><h2 class="font-bold text-3xl mt-2">Nave Sauce Viejo</h2><p class="text-muted mt-3">Planificación de etapas, compras críticas y coordinación de ejecución industrial.</p></div>
+    </a>
+    <a href="proyecto-186.html" class="bg-white/60 border border-black/10">
+      <img src="assets/exp_186.png" alt="Locales del Parque" class="w-full aspect-[4/3] object-cover" />
+      <div class="p-6"><span class="tag">Comercial · 120 m2</span><h2 class="font-bold text-3xl mt-2">Locales del Parque</h2><p class="text-muted mt-3">Reforma comercial con control de tiempos, interferencias y puesta en marcha.</p></div>
+    </a>
+  </section>
 </main>
 
-<footer class="bg-secondary text-white py-12 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="text-2xl font-black"><span class="text-primary">ESTUDIO</span>NORTE</div>
-        <div class="text-xs opacity-30 uppercase tracking-widest">Ingeniería de Autoridad // 2026</div>
-    </div>
+<footer class="bg-ink text-white mt-12">
+  <div class="max-w-7xl mx-auto px-5 py-10 flex flex-col md:flex-row justify-between gap-6">
+    <p class="font-display text-2xl uppercase">Estudio Norte</p>
+    <p class="text-white/50">Caso conceptual de Trama Studio · Imágenes referenciales.</p>
+  </div>
 </footer>
-
 </body>
 </html>

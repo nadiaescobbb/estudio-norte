@@ -1,509 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Profesionales en servicios de construcción y arquitectura técnica. Estudio Norte."/>
-<title>Estudio Norte | Servicios de Construcción Profesional</title>
-
-<!-- Fonts: Montserrat for bold construction, Inter for premium UI feel -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<script id="tailwind-config">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Estudio Norte: construcción, dirección de obra y seguimiento técnico para proyectos residenciales, comerciales e industriales." />
+  <title>Estudio Norte | Construcción y Dirección de Obra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
     tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    "primary": "#D90429",
-                    "secondary": "#111111", /* Deeper Black */
-                    "accent": "#8D99AE",
-                    "surface": "#FAF9F6" /* Warm Bone Background */
-                },
-                fontFamily: {
-                    "sans": ["Inter", "sans-serif"],
-                    "display": ["Montserrat", "sans-serif"]
-                }
-            }
+      theme: {
+        extend: {
+          colors: {
+            ink: "#151515",
+            paper: "#f6f2ea",
+            clay: "#b44a2f",
+            line: "rgba(21,21,21,.12)",
+            muted: "#6e665d"
+          },
+          fontFamily: {
+            sans: ["IBM Plex Sans", "sans-serif"],
+            display: ["Archivo Black", "sans-serif"],
+            mono: ["IBM Plex Mono", "monospace"]
+          }
         }
+      }
     }
-</script>
-<style>
+  </script>
+  <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: #FAF9F6; color: #111111; position: relative; }
-    
-    /* Skill: Grain/Noise Texture */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        opacity: 0.025;
-        pointer-events: none;
-        z-index: 9999;
-    }
-
-    h1, h2, h3, h4, .font-display { font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: -0.03em; }
-    .mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
-    
-    .btn-primary {
-        background-color: #D90429;
-        color: white;
-        padding: 12px 28px;
-        border-radius: 4px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 14px;
-        transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1);
-    }
-    .btn-primary:hover {
-        background-color: #b90422;
-        transform: translateY(-2px);
-    }
-    .btn-primary:active { transform: scale(0.96); }
-
-    .service-card {
-        position: relative;
-        background: white;
-        padding: 40px;
-        border-radius: 12px;
-        transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.6s ease;
-        overflow: hidden;
-        border: 1px solid rgba(0,0,0,0.05);
-    }
-    .service-card:hover { transform: translateY(-12px); box-shadow: 0 32px 64px rgba(0,0,0,0.08); }
-    .service-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(217, 4, 41, 0.05), transparent 80%);
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        pointer-events: none;
-    }
-    .service-card:hover::after { opacity: 1; }
-
-    /* Metadata Label */
-    .metadata-tag {
-        font-family: 'IBM Plex Mono', monospace;
-        font-size: 9px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: rgba(0,0,0,0.4);
-    }
-
-    /* Marquee */
-    .marquee {
-        background: #D90429;
-        color: white;
-        padding: 40px 0;
-        overflow: hidden;
-        white-space: nowrap;
-    }
-    .marquee-content {
-        display: inline-block;
-        animation: marquee 20s linear infinite;
-    }
-    .marquee-item {
-        display: inline-block;
-        font-size: 24px;
-        font-weight: 800;
-        text-transform: uppercase;
-        margin-right: 60px;
-    }
-    @keyframes marquee {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
-    }
-
-    /* Price Card */
-    .price-card {
-        background: white;
-        border-radius: 8px;
-        padding: 48px;
-        text-align: center;
-        border: 1px solid #eee;
-    }
-    .price-card.featured {
-        border-color: #D90429;
-        box-shadow: 0 20px 40px rgba(217, 4, 41, 0.1);
-    }
-</style>
+    body { background: #f6f2ea; color: #151515; }
+    .hairline { border-color: rgba(21,21,21,.12); }
+    .btn { display:inline-flex; align-items:center; gap:.6rem; border-radius:4px; padding:.9rem 1.15rem; font-weight:700; text-transform:uppercase; font-size:.78rem; letter-spacing:.02em; }
+    .btn-primary { background:#151515; color:#fff; }
+    .btn-secondary { border:1px solid rgba(21,21,21,.18); color:#151515; }
+    .tag { font-family:"IBM Plex Mono", monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:#b44a2f; }
+    .section-title { font-family:"Archivo Black", sans-serif; text-transform:uppercase; line-height:.95; letter-spacing:-.02em; }
+  </style>
 </head>
-<body>
+<body class="font-sans antialiased">
 
-<!-- Top Bar -->
-<div class="bg-secondary text-white py-2 px-6 flex justify-between text-xs hidden md:flex">
-    <div class="flex gap-6">
-        <span>+54 11 4582 9000</span>
-        <span>hola@estudionorte.com</span>
+<header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b hairline">
+  <nav class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-6">
+    <a href="index.html" class="font-display text-xl uppercase tracking-tight">Estudio Norte</a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-semibold">
+      <a href="#servicios" class="hover:text-clay">Servicios</a>
+      <a href="#metodo" class="hover:text-clay">Método</a>
+      <a href="portfolio.html" class="hover:text-clay">Obras</a>
+      <a href="contacto.html" class="hover:text-clay">Contacto</a>
     </div>
-    <div class="flex gap-4">
-        <span>Facebook</span>
-        <span>Instagram</span>
-        <span>LinkedIn</span>
-    </div>
-</div>
+    <a href="contacto.html" class="btn btn-primary">Solicitar evaluación</a>
+  </nav>
+</header>
 
-<!-- Navigation -->
-<nav class="bg-white py-4 px-6 flex justify-between items-center sticky top-0 z-50 shadow-sm">
-    <div class="text-2xl font-black text-secondary">
-        <span class="text-primary">ESTUDIO</span>NORTE
-    </div>
-    <div class="hidden lg:flex gap-8 font-bold text-sm uppercase">
-        <a href="#" class="text-primary">Inicio</a>
-        <a href="#about" class="hover:text-primary transition-colors">Nosotros</a>
-        <a href="#services" class="hover:text-primary transition-colors">Servicios</a>
-        <a href="portfolio.html" class="hover:text-primary transition-colors">Proyectos</a>
-        <a href="contacto.html" class="hover:text-primary transition-colors">Contacto</a>
-    </div>
-    <a href="contacto.html" class="btn-primary">Cotizar Obra</a>
-</nav>
-
-<!-- Hero Section -->
-<section class="relative bg-secondary text-white min-h-[90vh] flex items-center px-6 overflow-hidden">
-    <div class="absolute inset-0 opacity-20">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover" alt="Construction background"/>
-    </div>
-    <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <h1 class="text-4xl md:text-7xl font-extrabold mb-8 leading-tight">
-                Somos Profesionales en Servicios de Construcción
-            </h1>
-            <p class="text-lg opacity-80 mb-10 max-w-lg">
-                Ofrecemos soluciones integrales en arquitectura técnica, dirección de obra y gestión de proyectos con plazos garantizados y presupuestos cerrados.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="portfolio.html" class="btn-primary">Ver Proyectos</a>
-                <a href="#services" class="btn-outline">Nuestros Servicios</a>
-            </div>
-        </div>
-        <div class="relative">
-            <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-white/10">
-                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&w=1200&q=80" alt="Obra en curso"/>
-            </div>
-            <div class="absolute -bottom-6 -left-6 bg-primary p-6 rounded-lg text-white shadow-xl hidden md:block">
-                <div class="text-3xl font-black">25+</div>
-                <div class="text-xs uppercase font-bold">Años de Experiencia</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Metrics Bar -->
-<section class="bg-white py-16 px-6 shadow-2xl relative z-20 -mt-16 max-w-6xl mx-auto rounded-xl grid grid-cols-2 md:grid-cols-4 gap-8 text-center border border-black/5">
+<main>
+  <section class="max-w-7xl mx-auto px-5 pt-16 md:pt-24 pb-10 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-end">
     <div>
-        <div class="text-5xl font-black text-secondary mono">20<span class="text-primary text-3xl">+</span></div>
-        <div class="metadata-tag mt-3">Años de Trayectoria</div>
+      <p class="tag mb-5">Construcción · Dirección de obra · Seguimiento técnico</p>
+      <h1 class="section-title text-5xl md:text-7xl lg:text-8xl max-w-4xl">
+        Obras con alcance claro y seguimiento de principio a fin
+      </h1>
+      <p class="mt-7 text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
+        Planificamos, documentamos y acompañamos proyectos residenciales, comerciales e industriales para que cada etapa tenga responsables, costos visibles y decisiones mejor informadas.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="contacto.html" class="btn btn-primary">Contar mi proyecto <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+        <a href="portfolio.html" class="btn btn-secondary">Ver obras</a>
+      </div>
     </div>
-    <div class="border-l border-black/5">
-        <div class="text-5xl font-black text-secondary mono">15<span class="text-primary text-3xl">+</span></div>
-        <div class="metadata-tag mt-3">Premios Ganados</div>
+    <div class="relative">
+      <img src="assets/hero_main.png" alt="Equipo técnico revisando documentación de obra" class="w-full aspect-[4/5] object-cover border hairline" />
+      <div class="absolute left-4 bottom-4 right-4 bg-paper/95 border hairline p-4 grid grid-cols-3 gap-3">
+        <div><span class="block font-display text-2xl">01</span><span class="tag">Diagnóstico</span></div>
+        <div><span class="block font-display text-2xl">02</span><span class="tag">Plan de obra</span></div>
+        <div><span class="block font-display text-2xl">03</span><span class="tag">Seguimiento</span></div>
+      </div>
     </div>
-    <div class="border-l border-black/5">
-        <div class="text-5xl font-black text-secondary mono">30<span class="text-primary text-3xl">+</span></div>
-        <div class="metadata-tag mt-3">Proyectos Listos</div>
-    </div>
-    <div class="border-l border-black/5">
-        <div class="text-5xl font-black text-secondary mono">5K</div>
-        <div class="metadata-tag mt-3">M2 Construidos</div>
-    </div>
-</section>
+  </section>
 
-<!-- About Section -->
-<section id="about" class="py-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-    <div class="grid grid-cols-2 gap-4">
-        <div class="space-y-4">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" class="rounded-lg shadow-lg" alt="Arquiteto"/>
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" class="rounded-lg shadow-lg" alt="Oficina"/>
-        </div>
-        <div class="pt-12">
-            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" class="rounded-lg shadow-lg h-full object-cover" alt="Obra"/>
-        </div>
+  <section class="border-y hairline bg-white/45">
+    <div class="max-w-7xl mx-auto px-5 py-8 grid md:grid-cols-4 gap-6">
+      <div><span class="tag">Zona de trabajo</span><p class="font-semibold mt-2">Santa Fe y región centro</p></div>
+      <div><span class="tag">Tipo de cliente</span><p class="font-semibold mt-2">Particulares, comercios y pymes</p></div>
+      <div><span class="tag">Antes de construir</span><p class="font-semibold mt-2">Alcance, costos y prioridades</p></div>
+      <div><span class="tag">Durante la obra</span><p class="font-semibold mt-2">Reportes, coordinación y control</p></div>
     </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-5 py-20 grid lg:grid-cols-[.65fr_1fr] gap-12" id="problemas">
     <div>
-        <span class="eyebrow">Sobre Nosotros</span>
-        <h2 class="section-title">Construyendo Sueños, Ladrillo a Ladrillo</h2>
-        <p class="text-lg opacity-70 mb-8 leading-relaxed">
-            Nuestro equipo de expertos se dedica a transformar visiones en realidades estructurales. Con un enfoque en la precisión técnica y la eficiencia operativa, garantizamos que cada proyecto cumpla con los más altos estándares de calidad.
-        </p>
-        <ul class="space-y-4 mb-10">
-            <li class="flex items-center gap-3 font-bold">
-                <span class="material-symbols-outlined text-primary">check_circle</span> Auditoría Técnica Permanente
-            </li>
-            <li class="flex items-center gap-3 font-bold">
-                <span class="material-symbols-outlined text-primary">check_circle</span> Gestión de Materiales y Logística
-            </li>
-            <li class="flex items-center gap-3 font-bold">
-                <span class="material-symbols-outlined text-primary">check_circle</span> Plazos de Entrega Garantizados
-            </li>
-        </ul>
-        <div class="flex items-center gap-6">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80" class="w-16 h-16 rounded-full object-cover shadow-md" alt="Francisco Norte"/>
-            <div>
-                <div class="font-black text-secondary uppercase">Francisco G. Norte</div>
-                <div class="text-xs text-primary font-bold uppercase">Director de Proyecto</div>
-            </div>
-        </div>
+      <p class="tag mb-4">Lo que necesita el cliente final</p>
+      <h2 class="section-title text-4xl md:text-5xl">Menos incertidumbre antes de invertir</h2>
     </div>
-</section>
+    <div class="grid md:grid-cols-2 gap-4">
+      <article class="border hairline bg-white/55 p-6">
+        <span class="material-symbols-outlined text-clay">payments</span>
+        <h3 class="font-bold text-xl mt-4">Entender el presupuesto</h3>
+        <p class="text-muted mt-2">Separar alcance, materiales, mano de obra y etapas para comparar propuestas sin perderse en tecnicismos.</p>
+      </article>
+      <article class="border hairline bg-white/55 p-6">
+        <span class="material-symbols-outlined text-clay">event_note</span>
+        <h3 class="font-bold text-xl mt-4">Ordenar tiempos y prioridades</h3>
+        <p class="text-muted mt-2">Definir hitos de avance, decisiones pendientes y dependencias críticas antes de iniciar la ejecución.</p>
+      </article>
+      <article class="border hairline bg-white/55 p-6">
+        <span class="material-symbols-outlined text-clay">engineering</span>
+        <h3 class="font-bold text-xl mt-4">Coordinar equipos</h3>
+        <p class="text-muted mt-2">Alinear proveedores, gremios y responsables técnicos para reducir retrabajos y cambios de último momento.</p>
+      </article>
+      <article class="border hairline bg-white/55 p-6">
+        <span class="material-symbols-outlined text-clay">fact_check</span>
+        <h3 class="font-bold text-xl mt-4">Seguir la obra con datos</h3>
+        <p class="text-muted mt-2">Registrar avances, desvíos y decisiones para que el comitente sepa qué está pasando y por qué.</p>
+      </article>
+    </div>
+  </section>
 
-<!-- Services Section -->
-<section id="services" class="bg-surface py-24 px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <span class="eyebrow justify-center">Nuestros Servicios</span>
-            <h2 class="section-title">El Mejor Servicio Para Usted</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="service-card spotlight-card">
-                <div class="w-16 h-16 bg-primary text-white flex items-center justify-center rounded-xl mb-8 shadow-lg shadow-red-500/20">
-                    <span class="material-symbols-outlined text-3xl">architecture</span>
-                </div>
-                <h3 class="text-2xl mb-4">Diseño y Planificación</h3>
-                <p class="opacity-60 mb-8 text-sm leading-relaxed">Desarrollamos planos detallados y especificaciones técnicas para asegurar una ejecución impecable.</p>
-                <div class="rounded-lg overflow-hidden h-40 relative">
-                    <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-[8px] mono text-white uppercase tracking-widest">BATCH_NO: 184-A</div>
-                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Diseño"/>
-                </div>
-            </div>
-            <div class="service-card spotlight-card md:mt-12">
-                <div class="w-16 h-16 bg-primary text-white flex items-center justify-center rounded-xl mb-8 shadow-lg shadow-red-500/20">
-                    <span class="material-symbols-outlined text-3xl">construction</span>
-                </div>
-                <h3 class="text-2xl mb-4">Construcción General</h3>
-                <p class="opacity-60 mb-8 text-sm leading-relaxed">Ejecución de obras residenciales, comerciales e industriales con mano de obra calificada.</p>
-                <div class="rounded-lg overflow-hidden h-40 relative">
-                    <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-[8px] mono text-white uppercase tracking-widest">BATCH_NO: 185-B</div>
-                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Construcción"/>
-                </div>
-            </div>
-            <div class="service-card spotlight-card">
-                <div class="w-16 h-16 bg-primary text-white flex items-center justify-center rounded-xl mb-8 shadow-lg shadow-red-500/20">
-                    <span class="material-symbols-outlined text-3xl">engineering</span>
-                </div>
-                <h3 class="text-2xl mb-4">Dirección Técnica</h3>
-                <p class="opacity-60 mb-8 text-sm leading-relaxed">Supervisión constante en terreno para auditar calidad, costos y tiempos de obra.</p>
-                <div class="rounded-lg overflow-hidden h-40 relative">
-                    <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-[8px] mono text-white uppercase tracking-widest">BATCH_NO: 186-C</div>
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Ingeniería"/>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Pricing Section -->
-<section class="py-24 px-6 bg-secondary text-white relative">
-    <div class="absolute inset-0 opacity-10">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover" alt="bg"/>
-    </div>
-    <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-            <span class="eyebrow justify-center">Planes y Precios</span>
-            <h2 class="section-title text-white">Nuestros Paquetes</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8 items-start">
-            <div class="price-card text-secondary spotlight-card md:mt-16">
-                <div class="text-primary font-bold uppercase mb-4 text-[10px] tracking-widest">Plan Básico</div>
-                <div class="text-6xl font-black mb-8 mono">$299<span class="text-base font-normal opacity-30">/m2</span></div>
-                <ul class="space-y-4 mb-10 text-left opacity-70 text-sm">
-                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Dirección Técnica Semanal</li>
-                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Planos de Planta</li>
-                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Cómputo de Materiales</li>
-                </ul>
-                <a href="#" class="btn-primary w-full block">Elegir Plan</a>
-            </div>
-            <div class="price-card text-secondary featured shadow-2xl spotlight-card relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-4">
-                    <span class="bg-primary text-white text-[8px] mono px-3 py-1 rounded-full uppercase tracking-widest">Most Popular</span>
-                </div>
-                <div class="text-primary font-bold uppercase mb-4 text-[10px] tracking-widest">Plan Profesional</div>
-                <div class="text-6xl font-black mb-8 mono">$599<span class="text-base font-normal opacity-30">/m2</span></div>
-                <ul class="space-y-4 mb-10 text-left opacity-70 text-sm">
-                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Dirección Diaria en Obra</li>
-                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Proyecto Ejecutivo Full</li>
-                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Gestión de Permisos</li>
-                </ul>
-                <a href="#" class="btn-primary w-full block">Elegir Plan</a>
-            </div>
-            <div class="price-card text-secondary spotlight-card md:mt-24">
-                <div class="text-primary font-bold uppercase mb-4 text-[10px] tracking-widest">Plan Premium</div>
-                <div class="text-6xl font-black mb-8 mono">$999<span class="text-base font-normal opacity-30">/m2</span></div>
-                <ul class="space-y-4 mb-10 text-left opacity-70 text-sm">
-                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Llave en Mano Total</li>
-                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Materiales Incluidos</li>
-                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Garantía de Post-Obra</li>
-                </ul>
-                <a href="#" class="btn-primary w-full block">Elegir Plan</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Projects Gallery -->
-<section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="flex justify-between items-end mb-16 flex-wrap gap-6">
+  <section class="bg-ink text-white py-20" id="servicios">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
         <div>
-            <span class="eyebrow">Portfolio</span>
-            <h2 class="section-title mb-0">Proyectos Recientes</h2>
+          <p class="tag mb-4">Servicios</p>
+          <h2 class="section-title text-4xl md:text-6xl max-w-3xl">Una web debe explicar qué se contrata</h2>
         </div>
-        <a href="#" class="btn-primary">Ver Todos</a>
+        <p class="text-white/60 max-w-md">Por eso los servicios están escritos como decisiones reales del cliente, no como paquetes cerrados por metro cuadrado.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <article class="bg-ink p-7">
+          <span class="tag">01</span>
+          <h3 class="font-bold text-2xl mt-5">Proyecto y documentación</h3>
+          <p class="text-white/60 mt-3">Planos, cómputos, detalles técnicos y alcance para presupuestar con mayor claridad.</p>
+        </article>
+        <article class="bg-ink p-7">
+          <span class="tag">02</span>
+          <h3 class="font-bold text-2xl mt-5">Dirección de obra</h3>
+          <p class="text-white/60 mt-3">Seguimiento de ejecución, coordinación de tareas y reportes de avance por etapa.</p>
+        </article>
+        <article class="bg-ink p-7">
+          <span class="tag">03</span>
+          <h3 class="font-bold text-2xl mt-5">Construcción integral</h3>
+          <p class="text-white/60 mt-3">Gestión de obra para proyectos que requieren planificación, compras y coordinación completa.</p>
+        </article>
+        <article class="bg-ink p-7">
+          <span class="tag">04</span>
+          <h3 class="font-bold text-2xl mt-5">Auditoría de avance</h3>
+          <p class="text-white/60 mt-3">Revisión técnica de obra iniciada, estado de ejecución y riesgos de costo o plazo.</p>
+        </article>
+        <article class="bg-ink p-7">
+          <span class="tag">05</span>
+          <h3 class="font-bold text-2xl mt-5">Coordinación de proveedores</h3>
+          <p class="text-white/60 mt-3">Orden de compras, entregas, gremios y documentación para evitar fricciones operativas.</p>
+        </article>
+        <article class="bg-ink p-7">
+          <span class="tag">06</span>
+          <h3 class="font-bold text-2xl mt-5">Cierre y post-obra</h3>
+          <p class="text-white/60 mt-3">Entrega documentada, pendientes, mantenimiento inicial y registro de decisiones tomadas.</p>
+        </article>
+      </div>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
-        <a href="proyecto-184.html" class="group relative overflow-hidden rounded-lg h-80 block">
-            <div class="absolute top-4 right-4 z-10 bg-primary/90 backdrop-blur-md text-white text-[8px] mono px-3 py-1 rounded tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">LAT: -31.63 // LON: -60.70</div>
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="P1"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex items-end p-8">
-                <div>
-                    <div class="text-primary font-bold uppercase text-[10px] tracking-widest mb-2">Residencial // 184-M2</div>
-                    <h4 class="text-white text-2xl font-black">Casa del Lago</h4>
-                </div>
-            </div>
-        </a>
-        <a href="proyecto-185.html" class="group relative overflow-hidden rounded-lg h-80 block">
-            <div class="absolute top-4 right-4 z-10 bg-primary/90 backdrop-blur-md text-white text-[8px] mono px-3 py-1 rounded tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">LOG: INBOUND_STATION</div>
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="P2"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex items-end p-8">
-                <div>
-                    <div class="text-primary font-bold uppercase text-[10px] tracking-widest mb-2">Industrial // 440-M2</div>
-                    <h4 class="text-white text-2xl font-black">Nave Sauce Viejo</h4>
-                </div>
-            </div>
-        </a>
-        <a href="proyecto-186.html" class="group relative overflow-hidden rounded-lg h-80 block">
-            <div class="absolute top-4 right-4 z-10 bg-primary/90 backdrop-blur-md text-white text-[8px] mono px-3 py-1 rounded tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">STATUS: OPERATIONAL</div>
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="P3"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-secondary to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex items-end p-8">
-                <div>
-                    <div class="text-primary font-bold uppercase text-[10px] tracking-widest mb-2">Comercial // 120-M2</div>
-                    <h4 class="text-white text-2xl font-black">Locales del Parque</h4>
-                </div>
-            </div>
-        </a>
-    </div>
-</section>
+  </section>
 
-<!-- Marquee -->
-<div class="marquee">
-    <div class="marquee-content">
-        <span class="marquee-item">Construcción General</span>
-        <span class="marquee-item">Mantenimiento</span>
-        <span class="marquee-item">Concepto de Edificio</span>
-        <span class="marquee-item">Reparación Estructural</span>
-        <span class="marquee-item">Construcción General</span>
-        <span class="marquee-item">Mantenimiento</span>
-        <span class="marquee-item">Concepto de Edificio</span>
-        <span class="marquee-item">Reparación Estructural</span>
+  <section class="max-w-7xl mx-auto px-5 py-20" id="metodo">
+    <p class="tag mb-4">Método de trabajo</p>
+    <h2 class="section-title text-4xl md:text-6xl max-w-4xl mb-12">El proceso visible también vende confianza</h2>
+    <div class="grid md:grid-cols-5 gap-4">
+      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">1</span><h3 class="font-bold mt-3">Consulta inicial</h3><p class="text-muted text-sm mt-2">Estado del proyecto, urgencias y objetivo de inversión.</p></div>
+      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">2</span><h3 class="font-bold mt-3">Relevamiento</h3><p class="text-muted text-sm mt-2">Documentación existente, superficie, sitio y restricciones.</p></div>
+      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">3</span><h3 class="font-bold mt-3">Alcance</h3><p class="text-muted text-sm mt-2">Qué incluye la obra, qué falta definir y qué se prioriza.</p></div>
+      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">4</span><h3 class="font-bold mt-3">Plan de obra</h3><p class="text-muted text-sm mt-2">Etapas, responsables, compras y calendario de decisiones.</p></div>
+      <div class="border-t-2 border-clay pt-5"><span class="font-display text-3xl">5</span><h3 class="font-bold mt-3">Seguimiento</h3><p class="text-muted text-sm mt-2">Reportes, desvíos, ajustes y cierre documentado.</p></div>
     </div>
-</div>
+  </section>
 
-<!-- Testimonials -->
-<section class="py-24 px-6 bg-surface">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <span class="eyebrow justify-center">Testimonios</span>
-            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                <div class="text-primary mb-4 flex justify-center gap-1">
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                </div>
-                <p class="italic opacity-70 mb-8">"Excelente profesionalismo. Terminaron mi local en el plazo acordado y sin sorpresas en el costo."</p>
-                <div class="font-bold uppercase text-secondary">Ricardo Rossi</div>
-                <div class="text-xs opacity-50 uppercase font-bold">Inversor</div>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                <div class="text-primary mb-4 flex justify-center gap-1">
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                </div>
-                <p class="italic opacity-70 mb-8">"La dirección de obra fue impecable. Los reportes semanales nos dieron mucha tranquilidad."</p>
-                <div class="font-bold uppercase text-secondary">Elena Sotelo</div>
-                <div class="text-xs opacity-50 uppercase font-bold">Empresaria</div>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                <div class="text-primary mb-4 flex justify-center gap-1">
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                    <span class="material-symbols-outlined fill-1">star</span>
-                </div>
-                <p class="italic opacity-70 mb-8">"Un equipo comprometido. Se nota la experiencia en cada detalle constructivo."</p>
-                <div class="font-bold uppercase text-secondary">Juan Perez</div>
-                <div class="text-xs opacity-50 uppercase font-bold">Propietario</div>
-            </div>
-        </div>
+  <section class="max-w-7xl mx-auto px-5 pb-20" id="obras">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+      <div>
+        <p class="tag mb-4">Obras y proyectos</p>
+        <h2 class="section-title text-4xl md:text-6xl">Casos por tipo de intervención</h2>
+      </div>
+      <a href="portfolio.html" class="btn btn-secondary">Ver todos</a>
     </div>
-</section>
+    <div class="grid md:grid-cols-3 gap-5">
+      <a href="proyecto-184.html" class="group bg-white/55 border hairline">
+        <img src="assets/exp_184.png" alt="Vivienda residencial en etapa de obra" class="w-full aspect-[4/3] object-cover" />
+        <div class="p-5"><span class="tag">Residencial · Dirección de obra</span><h3 class="font-bold text-2xl mt-2">Casa del Lago</h3><p class="text-muted mt-2">Control de documentación, decisiones de materialidad y seguimiento por etapas.</p></div>
+      </a>
+      <a href="proyecto-185.html" class="group bg-white/55 border hairline">
+        <img src="assets/exp_185.png" alt="Nave industrial en ejecución" class="w-full aspect-[4/3] object-cover" />
+        <div class="p-5"><span class="tag">Industrial · Plan de obra</span><h3 class="font-bold text-2xl mt-2">Nave Sauce Viejo</h3><p class="text-muted mt-2">Organización de etapas, compras críticas y coordinación de gremios.</p></div>
+      </a>
+      <a href="proyecto-186.html" class="group bg-white/55 border hairline">
+        <img src="assets/exp_186.png" alt="Local comercial reformado" class="w-full aspect-[4/3] object-cover" />
+        <div class="p-5"><span class="tag">Comercial · Reforma</span><h3 class="font-bold text-2xl mt-2">Locales del Parque</h3><p class="text-muted mt-2">Reforma con operación comercial cercana y ventanas acotadas de trabajo.</p></div>
+      </a>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer class="bg-secondary text-white pt-24 pb-12 px-6">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
-        <div>
-            <div class="text-3xl font-black mb-8"><span class="text-primary">ESTUDIO</span>NORTE</div>
-            <p class="opacity-50 text-sm leading-relaxed mb-8">Somos líderes en la industria de la construcción, brindando servicios de alta calidad con un compromiso inquebrantable.</p>
-            <div class="flex gap-4">
-                <div class="w-10 h-10 bg-white/10 flex items-center justify-center rounded-lg hover:bg-primary transition-colors cursor-pointer">F</div>
-                <div class="w-10 h-10 bg-white/10 flex items-center justify-center rounded-lg hover:bg-primary transition-colors cursor-pointer">I</div>
-                <div class="w-10 h-10 bg-white/10 flex items-center justify-center rounded-lg hover:bg-primary transition-colors cursor-pointer">L</div>
-            </div>
-        </div>
-        <div>
-            <h4 class="text-xl mb-8">Nuestros Servicios</h4>
-            <ul class="space-y-4 opacity-50 text-sm">
-                <li><a href="#" class="hover:text-primary">Auditoría Técnica</a></li>
-                <li><a href="#" class="hover:text-primary">Dirección de Obra</a></li>
-                <li><a href="#" class="hover:text-primary">Planificación</a></li>
-                <li><a href="#" class="hover:text-primary">Construcción General</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="text-xl mb-8">Links Rápidos</h4>
-            <ul class="space-y-4 opacity-50 text-sm">
-                <li><a href="#" class="hover:text-primary">Inicio</a></li>
-                <li><a href="#" class="hover:text-primary">Sobre Nosotros</a></li>
-                <li><a href="#" class="hover:text-primary">Proyectos</a></li>
-                <li><a href="#" class="hover:text-primary">Contacto</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="text-xl mb-8">Contáctenos</h4>
-            <ul class="space-y-4 opacity-50 text-sm">
-                <li>Calle Falsa 123, Santa Fe, AR</li>
-                <li>+54 11 4582 9000</li>
-                <li>hola@estudionorte.com</li>
-            </ul>
-        </div>
+  <section class="bg-white/55 border-y hairline">
+    <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-[.9fr_1.1fr] gap-10 items-center">
+      <div>
+        <p class="tag mb-4">Caso conceptual Trama Studio</p>
+        <h2 class="section-title text-4xl md:text-5xl">Diseñado para demostrar criterio de negocio</h2>
+      </div>
+      <p class="text-lg text-muted leading-relaxed">
+        Este proyecto muestra cómo una web para construcción puede dejar de ser un folleto y convertirse en una herramienta comercial: filtra consultas, explica procesos, ordena servicios y responde las dudas que aparecen antes de invertir en una obra.
+      </p>
     </div>
-    <div class="max-w-7xl mx-auto pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs opacity-50 uppercase tracking-widest">
-        <span>© 2026 Estudio Norte - Todos los derechos reservados</span>
-        <div class="flex gap-8">
-            <span>Privacidad</span>
-            <span>Términos</span>
-        </div>
-    </div>
+  </section>
+</main>
+
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-12 grid md:grid-cols-3 gap-8">
+    <div><h3 class="font-display text-2xl uppercase">Estudio Norte</h3><p class="text-white/55 mt-4">Construcción, dirección de obra y seguimiento técnico para proyectos con decisiones claras.</p></div>
+    <div><p class="tag mb-3">Contacto</p><p class="text-white/70">Santa Fe · Región centro</p><p class="text-white/70">hola@estudionorte.com</p></div>
+    <div class="md:text-right"><a href="contacto.html" class="btn btn-primary bg-white text-ink">Solicitar evaluación</a></div>
+  </div>
 </footer>
-
-<script>
-    // Redesign Upgrade: Spotlight Effect
-    document.addEventListener('mousemove', e => {
-        document.querySelectorAll('.service-card, .price-card, .spotlight-card').forEach(card => {
-            const rect = card.getBoundingClientRect();
-            card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-            card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
-        });
-    });
-</script>
 
 </body>
 </html>
