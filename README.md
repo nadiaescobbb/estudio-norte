@@ -42,14 +42,30 @@ El sitio esta pensado para personas o equipos que necesitan construir, reformar,
 
 ## Estructura del sitio
 
+```txt
+estudio-norte/
+  index.html
+  pages/
+    estudio.html
+    portfolio.html
+    contacto.html
+    proyecto-184.html
+    proyecto-185.html
+    proyecto-186.html
+  css/
+    style.css
+  js/
+    main.js
+  assets/
+    images/
+  README.md
+```
+
 - `index.html`: pagina principal con propuesta, servicios, confianza y contacto.
-- `estudio.html`: enfoque del proyecto y criterio comercial.
-- `portfolio.html`: obras conceptuales organizadas por tipo de intervencion.
-- `contacto.html`: formulario para solicitar una primera evaluacion.
-- `proyecto-184.html`, `proyecto-185.html`, `proyecto-186.html`: fichas de obra.
-- `style.css`: sistema visual del sitio.
-- `script.js`: interacciones y validacion del formulario.
-- `assets/`: imagenes utilizadas en el caso.
+- `pages/`: paginas internas y fichas de obra.
+- `css/style.css`: sistema visual del sitio.
+- `js/main.js`: interacciones y validacion del formulario.
+- `assets/images/`: imagenes utilizadas en el caso.
 
 ## Objetivo
 
