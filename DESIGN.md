@@ -2,29 +2,36 @@
 
 ## Scene
 
-A construction owner, architect, or business operator scans this site during office hours, comparing vendors and trying to understand whether this team can bring order to a costly project.
+Una persona que esta por construir o revisar una obra entra al sitio durante una comparacion de proveedores. Necesita entender si el equipo puede ordenar alcance, documentacion, tiempos y seguimiento sin prometer resultados irreales.
 
 ## Color Strategy
 
-Restrained but physical: warm paper, near-black ink, clay accent. The palette should feel like printed construction documentation, marked-up drawings, brick dust, and site folders.
+Verde institucional sobre fondo menta claro. La paleta debe sentirse cercana a obra publica, infraestructura, seguridad y confianza tecnica.
 
-Use OKLCH tokens in new CSS. Avoid pure black and pure white.
+- Fondo: menta claro, aireado y limpio.
+- Marca: verde profundo.
+- Acento: verde vivo para puntos de accion y detalles.
+- Texto: tinta verde muy oscura, nunca negro puro.
+
+Usar OKLCH en CSS y evitar blancos o negros puros.
 
 ## Typography
 
-Current fonts are Archivo Black and IBM Plex Sans/Mono. They are acceptable for this existing identity, but use them with restraint:
+Manrope como familia unica para mantener una lectura moderna, institucional y directa.
 
-- Archivo Black for strong architectural headings only.
-- IBM Plex Sans for readable body copy.
-- Mono labels only where they behave like project metadata, not decoration.
+- Titulares grandes, compactos y con peso alto.
+- Cuerpo breve, de lectura rapida.
+- Etiquetas cortas y utiles, no decorativas.
 
 ## Components
 
-- Buttons: rectangular, purposeful, no pill shapes.
-- Cards: use only for real grouped content like services or projects.
-- Project tiles: image first, then intervention and challenge.
-- Forms: clear labels, generous hit targets, visible feedback, helper text.
+- Navegacion tipo capsula.
+- Botones redondeados y contundentes.
+- Imagenes grandes con esquinas amplias.
+- Chips flotantes para servicios clave.
+- Bloques verdes para secciones institucionales y contacto.
+- Formularios con etiquetas visibles, estados de error y campos amplios.
 
 ## Interaction
 
-Keep motion light. Prefer focus states, hover states, and form feedback over decorative animation.
+Movimiento ligero: entradas suaves, hover en botones y focus visible. La interaccion debe sentirse cuidada sin distraer del contenido comercial.
