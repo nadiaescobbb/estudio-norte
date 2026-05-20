@@ -101,6 +101,16 @@ p { line-height: 1.42; }
 .service-feature p { position: relative; z-index: 1; max-width: 58rem; color: oklch(98% 0.006 160); }
 .service-line { display: flex; align-items: center; gap: .85rem; padding: .35rem 0 .2rem; font-size: 1.1rem; font-weight: 900; }
 .service-line .icon, .feature-item .icon { display: grid; place-items: center; width: 1.55rem; height: 1.55rem; border-radius: .35rem; background: var(--green-2); color: var(--white); font-size: .8rem; }
+.icon svg,
+.contact-list svg {
+  width: .95rem;
+  height: .95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .service-item {
   display: grid;
   grid-template-columns: minmax(14rem, .35fr) 1fr;

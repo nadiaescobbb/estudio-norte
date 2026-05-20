@@ -1,6 +1,6 @@
 # Estudio Norte
 
-Sitio conceptual desarrollado para presentar como una constructora puede comunicar mejor su forma de trabajo, sus servicios y sus casos de obra.
+Sitio web pensado para mostrar como una constructora puede comunicar mejor su forma de trabajo, sus servicios y sus casos de obra.
 
 El proyecto esta pensado como parte del portfolio de Trama Studio. La idea fue tomar el rubro construccion y llevarlo a una web mas clara, comercial y cercana al cliente real: alguien que esta por invertir, comparar propuestas o destrabar una obra que ya empezo.
 
@@ -71,4 +71,4 @@ estudio-norte/
 
 El objetivo fue demostrar que una web para una constructora no tiene que ser solamente una tarjeta de presentacion. Puede funcionar como una herramienta comercial: explicar, ordenar, filtrar consultas y ayudar a que el cliente llegue mejor preparado a la primera conversacion.
 
-Este proyecto es conceptual y fue creado para mostrar criterio de diseno, contenido y estrategia aplicado al rubro construccion.
+El caso fue desarrollado para mostrar criterio de diseno, contenido y estrategia aplicado al rubro construccion.

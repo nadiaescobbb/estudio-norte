@@ -1,0 +1,17 @@
+{
+  "name": "estudio-norte",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web estatico para una constructora enfocada en construccion civil, direccion de obra y seguimiento tecnico.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadiaescobbb/estudio-norte.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nadiaescobbb/estudio-norte/issues"
+  },
+  "homepage": "https://github.com/nadiaescobbb/estudio-norte#readme",
+  "dependencies": {
+    "lucide": "^1.16.0"
+  }
+}
