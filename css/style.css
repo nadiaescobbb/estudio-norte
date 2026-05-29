@@ -1038,6 +1038,19 @@ p { line-height: 1.55; }
 .footer {
   background: oklch(12% 0.024 145);
 }
+.footer-brand {
+  color: var(--white);
+}
+.footer-brand small {
+  color: oklch(86% 0.015 125);
+}
+.footer-brand .brand-mark::before {
+  border-left-color: var(--white);
+  border-top-color: var(--white);
+}
+.footer-brand .brand-mark::after {
+  border-left-color: var(--white);
+}
 .footer-links,
 .footer-bottom,
 .social-row {
@@ -1076,6 +1089,44 @@ p { line-height: 1.55; }
   background: oklch(96% 0.008 112);
   color: var(--ink);
   font: inherit;
+}
+.spec-strip {
+  padding-block: 0 clamp(2rem, 4vw, 3rem);
+}
+.spec-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .75rem;
+}
+.spec {
+  display: grid;
+  gap: .35rem;
+  min-height: 4.25rem;
+  align-content: center;
+  padding: .9rem 1rem;
+  border-radius: .55rem;
+}
+.spec .meta {
+  display: block;
+  line-height: 1;
+}
+.spec strong {
+  display: block;
+  font-size: clamp(.98rem, 1.4vw, 1.15rem);
+  line-height: 1.08;
+}
+.project-content {
+  padding-top: clamp(2rem, 4.5vw, 3.5rem);
+}
+.project-content .deliverables {
+  margin-top: 1.35rem;
+}
+.deliverables div {
+  display: grid;
+  gap: .85rem;
+  min-height: 8.25rem;
+}
+.deliverables p {
+  margin: 0;
 }
 .field:focus {
   background: oklch(98% 0.006 112);
@@ -1326,6 +1377,9 @@ p { line-height: 1.55; }
   }
   .about-card, .service-feature, .cta-card, .contact-card { border-radius: 18px; }
   .facts-grid, .process, .spec-grid, .deliverables, .form-grid, .radio-pills { grid-template-columns: 1fr; }
+  .spec {
+    min-height: auto;
+  }
   .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
   .estudio-hero-copy,
   .estudio-hero-media,
