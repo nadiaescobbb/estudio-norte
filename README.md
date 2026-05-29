@@ -47,11 +47,12 @@ estudio-norte/
   index.html
   pages/
     estudio.html
-    portfolio.html
+    obras.html
     contacto.html
-    proyecto-184.html
-    proyecto-185.html
-    proyecto-186.html
+    obras/
+      casa-del-lago.html
+      nave-sauce-viejo.html
+      locales-del-parque.html
   css/
     style.css
   js/
@@ -62,10 +63,17 @@ estudio-norte/
 ```
 
 - `index.html`: pagina principal con propuesta, servicios, confianza y contacto.
-- `pages/`: paginas internas y fichas de obra.
+- `pages/`: paginas internas del sitio.
+- `pages/obras/`: fichas individuales de obras con URLs claras.
 - `css/style.css`: sistema visual del sitio.
 - `js/main.js`: interacciones y validacion del formulario.
-- `assets/images/`: imagenes utilizadas en el caso.
+- `assets/images/`: imagenes optimizadas en formato AVIF.
+
+## Tecnologia
+
+El sitio esta construido como proyecto estatico con HTML, CSS y JavaScript. No usa framework ni proceso de build porque el alcance no lo necesita: son paginas livianas, navegables y faciles de publicar en cualquier hosting estatico.
+
+La decision fue mantener una estructura simple y entendible, sin dependencias que no aporten al resultado final.
 
 ## Objetivo
 
