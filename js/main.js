@@ -4,6 +4,30 @@ document.addEventListener("DOMContentLoaded", () => {
     item.style.animationDelay = Math.min(index * 70, 420) + "ms";
   });
 
+  const nav = document.querySelector(".nav");
+  const navToggle = document.querySelector(".nav-toggle");
+  const navMenu = document.getElementById("primary-menu");
+
+  if (nav && navToggle && navMenu) {
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  }
+
   const form = document.getElementById("technical-form");
   if (!form) return;
 
@@ -35,13 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
     button.textContent = isValid ? "Consulta registrada" : "Revisar datos";
     if (status) {
       status.textContent = isValid
-        ? "Consulta simulada correctamente. En produccion se enviaria al canal comercial definido."
+        ? "Recibimos los datos principales. El siguiente paso seria coordinar una primera revision."
         : "Faltan datos clave: nombre, WhatsApp y etapa actual.";
     }
 
     window.setTimeout(() => {
       button.textContent = original;
-      if (status) status.textContent = "Completa los campos clave para simular una consulta calificada.";
+      if (status) status.textContent = "Completa los datos principales para que podamos orientar mejor la primera respuesta.";
       if (isValid) form.reset();
     }, 2600);
   });
