@@ -634,6 +634,109 @@ p { line-height: 1.42; }
   letter-spacing: -.06em;
 }
 
+.business-head {
+  display: grid;
+  grid-template-columns: .82fr 1fr;
+  gap: clamp(1rem, 4vw, 3rem);
+  align-items: end;
+  margin-bottom: 1.2rem;
+}
+.business-head .eyebrow { grid-column: 1 / -1; margin-bottom: 0; }
+.business-head .lead { margin: 0; }
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.business-grid-wide {
+  grid-template-columns: 1.1fr .95fr .95fr;
+}
+.business-card {
+  min-height: 15rem;
+  padding: clamp(1.15rem, 2.4vw, 1.6rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: oklch(96% 0.008 112 / .82);
+}
+.business-card h3 {
+  margin: .85rem 0 .75rem;
+  max-width: 24rem;
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+}
+.business-card p {
+  margin: 0;
+  color: var(--muted);
+}
+.dark-card {
+  background: var(--green);
+  color: var(--white);
+}
+.dark-card .meta { color: var(--bright); }
+.dark-card p { color: oklch(91% 0.012 120 / .82); }
+.faq-block {
+  display: grid;
+  grid-template-columns: .72fr 1fr;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: start;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: oklch(96% 0.008 112 / .7);
+}
+.faq-block h2 {
+  margin: 0;
+  max-width: 29rem;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -.065em;
+}
+.faq-list {
+  display: grid;
+  gap: .75rem;
+}
+.faq-list details {
+  border: 1px solid var(--line);
+  border-radius: .55rem;
+  background: var(--white);
+  padding: 1rem;
+}
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 900;
+  letter-spacing: -.035em;
+}
+.faq-list p {
+  margin: .75rem 0 0;
+  color: var(--muted);
+}
+.doc-pills {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.contact-next {
+  margin-top: 1.35rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--line);
+}
+.contact-next p { color: var(--muted); }
+.case-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.case-detail-grid article {
+  padding: 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: .55rem;
+  background: oklch(96% 0.008 112 / .82);
+}
+.case-detail-grid p {
+  margin: .65rem 0 0;
+  color: var(--muted);
+}
+
 /* Brand direction: sober architectural/editorial system */
 :root {
   --mint: oklch(94% 0.014 125);
@@ -1142,6 +1245,12 @@ p { line-height: 1.55; }
 
 @media (max-width: 960px) {
   .hero, .about-card, .cta-card, .feature-cloud, .contact-card, .section-head, .needs-grid, .case-inner, .project-grid, .studio-grid, .project-hero, .project-content, .contact-layout, .estudio-hero, .estudio-proof, .estudio-process, .estudio-checklist, .estudio-cta, .obras-hero, .featured-work, .obras-section-head, .obras-grid, .obras-cta { grid-template-columns: 1fr; }
+  .business-head,
+  .business-grid,
+  .business-grid-wide,
+  .faq-block,
+  .case-detail-grid,
+  .doc-pills { grid-template-columns: 1fr; }
   .chip { position: static; margin-top: .5rem; }
   .hero-media { min-height: auto; }
   .about-card { gap: 1.5rem; }

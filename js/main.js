@@ -59,13 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
     button.textContent = isValid ? "Consulta registrada" : "Revisar datos";
     if (status) {
       status.textContent = isValid
-        ? "Recibimos los datos principales. El siguiente paso seria coordinar una primera revision."
+        ? "Recibimos la etapa, tipo de obra y datos principales. El siguiente paso seria revisar documentacion disponible y coordinar una primera lectura."
         : "Faltan datos clave: nombre, WhatsApp y etapa actual.";
     }
 
     window.setTimeout(() => {
       button.textContent = original;
-      if (status) status.textContent = "Completa los datos principales para que podamos orientar mejor la primera respuesta.";
+      if (status) status.textContent = "Completa etapa, ubicacion, urgencia y documentacion disponible para orientar mejor la primera respuesta.";
       if (isValid) form.reset();
     }, 2600);
   });

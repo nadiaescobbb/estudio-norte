@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@500;600;700&family=Chivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css?v=20260529-nav3" />
+  <link rel="stylesheet" href="../css/style.css?v=20260529-real1" />
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -20,7 +20,7 @@
   <nav class="nav" aria-label="Navegacion principal">
     <a class="brand" href="../index.html" aria-label="Estudio Norte inicio">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span>Estudio Norte<small>constructora</small></span>
+      <span>Estudio Norte<small>obra y direccion</small></span>
     </a>
     <button class="nav-toggle" type="button" aria-controls="primary-menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -51,6 +51,8 @@
         <label><span class="meta">Tipo de obra</span><select name="tipo" class="field"><option>Residencial</option><option>Comercial</option><option>Industrial</option><option>Obra civil</option><option>Reforma o ampliacion</option><option>No estoy seguro</option></select></label>
         <label><span class="meta">Ubicacion</span><input name="ubicacion" class="field" placeholder="Ciudad o zona" /></label>
         <label><span class="meta">Superficie estimada</span><input name="superficie" class="field" placeholder="Ej. 180 m2" /></label>
+        <label><span class="meta">Urgencia</span><select name="urgencia" class="field"><option>Estoy evaluando opciones</option><option>Necesito definir este mes</option><option>La obra ya esta en marcha</option><option>Hay un problema que destrabar</option></select></label>
+        <label><span class="meta">Presupuesto estimado</span><select name="presupuesto" class="field"><option>No definido todavia</option><option>Hasta 20 millones</option><option>20 a 60 millones</option><option>Mas de 60 millones</option><option>Prefiero conversarlo</option></select></label>
       </div>
       <div style="margin-top: 1.5rem;">
         <span class="meta">Etapa actual</span>
@@ -59,6 +61,15 @@
           <label><input type="radio" name="stage" value="planos" /> Tengo planos</label>
           <label><input type="radio" name="stage" value="presupuesto" /> Busco presupuesto</label>
           <label><input type="radio" name="stage" value="obra" /> Obra iniciada</label>
+        </div>
+      </div>
+      <div style="margin-top: 1.5rem;">
+        <span class="meta">Documentacion disponible</span>
+        <div class="radio-pills doc-pills">
+          <label><input type="checkbox" name="documentacion" value="planos" /> Planos</label>
+          <label><input type="checkbox" name="documentacion" value="fotos" /> Fotos de obra</label>
+          <label><input type="checkbox" name="documentacion" value="presupuesto" /> Presupuesto previo</label>
+          <label><input type="checkbox" name="documentacion" value="computo" /> Computo o listado</label>
         </div>
       </div>
       <label style="margin-top: 1.5rem;"><span class="meta">Mensaje</span><textarea id="message" name="mensaje" rows="5" class="field" placeholder="Que necesitas resolver, plazo aproximado y datos utiles."></textarea></label>
@@ -74,6 +85,10 @@
         <li>Decision que hoy bloquea el avance.</li>
       </ul>
       <p class="proof-note">Con estos datos podemos orientar la primera conversacion y definir si conviene revisar planos, visitar la obra o relevar documentacion.</p>
+      <div class="contact-next">
+        <span class="meta">Despues del envio</span>
+        <p>Respondemos con una primera lectura del caso y, si tiene sentido avanzar, proponemos una reunion breve o visita tecnica.</p>
+      </div>
     </aside>
   </section>
 </main>
@@ -86,7 +101,7 @@
   <div class="container footer-inner">
     <a class="brand footer-brand" href="../index.html">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span>Estudio Norte<small>constructora</small></span>
+      <span>Estudio Norte<small>obra y direccion</small></span>
     </a>
     <nav class="footer-links" aria-label="Navegacion de pie">
       <a href="../index.html">Inicio</a>
@@ -103,6 +118,6 @@
     </div>
   </div>
 </footer>
-<script src="../js/main.js?v=20260529-nav3"></script>
+<script src="../js/main.js?v=20260529-real1"></script>
 </body>
 </html>
