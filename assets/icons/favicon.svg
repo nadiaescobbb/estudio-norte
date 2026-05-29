@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Estudio Norte">
+  <rect width="64" height="64" rx="10" fill="#f0f1e8"/>
+  <path d="M17 26 32 11l15 15" fill="none" stroke="#043a1c" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M31.5 18v34" fill="none" stroke="#043a1c" stroke-width="4" stroke-linecap="square"/>
+  <path d="M31.5 28 21 39" fill="none" stroke="#043a1c" stroke-width="4" stroke-linecap="square"/>
+</svg>
