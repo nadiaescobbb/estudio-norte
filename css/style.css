@@ -1101,9 +1101,10 @@ p { line-height: 1.55; }
   }
   .nav-pill {
     position: fixed;
-    top: 4.75rem;
-    left: var(--gutter);
+    top: 4.35rem;
+    left: auto;
     right: var(--gutter);
+    width: min(15rem, calc(100vw - (var(--gutter) * 2)));
     z-index: 60;
     display: grid;
     grid-template-columns: 1fr;
@@ -1121,7 +1122,7 @@ p { line-height: 1.55; }
   .nav.is-open .nav-pill {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
   .nav-pill a {
     width: 100%;
@@ -1186,9 +1187,10 @@ p { line-height: 1.55; }
     padding-inline: .7rem;
   }
   .nav-pill {
-    top: 4.65rem;
-    left: 1rem;
+    top: 4.25rem;
+    left: auto;
     right: 1rem;
+    width: min(14rem, calc(100vw - 2rem));
   }
   .hero { padding-block: 2rem 3rem; }
   .hero h1 {
@@ -1275,9 +1277,10 @@ p { line-height: 1.55; }
     padding-inline: .55rem;
   }
   .nav-pill {
-    top: 4.25rem;
-    left: .75rem;
+    top: 3.85rem;
+    left: auto;
     right: .75rem;
+    width: min(13.25rem, calc(100vw - 1.5rem));
   }
 }
 
